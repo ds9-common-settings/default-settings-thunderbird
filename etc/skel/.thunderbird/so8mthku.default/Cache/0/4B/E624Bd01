@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<searchresults total_results="4">
+        <addon id="9716">
+  <name>Extra Folder Columns</name>
+  <type id="1">Extension</type>
+  <guid>extra-cols@jminta_gmail.com</guid>
+  <slug>extra-folder-columns</slug>
+  <version>1.1.4</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="63183">
+      <name>Joey Minta</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/63183/?src=api</link>
+    </author><author id="296323">
+      <name>Standard8</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/296323/?src=api</link>
+    </author>      </authors>
+  <summary>This extension is for those TB3 users who want the multiple-columns view that TB2 allowed</summary>
+
+  <description>Adds additional columns to Thunderbird&#39;s folder pane</description>
+
+  <icon></icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>3.0</min_version>
+      <max_version>9.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="" width="258" height="199">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/54/54924.png?src=api&amp;modified=1299839253
+      </full>
+      <thumbnail type="" width="194" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/54/54924.png?src=api&amp;modified=1299839253
+      </thumbnail><caption>All columns displayed.</caption></preview><preview position="1">
+      <full type="" width="254" height="185">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/54/54925.png?src=api&amp;modified=1299839253
+      </full>
+      <thumbnail type="" width="200" height="145">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/54/54925.png?src=api&amp;modified=1299839253
+      </thumbnail><caption>Without the add-on.</caption></preview><preview position="2">
+      <full type="" width="254" height="199">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/54/54926.png?src=api&amp;modified=1299839253
+      </full>
+      <thumbnail type="" width="191" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/54/54926.png?src=api&amp;modified=1299839253
+      </thumbnail><caption>Select your columns using the picker menu at the top corner.</caption></preview></previews><rating>4</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/extra-folder-columns/?src=api</learnmore><install hash="sha256:fedd72eb3db010a3f2251070bdeb3109e76a018cf7121ee6eb88ada09f1fee96"
+    os="ALL"
+    size="17408">https://addons.mozilla.org/thunderbird/downloads/file/134579/extra_folder_columns-1.1.4-tb.xpi?src=api</install>
+      <developer_comments></developer_comments>
+    <reviews num="148">
+      https://addons.mozilla.org/en-US/thunderbird/addon/extra-folder-columns/reviews/?src=api
+    </reviews>
+    <total_downloads>1733021</total_downloads>
+    <weekly_downloads>10262</weekly_downloads>
+    <daily_users>286187</daily_users>
+    <created epoch="1227393089">
+      2008-11-22T22:31:29Z
+    </created>
+    <last_updated epoch="1319213814">
+      2011-10-21T16:16:54Z
+    </last_updated>
+    <homepage></homepage>
+    <support></support>
+    <featured>1</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="5698">
+  <name>Noia 2.0 eXtreme (v3.x)</name>
+  <type id="2">Theme</type>
+  <guid>noia2_full@gd.noia</guid>
+  <slug>noia-20-extreme-v3x</slug>
+  <version>3.33</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="9487">
+      <name>Gerard D.</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/9487/?src=api</link>
+    </author>      </authors>
+  <summary>A new version, completely rewritten of Noia 2 eXtreme theme.
+Thanks to Carlitus for the wonderful icon set.</summary>
+
+  <description>This is a full version of a previously (lite) theme developed by Kongkeat Kuatrakull (Kasteo) and first updated by Vadim Bodrov (in the lite version). The look is compatible with the equivalent theme for Firefox. Thanks to Kasteo for his help !</description>
+
+  <icon>https://static-cdn.addons.mozilla.net/en-US/firefox/images/addon_icon/5698-32.png?modified=1317977523</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>2.0a1</min_version>
+      <max_version>9.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="image/jpeg">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/16/16479.png?src=api&amp;modified=1190567731
+      </full>
+      <thumbnail type="image/png">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/16/16479.png?src=api&amp;modified=1190567731
+      </thumbnail></preview></previews><rating>4</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/noia-20-extreme-v3x/?src=api</learnmore><install hash="sha256:ce87851a911e0581cfd6e6cb551790fbd47a0e5c9e3506bf2ad79ebd407c0eb8"
+    os="ALL"
+    size="1533952">https://addons.mozilla.org/thunderbird/downloads/file/133507/noia_20_extreme_v3x-3.33-tb.xpi?src=api</install>
+      <developer_comments>Noia 2 eXtreme V3 has been rewritten starting from TB2.0 default theme. So, it&#39;s no more compatible with TB 1.5 and previous versions. Update from V2.x to V3.x is NOT automatic.
+
+&lt;b&gt;New from 3.22 version&lt;/b&gt; : An extension has been added to set Noia2 theme options (version 3.18 and above). This extension &lt;b&gt;can now be localized&lt;/b&gt; in your own language. Look at my web site to see if it&#39;s not already translated (but not still officially published !). You can participate by translating it. Simply follow the instructions on my main web page. You can also propose an other translation for some strings.
+
+&lt;b&gt;Warning&lt;/b&gt; : Options are set by using userChrome.css inside the chrome folder of your Thunderbird profile. This chrome folder is normally created during installation, but may not exist if you have a portable version of TB or on Linux. So, if not here, create it manually (before v 3.22) ! After v3.22, this chrome folder is created for you by the Noia2 eXtreme XT extension, if needed.
+
+&lt;b&gt;From v 2.25 to v 3.17 included&lt;/b&gt; : Options may be installed/validated automatically with an Option button in Themes window. (From codes found in Noia2 Extreme and Shifts themes for Firefox). As it is now, this option button does not work with TB 2.0. But, the option window is still available with a right click on the theme (always in the theme window) and the &#34;about&#34; submenu. To work properly, Noia must be the active theme. 
+
+Before v 3.18, with TB 3.0, follow the instructions on the about menu to be able to use those options.
+
+&lt;b&gt;From v 3.18&lt;/b&gt;, options are available through a small extension (&lt;b&gt;Noia 2.0 eXtreme XT&lt;/b&gt;) downloaded (and installed) with the theme. So, the &#34;About&#34; window in the theme is now the standard one. No more &#34;specials&#34; settings to do ! &lt;b&gt;Important :&lt;/b&gt; If you uninstall the theme (before version 3.24), you&#39;ll have to uninstall manually the extension. But, starting with 3.24 version, and for TB 3.0 and above, it&#39;s now automatic (Sorry, not for TB 2.x !). The code used is largely copied from the one found in Silvermel Theme (with the help of his author : Many Thanks to Pardal / Sharebird).
+
+Nevertheless, if you wish, you call still set options manually :-) as follows :
+
+&lt;b&gt;&lt;i&gt;Options&lt;/i&gt;&lt;/b&gt; :
+Add these lines at the beginning of your userChrome.css :
+(As told before, this file must be in a chrome folder of your Thunderbird profile.)
+
+&lt;b&gt;@import url(&#34;chrome://global/skin/subskin/no-zebra.css&#34; );&lt;/b&gt;
+To eliminate the alternation of white and blue lines in the message window. (option from Aaron Spuler&#39;s site, the smoke theme)
+
+&lt;b&gt;@import url(&#34;chrome://global/skin/subskin/noHead.css&#34; );&lt;/b&gt;
+This option eliminate the female head in front of the sender address in the message Header (for those who don&#39;t like her).
+
+&lt;b&gt;@import url(&#34;chrome://global/skin/subskin/inverse-size.css&#34;);&lt;/b&gt;
+Option to invert the size change in taskbar.
+
+Those following new options are directly transposed from the Firefox Noia2 theme.
+
+&lt;b&gt;@import url(&#34;chrome://global/skin/subskin/new-officexp.css&#34;);&lt;/b&gt;
+New menu presentation with rounded edges. Works correctly only with TB 3.0 and above.
+
+&lt;b&gt;@import url(&#34;chrome://global/skin/subskin/Dark.css&#34;);&lt;/b&gt;
+To obtain more less a dark Theme. 
+
+&lt;b&gt;@import url(&#34;chrome://global/skin/subskin/Light_Dark.css&#34;);&lt;/b&gt;
+To obtain lighter dark Theme than the previous one. 
+
+&lt;b&gt;@import url(&#34;chrome://global/skin/subskin/blueground.css&#34;);&lt;/b&gt;
+Blue background. Not compatible with Dark option.
+
+&lt;b&gt;@import url(&#34;chrome://global/skin/subskin/Cleaner.css&#34;);&lt;/b&gt;
+Cleaner look by deleting some horizontal lines between menus.
+
+&lt;b&gt;@import url(&#34;chrome://global/skin/subskin/collapse.css&#34;);&lt;/b&gt;
+Delete menu options which are not activated (normally grayed).
+
+&lt;b&gt;@import url(&#34;chrome://global/skin/subskin/round-tabs.css&#34;);&lt;/b&gt;
+To obtain rounded tabs. Works with TB3, but not fully compatible with TB 2.0.
+
+&lt;b&gt;@import url(&#34;chrome://global/skin/subskin/cmpctHeaderAdj.css&#34; );&lt;/b&gt;
+This option corrects a misalignment in some buttons caused by small incompatibilities between CompactHeader extension, version 0.9.0, and TB 3.0pre (while waiting new versions ...).
+Normally not necessary with last CompactHeader versions, but still here just in case ...
+
+&lt;b&gt;@import url(&#34;chrome://global/skin/subskin/personas.css&#34; );&lt;/b&gt; (from version 3.16)
+This option invalidates the use of a few images in toolbars, so Personas extension can now be used. (I have not &#34;still&#34; found a better solution ! )
+
+&lt;b&gt;@import url(&#34;chrome://global/skin/subskin/BlueDropmarker.css&#34; );&lt;/b&gt; (from version 3.21)
+This option may be used to obtain blue dropmarkers as in previous theme versions. Standard is now gray dropmarkers.
+
+&lt;b&gt;&lt;i&gt;Throbber options :&lt;/i&gt;&lt;/b&gt;
+
+&lt;b&gt;@import url(&#34;chrome://global/skin/subskin/defThrobber.css&#34; );&lt;/b&gt;
+To have the default theme throbber
+
+&lt;b&gt;@import url(&#34;chrome://global/skin/subskin/newThrobber.css&#34; );&lt;/b&gt;
+To have an other throbber
+
+&lt;b&gt;@import url(&#34;chrome://global/skin/subskin/bigThrobber.css&#34; );&lt;/b&gt;
+To have the old big throbber</developer_comments>
+    <reviews num="60">
+      https://addons.mozilla.org/en-US/thunderbird/addon/noia-20-extreme-v3x/reviews/?src=api
+    </reviews>
+    <total_downloads>475546</total_downloads>
+    <weekly_downloads>3311</weekly_downloads>
+    <daily_users>38346</daily_users>
+    <created epoch="1189793701">
+      2007-09-14T18:15:01Z
+    </created>
+    <last_updated epoch="1317977407">
+      2011-10-07T08:50:07Z
+    </last_updated>
+    <homepage>http://pagesperso-orange.fr/thunderbird-noia2/</homepage>
+    <support>http://pagesperso-orange.fr/thunderbird-noia2/</support>
+    <featured>1</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="1339">
+  <name>Expression Search / GMailUI</name>
+  <type id="1">Extension</type>
+  <guid>{03EF8A6E-C972-488f-92FA-98ABC2C9F8B9}</guid>
+  <slug>gmailui</slug>
+  <version>0.8.3</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="2624362">
+      <name>wang opera</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/2624362/?src=api</link>
+    </author>      </authors>
+  <summary>Powerful message searching through expressions. Type &#34;from:fred to:tom&#34; to see all messages from Fred to Tom in the current view.</summary>
+
+  <description>Expression Search / G M a i l U I is an extension to Thunderbird (versions 3.1+) which add powerful message searching features. Originally written by Ken Mixter.
+
+Type &#34;from:fred to:tom attachment:yes&#34; to see all messages from Fred to Tom in the current view that have an attachment. Press Ctrl+Enter to have this search apply to all folders.</description>
+
+  <icon>https://static-cdn.addons.mozilla.net/media//img/addon-icons/search-32.png</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>3.1</min_version>
+      <max_version>10.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="image/jpeg">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/2/2601.png?src=api&amp;modified=1303193561
+      </full>
+      <thumbnail type="image/png">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/2/2601.png?src=api&amp;modified=1303193561
+      </thumbnail><caption>Example search expression</caption></preview><preview position="1">
+      <full type="" width="537" height="303">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/56/56271.png?src=api&amp;modified=1303193562
+      </full>
+      <thumbnail type="" width="200" height="112">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/56/56271.png?src=api&amp;modified=1303193562
+      </thumbnail><caption>optionally put search box in the toolbar or menubar
+search with sender and attachment type</caption></preview><preview position="2">
+      <full type="" width="533" height="172">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/56/56269.png?src=api&amp;modified=1303193562
+      </full>
+      <thumbnail type="" width="200" height="64">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/56/56269.png?src=api&amp;modified=1303193562
+      </thumbnail><caption>search subject with regular expression:
+all emails begin with &#34;accept&#34; and end with &#34;Lu&#34;, case insensitive.</caption></preview><preview position="3">
+      <full type="" width="538" height="122">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/56/56270.png?src=api&amp;modified=1303193562
+      </full>
+      <thumbnail type="" width="200" height="45">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/56/56270.png?src=api&amp;modified=1303193562
+      </thumbnail><caption>simply click the mail subject with Ctrl or Shift pressed to find the mails with same subject.</caption></preview><preview position="4">
+      <full type="" width="700" height="319">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/56/56266.png?src=api&amp;modified=1303193562
+      </full>
+      <thumbnail type="" width="200" height="91">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/56/56266.png?src=api&amp;modified=1303193562
+      </thumbnail><caption>find all emails between 4/3 and 4/5</caption></preview><preview position="5">
+      <full type="" width="375" height="505">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/56/56824.png?src=api&amp;modified=1303193562
+      </full>
+      <thumbnail type="" width="111" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/56/56824.png?src=api&amp;modified=1303193562
+      </thumbnail><caption>options dialog</caption></preview><preview position="6">
+      <full type="" width="321" height="525">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/54/54915.png?src=api&amp;modified=1303193562
+      </full>
+      <thumbnail type="" width="91" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/54/54915.png?src=api&amp;modified=1303193562
+      </thumbnail><caption>document link can be found in the options dialog</caption></preview></previews><rating>4</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/gmailui/?src=api</learnmore><install hash="sha256:2a368cce64c419453f0bf43c46a062f18ba7f11591592606017516b116ef2dec"
+    os="ALL"
+    size="52224">https://addons.mozilla.org/thunderbird/downloads/file/125530/expression_search_gmailui-0.8.3-tb.xpi?src=api</install>
+  <contribution_data>
+      <link>https://addons.mozilla.org/en-US/thunderbird/addon/gmailui/contribute/?src=api</link>
+                <suggested_amount currency="USD" amount="2.00">
+            $2.00
+          </suggested_amount>
+            <meet_developers>
+        https://addons.mozilla.org/en-US/thunderbird/addon/gmailui/developers?src=api
+      </meet_developers>
+    </contribution_data>    <developer_comments>You do not need a GMail account to use this extension.  It adds some GMail inspired features to your existing accounts.
+
+Please see help document in the options dialog to learn how to properly configure Expression Search to choose &#34;Expression&#34; searching for powerful searching options.
+
+If you are having trouble using this extension, please let me know (from home page or directly by writing to opera.wang+es@gmail.com) .
+
+For TB2, please use old versions from the history.
+
+When using &#39;tag search&#39;, the word you type can only match one tag, If you want match multiple tags, please use &#39;l:(tag1 or tag2) Due to restrictions in Thunderbird&#39;s virtual search folder, the complex searching results maybe correct in your current search results, but maybe NOT in you search folder. as the search folder can only handle &#39;Match all&#39; and &#39;Match any&#39; types.
+
+Version 0.8.3:
+    Fixed context menu missing issue when click right button.
+
+Version 0.8.2:
+    Work with Thunderbird 5.
+    Fixed search bar shown issue.
+    Fixed issue when search with complicated expressions. 
+
+Version 0.8:
+    Work with Thunderbird 3.3.
+    Added &lt;b&gt;Click2Search&lt;/b&gt; similar to The Bat!
+    Added options to move expression search box to toolbar/menubar
+    Added options to act as normal search box
+    Added options to select 1st messages after hit enter in search box
+    Hit enter will launch gloda search if no message found
+    Hit Ctrl+B will focus on search box
+    before/after search can now search time within day
+    Added simple/&lt;b&gt;regex&lt;/b&gt;/date search
+    Added filename for attachment name/type search (&lt;b&gt;experimental&lt;/b&gt;)
+
+Version 0.7:
+Added &#39;status/is&#39; search.
+Added &#39;before/after&#39; search.
+Added Help &amp;amp; Contact link to Options dialog.
+Added Options dialog.
+Work with Thunderbird 3.1 .
+Shift+Enter to launch gloda search. Fix &#39;Cc&#39;,&#39;Cu&#39;,&#39;Ci&#39;,&#39;Cr&#39; redefine error.
+Added &#39;g:&#39; search mode for gloda search. Press &#39;Esc&#39; in thread tree will clear the search criteria. 
+
+* Internationalization
+ * zh-CN language support now exists.  Please contact me if you would like to improve or provide new translations.
+
+----------------------
+Note: As the original author, Ken Mixter, didn&#39;t use Thunberbird anymore, I ported the addon to TB 3.1 and forked as &#39;Expression Search&#39;. Later Ken Mixter kindly make me the new author, then I decided to merge the two addons together.
+
+Compare with original 0.6 version, these features are still missing:
+    Use &#39;Y&#39; to archive selected mail to archive folder (Use &#39;A&#39; instead)
+    Use J/K to move messages up and down, and Ctrl+J to mark a message as junk (conflict with builtin key mapping, use &#39;f/b&#39; instead)
+    Key &#39;/&#39; focuses on the quick search bar (use Ctrl+F)</developer_comments>
+    <reviews num="51">
+      https://addons.mozilla.org/en-US/thunderbird/addon/gmailui/reviews/?src=api
+    </reviews>
+    <total_downloads>133742</total_downloads>
+    <weekly_downloads>278</weekly_downloads>
+    <daily_users>5135</daily_users>
+    <created epoch="1128892957">
+      2005-10-09T21:22:37Z
+    </created>
+    <last_updated epoch="1310678010">
+      2011-07-14T21:13:30Z
+    </last_updated>
+    <homepage>http://code.google.com/p/expression-search/</homepage>
+    <support>http://code.google.com/p/expression-search/</support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="337472">
+  <name>Classic TB2</name>
+  <type id="2">Theme</type>
+  <guid>{2A95E724-F74E-46D3-93FD-3E9850382E52}</guid>
+  <slug>classic-tb2</slug>
+  <version>1.0.2</version>
+  <status id="8">Preliminarily Reviewed</status>
+  <authors>
+        <author id="5908274">
+      <name>Corey Drechsler</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/5908274/?src=api</link>
+    </author>      </authors>
+  <summary>Theme using mostly TB2 icons plus the best of TB1.5, TB3, and TB6.</summary>
+
+  <description>Based on the icons in &lt;a href=&#34;http://outgoing.mozilla.org/v1/eed5c0a8f17131f44b82376e43fa3fed9b2d09e5/http%3A//forums.mozillazine.org/viewtopic.php%3Ff=29&amp;amp;t=1396025&#34; rel=&#34;nofollow&#34;&gt;TB3 Classic&lt;/a&gt; by &lt;a href=&#34;http://outgoing.mozilla.org/v1/352ff7e41c0f4739210445450c91934bf416322f/http%3A//forums.mozillazine.org/memberlist.php%3Fmode=viewprofile&amp;amp;u=520895&amp;amp;sid=eb406984494307a46036541d0da49ff1&#34; rel=&#34;nofollow&#34;&gt;Zamula&lt;/a&gt;. Updated to work with Thunderbird 6 using the structure (and some of the icons) of &lt;a href=&#34;https://addons.mozilla.org/en-US/thunderbird/addon/classic-reloaded/&#34; rel=&#34;nofollow&#34;&gt;Classic Reloaded&lt;/a&gt; by &lt;a href=&#34;https://addons.mozilla.org/en-US/thunderbird/user/154445/&#34; rel=&#34;nofollow&#34;&gt;Christoph Wirsching&lt;/a&gt;. Icons from TB6 have been used for newer portions of the application.
+
+The latest version prevents buttons from displaying in the message pane. To restore them to the main toolbar, as in TB2, go to Help &amp;gt; Migration Assistant, then select Next &amp;gt; Keep your original Toolbar buttons.
+
+The &lt;a href=&#34;https://addons.mozilla.org/en-US/thunderbird/addon/compactheader/&#34; rel=&#34;nofollow&#34;&gt;CompactHeader&lt;/a&gt; and &lt;a href=&#34;https://addons.mozilla.org/en-US/thunderbird/addon/extra-folder-columns/&#34; rel=&#34;nofollow&#34;&gt;Extra Folder Columns&lt;/a&gt; extensions are also recommended.</description>
+
+  <icon>https://static-cdn.addons.mozilla.net/en-US/firefox/images/addon_icon/337472-32.png?modified=1322022036</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>6.0</min_version>
+      <max_version>9.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="" width="275" height="160">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/63/63258.png?src=api&amp;modified=1316763412
+      </full>
+      <thumbnail type="" width="200" height="116">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/63/63258.png?src=api&amp;modified=1316763412
+      </thumbnail></preview></previews><rating>4</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/classic-tb2/?src=api</learnmore><install hash="sha256:2b4c0c8f78cc0a8febc099349236a55e583881e503b253764b3b01822e9b9212"
+    os="ALL"
+    size="788480">https://addons.mozilla.org/thunderbird/downloads/file/135822/classic_tb2-1.0.2-tb.xpi?src=api</install>
+      <developer_comments></developer_comments>
+    <reviews num="3">
+      https://addons.mozilla.org/en-US/thunderbird/addon/classic-tb2/reviews/?src=api
+    </reviews>
+    <total_downloads>3696</total_downloads>
+    <weekly_downloads>622</weekly_downloads>
+    <daily_users>1027</daily_users>
+    <created epoch="1316761060">
+      2011-09-23T06:57:40Z
+    </created>
+    <last_updated epoch="1322019486">
+      2011-11-23T03:38:06Z
+    </last_updated>
+    <homepage></homepage>
+    <support></support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+    </searchresults>

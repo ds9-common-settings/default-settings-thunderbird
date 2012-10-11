@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<searchresults total_results="10">
+        <addon id="258">
+  <name>Folderpane Tools</name>
+  <type id="1">Extension</type>
+  <guid>{b243fe83-b8a7-47de-855d-21d865243d5d}</guid>
+  <slug>folderpane-tools</slug>
+  <version>0.6.1</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="67">
+      <name>chuonthis</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/67/?src=api</link>
+    </author><author id="408">
+      <name>Philip Chee</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/408/?src=api</link>
+    </author>      </authors>
+  <summary>Allows for customization of the folder pane. Accounts can be rearranged and the startup folder can be chosen.</summary>
+  <description>&lt;b&gt;Status&lt;/b&gt;
+
+This extension is in maintenance mode. No new features are planned and only urgent bug fixes will be considered. Patches are welcome; and if someone wants to take over this project and/or actively contribute code and features they too are welcome!
+
+&lt;b&gt;Credits&lt;/b&gt;
+
+Original Author: chuonthis &lt;a href=&#34;http://outgoing.mozilla.org/v1/3e7cc272a31ec888f4a340fc1b92f65281bcb7a1/http%3A//www.chuonthis.com/extensions/&#34;&gt;http://www.chuonthis.com/extensions/&lt;/a&gt;
+Current Author: Phil Chee &lt;a href=&#34;http://outgoing.mozilla.org/v1/8892b82f969da4c3cfdbf5e2243bcb43a050475b/http%3A//xsidebar.mozdev.org/modifiedmailnews.html%23folderpanetools&#34;&gt;http://xsidebar.mozdev.org/modifiedmailnews.html#folderpanetools&lt;/a&gt;
+
+&lt;b&gt;Options&lt;/b&gt;
+
+&lt;strong&gt;This extension must be configured before use&lt;/strong&gt;.  To open the options window, open the &lt;b&gt;Tools&lt;/b&gt; menu, select &lt;b&gt;Extensions&lt;/b&gt;, and double-click on the extension.
+&lt;ul&gt;&lt;li&gt;&lt;b&gt;Override startup folder:&lt;/b&gt; Enable this option to override the folder that is displayed on startup.
+  &lt;ul&gt;&lt;li&gt;&lt;b&gt;Select folder:&lt;/b&gt; Select the folder to display at startup from the dropdown menu.  To select a folder which has subfolders, open its submenu and select &lt;b&gt;choose this folder&lt;/b&gt;.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;b&gt;Rearrange accounts:&lt;/b&gt; Use the listbox and buttons in this section to rearrange the order that accounts are displayed.  The &lt;b&gt;Default account&lt;/b&gt; is always listed first.  Select an account from the listbox and click on one of the buttons below to either set the account as the default, move the account up in the list, or move the account down in the list.
+    &lt;ul&gt;&lt;li&gt;Email accounts and RSS accounts are always placed above the Local Folders.  The Local Folders are always placed above Newsgroup accounts.  If the Local Folders or a Newsgroup account is set as the Default account, it will be placed at the top.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</description><license>
+    <name>Custom License</name>
+    <url>https://addons.mozilla.org/en-US/thunderbird/addon/folderpane-tools/license/0.6.1</url>
+  </license><icon>https://static-ssl-cdn.addons.mozilla.net/img/uploads/addon_icons/0/258-32.png?modified=1311964684</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>1.0</min_version>
+      <max_version>11.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application><application>
+      <name>SeaMonkey</name>
+      <application_id>59</application_id>
+      <min_version>1.0</min_version>
+      <max_version>2.8a1</max_version>
+      <appID>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews></previews><rating>4</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/folderpane-tools/?src=api</learnmore><install hash="sha256:1af0ab935e9e70bd57df0b6d9626315837ab516b776e61f1ca49378695778377"
+    os="ALL"
+    size="32768">https://addons.mozilla.org/thunderbird/downloads/file/127433/folderpane_tools-0.6.1-sm+tb.xpi?src=api</install>
+      <developer_comments>NOTE: There is a rule which the order must follow with one exception.  The rule is that &#34;Mail&#34; and &#34;News&#34; accounts are listed first, then the &#34;Local Folders&#34; account, and finally &#34;Newsgroup&#34; accounts.  The one exception is that the default account is always listed first.
+
+WARNING: If you are using version 0.0.2 and see the message &#34;58: fpAM.getAccount(accounts[i]).incomingServer has no properties&#34; when you open the options window, please click Cancel for the window titled &#34;Folderpane Tools Options&#34;.  Please upgrade to version 0.0.3 to avoid this bug.  To those who have been affected by this bug, please send me an email so I can help you recover your accounts.</developer_comments>
+    <reviews num="92">
+      https://addons.mozilla.org/en-US/thunderbird/addon/folderpane-tools/reviews/?src=api
+    </reviews>
+    <total_downloads>283975</total_downloads>
+    <weekly_downloads>672</weekly_downloads>
+    <daily_users>42209</daily_users>
+    <created epoch="1095816522">
+      2004-09-22T01:28:42Z
+    </created>
+    <last_updated epoch="1311964643">
+      2011-07-29T18:37:23Z
+    </last_updated>
+    <homepage>http://xsidebar.mozdev.org/modifiedmailnews.html#folderpanetools</homepage>
+    <support></support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="6543">
+  <name>Nightly Tester Tools</name>
+  <type id="1">Extension</type>
+  <guid>{8620c15f-30dc-4dba-a131-7c5d20cf4a29}</guid>
+  <slug>nightly-tester-tools</slug>
+  <version>3.3</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="6084803">
+      <name>Mozilla QA Automation Services</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/6084803/?src=api</link>
+    </author>      </authors>
+  <summary>Useful tools for the nightly tester.</summary>
+  <description>Note: for addon compatibility override, use the &lt;a href=&#34;https://addons.mozilla.org/en-US/firefox/addon/add-on-compatibility-reporter/&#34; rel=&#34;nofollow&#34;&gt;Addon Compatibility Reporter&lt;/a&gt;.
+This extension adds a few extras useful to those that regularly test nightly builds of Firefox, Thunderbird, Seamonkey, and Songbird
+
+The following is a brief list of the extension&#39;s features:
+
+ * Titlebar customization
+ * Build ID retrieval
+ * Copy list of extensions to clipboard
+ * Screenshots
+ * Open profile folder
+ * Test crashing
+ * Force addon compatibility
+ * View pushlog of changes since last nightly
+ 
+
+
+See &lt;a href=&#34;http://outgoing.mozilla.org/v1/e7582d9a281dd6354e8691c3228fcaadbe401b31/https%3A//wiki.mozilla.org/Auto-tools/Projects/NightlyTesterTools&#34; rel=&#34;nofollow&#34;&gt;https://wiki.mozilla.org/Auto-tools/Projects/NightlyTesterTools&lt;/a&gt; for some proposed new features, and check out the source code on &lt;a href=&#34;http://outgoing.mozilla.org/v1/832accda447780dc213b95772cafedfc4e1a86e2/http%3A//github.com/mozilla/nightlytt&#34; rel=&#34;nofollow&#34;&gt;Github&lt;/a&gt;</description><license>
+    <name>Mozilla Public License, version 1.1</name>
+    <url>http://www.mozilla.org/MPL/MPL-1.1.html</url>
+  </license><icon>https://static-ssl-cdn.addons.mozilla.net/img/uploads/addon_icons/6/6543-32.png?modified=1336045683</icon>
+  <compatible_applications><application>
+      <name>Firefox</name>
+      <application_id>1</application_id>
+      <min_version>3.6</min_version>
+      <max_version>15.0a1</max_version>
+      <appID>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</appID>
+    </application><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>3.1</min_version>
+      <max_version>15.0a1</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application><application>
+      <name>SeaMonkey</name>
+      <application_id>59</application_id>
+      <min_version>2.1a1pre</min_version>
+      <max_version>2.12a1</max_version>
+      <appID>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="image/png" width="150" height="150">
+        https://static-ssl-cdn.addons.mozilla.net/img/uploads/previews/full/20/20160.png?src=api&amp;modified=1331247702
+      </full>
+      <thumbnail type="image/png" width="150" height="150">
+        https://static-ssl-cdn.addons.mozilla.net/img/uploads/previews/thumbs/20/20160.png?src=api&amp;modified=1331247702
+      </thumbnail></preview><preview position="1">
+      <full type="image/png" width="638" height="525">
+        https://static-ssl-cdn.addons.mozilla.net/img/uploads/previews/full/20/20159.png?src=api&amp;modified=1331247702
+      </full>
+      <thumbnail type="image/png" width="182" height="150">
+        https://static-ssl-cdn.addons.mozilla.net/img/uploads/previews/thumbs/20/20159.png?src=api&amp;modified=1331247702
+      </thumbnail></preview></previews><rating>4</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/nightly-tester-tools/?src=api</learnmore><install hash="sha256:f1c6179b4bee5e213c4590130fdc6aae03c4da10d053558b2f429c6e2d456786"
+    os="ALL"
+    size="123904">https://addons.mozilla.org/thunderbird/downloads/file/150406/nightly_tester_tools-3.3-fx+tb+sm.xpi?src=api</install>
+  <install hash="sha256:4672fcf4aa0d74077500a769d61a1e1ab226daa13af13489ca9d328fbaa94a29" os=""
+             size="123904"
+             status="Beta">
+      https://addons.mozilla.org/thunderbird/downloads/file/146830/nightly_tester_tools-3.2.2pre-fx+tb+sm.xpi?src=api
+    </install>
+        <developer_comments>The advanced extension compatibility fixing has been removed starting with Nightly Tester Tools 2.5, instead there is a checkbox to disable extension compatibility checking for all addons. Users are encouraged to install the &lt;a href=&#34;https://addons.mozilla.org/en-US/firefox/addon/15003/&#34; rel=&#34;nofollow&#34;&gt;Addon Compatibility Reporter&lt;/a&gt; which does the same thing but lets you also report feedback on compatibility to extension authors.</developer_comments>
+    <reviews num="174">
+      https://addons.mozilla.org/en-US/thunderbird/addon/nightly-tester-tools/reviews/?src=api
+    </reviews>
+    <total_downloads>1686940</total_downloads>
+    <weekly_downloads>3095</weekly_downloads>
+    <daily_users>88968</daily_users>
+    <created epoch="1203348809">
+      2008-02-18T15:33:29Z
+    </created>
+    <last_updated epoch="1336045630">
+      2012-05-03T11:47:10Z
+    </last_updated>
+    <homepage>https://wiki.mozilla.org/Auto-tools/Projects/NightlyTesterTools</homepage>
+    <support>https://wiki.mozilla.org/Auto-tools/Projects/NightlyTesterTools</support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="367989">
+  <name>Rise of the Tools</name>
+  <type id="1">Extension</type>
+  <guid>riseofthetools@rsjtdrjgfuzkfg.com</guid>
+  <slug>rise-of-the-tools</slug>
+  <version>1.0.1.0</version>
+  <status id="8">Preliminarily Reviewed</status>
+  <authors>
+        <author id="5162928">
+      <name>rsjtdrjgfuzkfg</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/5162928/?src=api</link>
+    </author>      </authors>
+  <summary>Moves the toolbar back above the tabbar.</summary>
+  <description>Moves the toolbar for mails back up above the tabbar. Note that this might cause the design to suffer when using a theme not supporting this extsion. So the default theme has issues with aero on windows (and looks as terrible as it looked before the changes in 1.11).
+
+Note that additional custom toolbars might still go into the tab, and tabs still do have toolbars other than the toolbar for mails (like the calendar when &lt;a href=&#34;https://addons.mozilla.org/thunderbird/addon/lightning/&#34; rel=&#34;nofollow&#34;&gt;Lightning&lt;/a&gt; is installed). I personally use it with my theme &lt;a href=&#34;https://addons.mozilla.org/thunderbird/addon/ignore-aero/?src=external-riseofthetools&#34; rel=&#34;nofollow&#34;&gt;Ignore Aero&lt;/a&gt; on windows, to prevent the aero glitch to reappear.</description><license>
+    <name>Mozilla Public License, version 1.1</name>
+    <url>http://www.mozilla.org/MPL/MPL-1.1.html</url>
+  </license><icon>https://static-ssl-cdn.addons.mozilla.net/img/uploads/addon_icons/367/367989-32.png?modified=1334946508</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>11.0</min_version>
+      <max_version>12.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="" width="180" height="120">
+        https://static-ssl-cdn.addons.mozilla.net/img/uploads/previews/full/68/68782.png?src=api&amp;modified=1331827815
+      </full>
+      <thumbnail type="" width="180" height="120">
+        https://static-ssl-cdn.addons.mozilla.net/img/uploads/previews/thumbs/68/68782.png?src=api&amp;modified=1331827815
+      </thumbnail></preview></previews><rating>5</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/rise-of-the-tools/?src=api</learnmore><install hash="sha256:52b98b54aa63ba9249d12a3bc27c53a9c3373f0036770b3d5f684d6f27b24971"
+    os="ALL"
+    size="3072">https://addons.mozilla.org/thunderbird/downloads/file/148063/rise_of_the_tools-1.0.1.0-tb.xpi?src=api</install>
+      <developer_comments>As I stated above, there are design issues. By altering the &lt;a href=&#34;http://outgoing.mozilla.org/v1/15b4463647f48aa765283206f29b4d5e2214337f/http%3A//kb.mozillazine.org/UserChrome.css&#34; rel=&#34;nofollow&#34;&gt;userchrome.css&lt;/a&gt; file you can insert own style rules fixing them. As inserting them for all users causes a risk of breaks in rare cases, I do not include fixes for that, that&#39;s the theme&#39;s authors buissness. Maybe you want to contact the author of your favorite theme and ask him/her to support this extension?
+
+&lt;b&gt;Missing toolbar divider line in default theme on Windows XP or earlier&lt;/b&gt;
+This fix was provided by &lt;a href=&#34;https://addons.mozilla.org/user/178407/&#34; rel=&#34;nofollow&#34;&gt;RDL&lt;/a&gt;. Thanks!
+&lt;code&gt;#mail-bar3 {
+border-bottom-style: solid !important;
+border-bottom-width: 1px !important;
+border-bottom-color: threeDShadow !important;
+}
+#tabs-toolbar {
+border-top-style: solid !important;
+border-top-width: 1px !important;
+border-top-color: threeDHighlight !important;
+}&lt;/code&gt;
+
+&lt;b&gt;Transparent menu bar with the default theme&lt;/b&gt;
+This fix was provided by rctgamer3. Thanks!
+&lt;code&gt;@media all and (-moz-windows-compositor) {
+  #mail-toolbar-menubar2 {
+    background: transparent !important;
+  }
+  #messengerWindow:not([sizemode=&#34;maximized&#34;]) #mail-toolbar-menubar2 {
+    margin: 0 1px !important;
+    border: 0 !important;
+  }
+
+  #menubar-items {
+    background-color: rgba(255, 255, 255, .5) !important;
+    border-radius: 4px !important;
+  }
+
+  menubar &amp;gt; menu:-moz-window-inactive {
+    color: ThreeDShadow !important;
+  }
+}&lt;/code&gt;
+
+&lt;b&gt;Background for the Toolbar with the default theme&lt;/b&gt;
+This fix was provided by CryingByte. Thanks!
+&lt;code&gt;#mail-bar3 {
+  background-color: #e9eff5 !important;
+}&lt;/code&gt;</developer_comments>
+    <reviews num="34">
+      https://addons.mozilla.org/en-US/thunderbird/addon/rise-of-the-tools/reviews/?src=api
+    </reviews>
+    <total_downloads>3985</total_downloads>
+    <weekly_downloads>440</weekly_downloads>
+    <daily_users>1497</daily_users>
+    <created epoch="1331827352">
+      2012-03-15T16:02:32Z
+    </created>
+    <last_updated epoch="1334580562">
+      2012-04-16T12:49:22Z
+    </last_updated>
+    <homepage></homepage>
+    <support></support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="2413">
+  <name>More Tools Menu</name>
+  <type id="1">Extension</type>
+  <guid>{9a7a67d3-3048-47fb-acde-d0f7ae51f86a}</guid>
+  <slug>more-tools-menu</slug>
+  <version>1.2.4</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="5794578">
+      <name>Mauro José da Silva</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/5794578/?src=api</link>
+    </author>      </authors>
+  <summary>Unclutter the &#34;Tools&#34; menu by moving new items to a &#34;More Tools&#34; menu.</summary>
+  <description>Unclutter the &#34;Tools&#34; menu by moving new items to a &#34;More Tools&#34; menu.</description><license>
+    <name>MIT/X11 License</name>
+    <url>http://www.opensource.org/licenses/mit-license.php</url>
+  </license><icon>https://static-ssl-cdn.addons.mozilla.net/img/uploads/addon_icons/2/2413-32.png?modified=1331411307</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>2.0</min_version>
+      <max_version>12.0a1</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application><application>
+      <name>Firefox</name>
+      <application_id>1</application_id>
+      <min_version>3.0</min_version>
+      <max_version>12.*</max_version>
+      <appID>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="image/png">
+        https://static-ssl-cdn.addons.mozilla.net/img/uploads/previews/full/5/5876.png?src=api&amp;modified=1331247702
+      </full>
+      <thumbnail type="image/png">
+        https://static-ssl-cdn.addons.mozilla.net/img/uploads/previews/thumbs/5/5876.png?src=api&amp;modified=1331247702
+      </thumbnail></preview><preview position="1">
+      <full type="image/png">
+        https://static-ssl-cdn.addons.mozilla.net/img/uploads/previews/full/5/5718.png?src=api&amp;modified=1331247702
+      </full>
+      <thumbnail type="image/png">
+        https://static-ssl-cdn.addons.mozilla.net/img/uploads/previews/thumbs/5/5718.png?src=api&amp;modified=1331247702
+      </thumbnail></preview></previews><rating>5</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/more-tools-menu/?src=api</learnmore><install hash="sha256:84cf676d98c6407b719c3caf404841bed0491eeb71d4a1789c82cf97fc41e596"
+    os="ALL"
+    size="30720">https://addons.mozilla.org/thunderbird/downloads/file/139796/more_tools_menu-1.2.4-tb+fx.xpi?src=api</install>
+      <developer_comments>&lt;code&gt;&lt;code&gt;
+More Tools Menu is an original creation by &lt;a href=&#34;http://outgoing.mozilla.org/v1/eda280d2aa98a445ba0f4d662120f22f0ef1516a/http%3A//arantius.com/&#34; rel=&#34;nofollow&#34;&gt;Anthony Lieuallen&lt;/a&gt;.&lt;/code&gt;&lt;/code&gt;</developer_comments>
+    <reviews num="29">
+      https://addons.mozilla.org/en-US/thunderbird/addon/more-tools-menu/reviews/?src=api
+    </reviews>
+    <total_downloads>140534</total_downloads>
+    <weekly_downloads>346</weekly_downloads>
+    <daily_users>4932</daily_users>
+    <created epoch="1145497959">
+      2006-04-20T01:52:39Z
+    </created>
+    <last_updated epoch="1324753680">
+      2011-12-24T19:08:00Z
+    </last_updated>
+    <homepage>http://code.google.com/p/more-tools-menu/</homepage>
+    <support>http://code.google.com/p/more-tools-menu/issues/</support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="215985">
+  <name>Tools &gt; Options… for Linux</name>
+  <type id="1">Extension</type>
+  <guid>toolsoptions4linux@daniel.dawson</guid>
+  <slug>tools-options-for-linux</slug>
+  <version>2.0</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="2192507">
+      <name>Daniel Dawson</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/2192507/?src=api</link>
+    </author>      </authors>
+  <summary>Moves Edit &amp;gt; Preferences to Tools &amp;gt; Options…</summary>
+  <description>Makes the menus look a little more like those in Windows by adding Tools &amp;gt; Options… and (optionally) hiding Edit &amp;gt; Preferences. Possible reasons include making screenshots and screencasts targeted at Windows users (maybe in conjunction with a Windows-like theme), or just because you like the Windows convention better.</description><license>
+    <name>GNU General Public License, version 3.0</name>
+    <url>http://www.gnu.org/licenses/gpl-3.0.html</url>
+  </license><icon></icon>
+  <compatible_applications><application>
+      <name>SeaMonkey</name>
+      <application_id>59</application_id>
+      <min_version>2.5</min_version>
+      <max_version>2.11a1</max_version>
+      <appID>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</appID>
+    </application><application>
+      <name>Firefox</name>
+      <application_id>1</application_id>
+      <min_version>8.0</min_version>
+      <max_version>14.0a1</max_version>
+      <appID>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</appID>
+    </application><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>8.0</min_version>
+      <max_version>14.0a1</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>Linux</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="" width="319" height="228">
+        https://static-ssl-cdn.addons.mozilla.net/img/uploads/previews/full/68/68951.png?src=api&amp;modified=1332244752
+      </full>
+      <thumbnail type="" width="200" height="142">
+        https://static-ssl-cdn.addons.mozilla.net/img/uploads/previews/thumbs/68/68951.png?src=api&amp;modified=1332244752
+      </thumbnail><caption>Tools menu showing Options… item</caption></preview><preview position="1">
+      <full type="" width="545" height="472">
+        https://static-ssl-cdn.addons.mozilla.net/img/uploads/previews/full/68/68947.png?src=api&amp;modified=1332244748
+      </full>
+      <thumbnail type="" width="173" height="150">
+        https://static-ssl-cdn.addons.mozilla.net/img/uploads/previews/thumbs/68/68947.png?src=api&amp;modified=1332244748
+      </thumbnail><caption>Add-on options</caption></preview></previews><rating>5</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/tools-options-for-linux/?src=api</learnmore><install hash="sha256:0018db2339b73f21ddf69fad49fac6423df087138bd95df6e7af901b64207531"
+    os="Linux"
+    size="34816">https://addons.mozilla.org/thunderbird/downloads/file/146985/tools_options_for_linux-2.0-sm+fx+tb-linux.xpi?src=api</install>
+      <developer_comments>Translations welcome. If you would like to provide one, please see the &lt;a href=&#34;http://outgoing.mozilla.org/v1/efe5aa3d2d8f55e807357e27c69569c885dce876/http%3A//www.babelzilla.org/forum/index.php%3Fshowtopic=6346&#34; rel=&#34;nofollow&#34;&gt;translation support thread&lt;/a&gt; on BabelZilla. You will need to sign up if you don&#39;t already have an account.
+
+Current locales:&lt;ul&gt;&lt;li&gt;de: Tobias Markus &#34;Tobbi&#34;&lt;/li&gt;&lt;li&gt;es-ES: Alejandro Pérez Martín &#34;AlePerez92&#34; (&lt;strong&gt;new volunteer needed&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;et-EE: &#34;Grunt&#34;&lt;/li&gt;&lt;li&gt;fr: &#34;benoitb&#34;&lt;/li&gt;&lt;li&gt;it: DAmbrosi&lt;/li&gt;&lt;li&gt;ja: Haebaru&lt;/li&gt;&lt;li&gt;nl: &#34;markh&#34;&lt;/li&gt;&lt;li&gt;pl: Marcin Borowczyk &#34;MarcinB&#34;&lt;/li&gt;&lt;li&gt;pt-BR: &lt;a href=&#34;http://outgoing.mozilla.org/v1/176a40cee7d4a8d00ffc635ed0edbc50ea072b6d/http%3A//ghelman.net/&#34; rel=&#34;nofollow&#34;&gt;Marcelo Ghelman&lt;/a&gt; &#34;Ghelman&#34;&lt;/li&gt;&lt;li&gt;sr: &#34;DakSrbija&#34;&lt;/li&gt;&lt;li&gt;sv-SE: Mikael Hiort af Ornäs &#34;Lakrits&#34;&lt;/li&gt;&lt;li&gt;zh-CN: &#34;BruceH&#34;&lt;/li&gt;&lt;li&gt;zh-TW: &#34;Velociraptor&#34;&lt;/li&gt;&lt;/ul&gt;</developer_comments>
+    <reviews num="3">
+      https://addons.mozilla.org/en-US/thunderbird/addon/tools-options-for-linux/reviews/?src=api
+    </reviews>
+    <total_downloads>8400</total_downloads>
+    <weekly_downloads>133</weekly_downloads>
+    <daily_users>285</daily_users>
+    <created epoch="1281503337">
+      2010-08-11T05:08:57Z
+    </created>
+    <last_updated epoch="1332212302">
+      2012-03-20T02:58:22Z
+    </last_updated>
+    <homepage></homepage>
+    <support></support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="91129">
+  <name>LightningButton</name>
+  <type id="1">Extension</type>
+  <guid>lightningbutton@rsjtdrjgfuzkfg.com</guid>
+  <slug>lightningbutton</slug>
+  <version>1.5.3</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="5162928">
+      <name>rsjtdrjgfuzkfg</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/5162928/?src=api</link>
+    </author>      </authors>
+  <summary>Toolbar-Buttons for Lightning; advances the feature to get rid of the tabbar.</summary>
+  <description>Adds toolbar-buttons: Calendar, Tasks, New Event, New Task, Convert to Event, Convert to Task, Messages
+
+&lt;b&gt;Features:&lt;/b&gt;
+&lt;ul&gt;&lt;li&gt;Adds Toolbar buttons&lt;/li&gt;&lt;li&gt;Hides Calendar and Tasks Button in tab bar&lt;/li&gt;&lt;li&gt;Hides Tabbar on Calendar and Tasks tab, if Messages button and Calendar/Tasks button is visible.&lt;/li&gt;&lt;/ul&gt;&lt;b&gt;Requires:&lt;/b&gt;
+&lt;ul&gt;&lt;li&gt;Lightning&lt;/li&gt;&lt;/ul&gt;
+Have a look at the Developer&#39;s comments section below if you need help on using the Add-on.
+
+If you want the toolbar back on the top, &lt;a href=&#34;https://addons.mozilla.org/firefox/addon/rise-of-the-tools/?src=external-lightningbutton&#34; rel=&#34;nofollow&#34;&gt;you can install an add-on moving it for you&lt;/a&gt;. If not, you can also add the toolbar buttons on the menu bar.
+
+&lt;b&gt;Warning:&lt;/b&gt; Do only use the feature to hide the tabbar when having the icons on a always-visible position, like the menubar or the main toolbar with &lt;a href=&#34;https://addons.mozilla.org/firefox/addon/rise-of-the-tools/?src=external-lightningbutton&#34; rel=&#34;nofollow&#34;&gt;Rise of the Tools&lt;/a&gt;.</description><license>
+    <name>Mozilla Public License, version 1.1</name>
+    <url>http://www.mozilla.org/MPL/MPL-1.1.html</url>
+  </license><icon>https://static-ssl-cdn.addons.mozilla.net/img/uploads/addon_icons/91/91129-32.png?modified=1333232386</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>11.0</min_version>
+      <max_version>12.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="" width="233" height="36">
+        https://static-ssl-cdn.addons.mozilla.net/img/uploads/previews/full/54/54969.png?src=api&amp;modified=1299972240
+      </full>
+      <thumbnail type="" width="200" height="30">
+        https://static-ssl-cdn.addons.mozilla.net/img/uploads/previews/thumbs/54/54969.png?src=api&amp;modified=1299972240
+      </thumbnail><caption>The Toolbar Buttons (left to right):
+Messages, Calendar, New Event, Convert to Event, Tasks, New Task, Convert to Task</caption></preview></previews><rating>4</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/lightningbutton/?src=api</learnmore><install hash="sha256:45b8de295b076ee71f0e7bedd69e1d81d72fa30c9512ba567587a27e5cdbadd4"
+    os="ALL"
+    size="21504">https://addons.mozilla.org/thunderbird/downloads/file/147708/lightningbutton-1.5.3-tb.xpi?src=api</install>
+      <developer_comments>Go get the buttons, do the following:
+&lt;ol&gt;&lt;li&gt;Right-click the toolbar&lt;/li&gt;&lt;li&gt;Choose Customize...&lt;/li&gt;&lt;li&gt;Search the button(s)&lt;/li&gt;&lt;li&gt;Drag it to the place on the toolbar you want it&lt;/li&gt;&lt;li&gt;Close the customize-window&lt;/li&gt;&lt;/ol&gt;
+If you don&#39;t want the tab bar buttons to be hidden, go to the advanced-tab in the preference window (Tools|Options). 
+Navigate to the General sub-tab and choose Config Editor (button).
+If you see a page with the warning message, This might void your warranty!, click the button labeled &#34;I&#39;ll be careful, I promise!&#34;, to continue.
+Enter &lt;code&gt;extensions.LightningButton.hideTabButton.&lt;/code&gt;, you will see two items in the list:
+&lt;code&gt;extensions.LightningButton.hideTabButton.Calendar&lt;/code&gt; If it is enabled, the Calendar-Button will be hidden.
+&lt;code&gt;extensions.LightningButton.hideTabButton.Tasks&lt;/code&gt; If it is enabled, the Tasks-Button will be hidden.
+You can change the values by double-clicking on it (Windows).</developer_comments>
+    <reviews num="11">
+      https://addons.mozilla.org/en-US/thunderbird/addon/lightningbutton/reviews/?src=api
+    </reviews>
+    <total_downloads>231321</total_downloads>
+    <weekly_downloads>2148</weekly_downloads>
+    <daily_users>31419</daily_users>
+    <created epoch="1267831883">
+      2010-03-05T23:31:23Z
+    </created>
+    <last_updated epoch="1333078038">
+      2012-03-30T03:27:18Z
+    </last_updated>
+    <homepage></homepage>
+    <support></support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="356507">
+  <name>Header Tools Lite</name>
+  <type id="1">Extension</type>
+  <guid>headerToolsLite@kaosmos.nnp</guid>
+  <slug>header-tools-lite</slug>
+  <version>0.4.4</version>
+  <status id="8">Preliminarily Reviewed</status>
+  <authors>
+        <author id="235043">
+      <name>Paolo &#34;Kaosmos&#34;</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/235043/?src=api</link>
+    </author>      </authors>
+  <summary>Allows to modify the header and the source of messages</summary>
+  <description>This extension allows the user to change the messages in folders.
+
+The editing features (changing headings only or the entire source code of the message) are accessible from the menu &#34;Message&#34; -&amp;gt; &#34;HeaderToolsLite&#34; or from the context menu in message panel.
+
+The edit function of the entire source code should be used with caution, because a wrong change can cause problems in displaying all the messages in the folder. Moreover, it could work not properly with some characters and some encodings.
+
+Options for extension:
+
+- Put the original message to the Trash (default = true): the changes are made by creating a copy of the original message. This option controls whether the original message goes to the Trash folder, or is deleted.
+
+- Forcing changes with IMAP accounts (default = true): some IMAP servers, such as Gmail, do not accept changes if some basic headers (date, sender, the message id, object) are not modified . With this option enabled, the changes are forced by changing the date of the message of 1 second.
+
+- Add the header X-HeaderToolsLite (default = false): by enabling this option, every time a change is adding a header that describes the type of change and its time and date.
+
+- Keyboard shortcuts: they are disabled by default.</description><license>
+    <name>GNU General Public License, version 3.0</name>
+    <url>http://www.gnu.org/licenses/gpl-3.0.html</url>
+  </license><icon></icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>3.0</min_version>
+      <max_version>12.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews></previews><rating>5</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/header-tools-lite/?src=api</learnmore><install hash="sha256:57fad16f7283eefd917205cc7b31d73fbbc9b40e434460a6dabf0ab17b9519ca"
+    os="ALL"
+    size="25600">https://addons.mozilla.org/thunderbird/downloads/file/144504/header_tools_lite-0.4.4-tb.xpi?src=api</install>
+      <developer_comments></developer_comments>
+    <reviews num="6">
+      https://addons.mozilla.org/en-US/thunderbird/addon/header-tools-lite/reviews/?src=api
+    </reviews>
+    <total_downloads>2644</total_downloads>
+    <weekly_downloads>144</weekly_downloads>
+    <daily_users>1017</daily_users>
+    <created epoch="1325515920">
+      2012-01-02T14:52:00Z
+    </created>
+    <last_updated epoch="1331757412">
+      2012-03-14T20:36:52Z
+    </last_updated>
+    <homepage>http://nic-nac-project.org/~kaosmos/headertoolslite-en.html</homepage>
+    <support></support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="324492">
+  <name>ImportExportTools</name>
+  <type id="1">Extension</type>
+  <guid>{3ed8cc52-86fc-4613-9026-c1ef969da4c3}</guid>
+  <slug>importexporttools</slug>
+  <version>2.7.0.3</version>
+  <status id="8">Preliminarily Reviewed</status>
+  <authors>
+        <author id="235043">
+      <name>Paolo &#34;Kaosmos&#34;</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/235043/?src=api</link>
+    </author>      </authors>
+  <summary>Adds some tools to import and export folders and messages</summary>
+  <description>This extension allows the user to export and import folders and messages with lots of options, for example:
+Tools Menu --&amp;gt; ImportExportTools or Context menu on folders panel --&amp;gt; Import/Export
+- export of folder in a single file (mbox format), with also the subfolders if you want;
+- export of all messages in single files (eml or html or plain text format or CSV), with an index;
+- export of all messages in one single plain text file;
+- export of index of the messages in a folder (HTML or CSV format);
+- mbox files import;
+- eml files import;
+- emlx files import;
+- import of all the eml files existing in a directory;
+- export of all files of all mail files of the profile (just from the &#34;Tools&#34; menu);
+- search with various criteria and export messages;
+- import SMS from the programs &#34;SMS Backup and Restore&#34; for Android and Nokia2AndroidSMS;
+
+File menu --&amp;gt; Save selected messages or Context menu of thread panel --&amp;gt; Save selected messages
+- saving multiple messages in eml/html/plain text format with just a click;
+
+Message menu --&amp;gt; Copy to clipboard or Context menu of thread panel --&amp;gt; Copy to clipboard
+- copy the message or all headers to clipboard.
+
+Context menu on an EML attachment
+- import file in the folder
+
+Moreover it has an option to have a scheduled backup of all profile&#39;s files or just of mail files.
+For more details visit &lt;a href=&#34;http://outgoing.mozilla.org/v1/96a1be9cd356699eb1f0c8940b9fca53cfb3eb9f/https%3A//nic-nac-project.org/%7Ekaosmos/mboximport-en.html&#34; rel=&#34;nofollow&#34;&gt;https://nic-nac-project.org/~kaosmos/mboximport-en.html&lt;/a&gt;
+
+In my website you can find lots of extensions and maybe some of them could interest you, so have a peek.
+
+To contact me, please use my email address in my homepage.</description><license>
+    <name>GNU General Public License, version 3.0</name>
+    <url>http://www.gnu.org/licenses/gpl-3.0.html</url>
+  </license><icon>https://static-ssl-cdn.addons.mozilla.net/media//img/addon-icons/tabs-32.png</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>1.0</min_version>
+      <max_version>13.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews></previews><rating>4</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/importexporttools/?src=api</learnmore><install hash="sha256:027d6659c2f96e79b011b1ded53e8d50b91823756bab6d55f563aa9a584c8833"
+    os="ALL"
+    size="137216">https://addons.mozilla.org/thunderbird/downloads/file/147535/importexporttools-2.7.0.3-tb.xpi?src=api</install>
+      <developer_comments></developer_comments>
+    <reviews num="26">
+      https://addons.mozilla.org/en-US/thunderbird/addon/importexporttools/reviews/?src=api
+    </reviews>
+    <total_downloads>235206</total_downloads>
+    <weekly_downloads>5783</weekly_downloads>
+    <daily_users>160085</daily_users>
+    <created epoch="1308862212">
+      2011-06-23T20:50:12Z
+    </created>
+    <last_updated epoch="1332989521">
+      2012-03-29T02:52:01Z
+    </last_updated>
+    <homepage>https://nic-nac-project.org/~kaosmos/index-en.html</homepage>
+    <support></support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="311015">
+  <name>GProxy Tool</name>
+  <type id="1">Extension</type>
+  <guid>{DCE88800-9606-11DC-8919-D33056D89593}</guid>
+  <slug>gproxy-tool</slug>
+  <version>1.65</version>
+  <status id="8">Preliminarily Reviewed</status>
+  <authors>
+        <author id="5727113">
+      <name>Ultra-GM</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/5727113/?src=api</link>
+    </author>      </authors>
+  <summary>GProxy lets you set and clear GPass local proxy in Firefox and Thunderbird, and do more.</summary>
+  <description>I Don&#39;t Take Credit for Creating this Add-on, all credit goes to the Gproxy Team
+I edit the Add-on cause i can&#39;t use it with my Firefox 4.0.* so i got inspired to check inside the Box called &#34;install.rdf&#34; and edit some stuff, thou am not a developer, but i wish to let other who find this useful to enjoy it as i do.
+Firefox and Thunderbird is the application that well verified to work well this Add-on.
+Have a nice time using it</description><license>
+    <name>GNU Lesser General Public License, version 3.0</name>
+    <url>http://www.gnu.org/licenses/lgpl-3.0.html</url>
+  </license><icon>https://static-ssl-cdn.addons.mozilla.net/img/uploads/addon_icons/311/311015-32.png?modified=1310067297</icon>
+  <compatible_applications><application>
+      <name>Firefox</name>
+      <application_id>1</application_id>
+      <min_version>1.5</min_version>
+      <max_version>12.*</max_version>
+      <appID>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</appID>
+    </application><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>1.0</min_version>
+      <max_version>11.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="" width="16" height="16">
+        https://static-ssl-cdn.addons.mozilla.net/img/uploads/previews/full/57/57272.png?src=api&amp;modified=1304092068
+      </full>
+      <thumbnail type="" width="16" height="16">
+        https://static-ssl-cdn.addons.mozilla.net/img/uploads/previews/thumbs/57/57272.png?src=api&amp;modified=1304092068
+      </thumbnail><caption>Gproxy Tool</caption></preview></previews><rating>5</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/gproxy-tool/?src=api</learnmore><install hash="sha256:11a8a0fc8801fdae56c5432455dc0281ae9b4ce4ce198cce4102c93296c37a6b"
+    os="ALL"
+    size="52224">https://addons.mozilla.org/thunderbird/downloads/file/124570/gproxy_tool-1.65-fx+tb.xpi?src=api</install>
+      <developer_comments></developer_comments>
+    <reviews num="2">
+      https://addons.mozilla.org/en-US/thunderbird/addon/gproxy-tool/reviews/?src=api
+    </reviews>
+    <total_downloads>14518</total_downloads>
+    <weekly_downloads>385</weekly_downloads>
+    <daily_users>6585</daily_users>
+    <created epoch="1304091505">
+      2011-04-29T15:38:25Z
+    </created>
+    <last_updated epoch="1310065776">
+      2011-07-07T19:09:36Z
+    </last_updated>
+    <homepage>http://gpass1.com/</homepage>
+    <support></support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="330424">
+  <name>PrintingTools</name>
+  <type id="1">Extension</type>
+  <guid>{5e9999c2-ba1d-44b6-bcee-5b30ce37d3b0}</guid>
+  <slug>printingtools</slug>
+  <version>1.2</version>
+  <status id="8">Preliminarily Reviewed</status>
+  <authors>
+        <author id="235043">
+      <name>Paolo &#34;Kaosmos&#34;</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/235043/?src=api</link>
+    </author>      </authors>
+  <summary>Adds some options to print messages and addressbooks</summary>
+  <description>N.B.: the latest version is 1.1.2  (1.1.1 version was buggy, sorry)
+If you don&#39;t see it on A.M.O., please download it from my website. 
+
+This extension for Thunderbird has the aim to improve the printing layout of the mails, with the following features:
+
+- it gives the possibility to have the date of the message in a format similar to the one used in messages panel;
+- it can also modify deeply the view of the attachments&#39; list, inserting it in the headers, just after the recipients;
+- it can add a border arorund the headers;
+- it can hide the headers;
+- it can truncate the headers&#39; lines too long;
+- it can hide the images in the message;
+- it can hide the inline attachments in printing, even if you view them by default;
+- it can add the user name before the headers;
+- it can delete the card header in addressbook (&#34;Card for&#34;);
+- it can print contacts with just name and email address;
+- it can print addressbook with small fonts. The default value is 10 pixel, but you can change it as you wish;
+- it can use a compact format to print from addressbook (with this option and the others you can save up to 40% of paper);
+- it can print just selected part of a message;
+- it can apply a style (color and size) to the quoted text;
+- it can give more options in printing addressbook;
+- it can use a font family and a font size in printing messages (for the whole message or just for headers);
+- it can hide always extended headers; - it can modify headers order;
+
+Moreover it gives you a fast access to two native functions of Thunderbird, pringing without progress bar and without the printer dialog.
+It deletes also automatically in printing the .doc and .rtf attachments wrongly displayed inline, because of a wrong content-type in the message.
+
+You can modify the settings for messages in main window from File --&amp;gt; Printing options and the settings for addressbook from addressbook window in File --&amp;gt; Printing options.
+
+How print just selection in a message: go in File --&amp;gt; Printing options in main window and enable this option. After, select a part of the message and click on &#34;Print&#34; or &#34;Print preview&#34;.</description><license>
+    <name>GNU General Public License, version 3.0</name>
+    <url>http://www.gnu.org/licenses/gpl-3.0.html</url>
+  </license><icon></icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>1.0</min_version>
+      <max_version>13.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews></previews><rating>4</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/printingtools/?src=api</learnmore><install hash="sha256:5ee63558f710b313230337e38e898e371520b7461216d072b209d845d7678954"
+    os="ALL"
+    size="50176">https://addons.mozilla.org/thunderbird/downloads/file/147762/printingtools-1.2-tb.xpi?src=api</install>
+      <developer_comments></developer_comments>
+    <reviews num="7">
+      https://addons.mozilla.org/en-US/thunderbird/addon/printingtools/reviews/?src=api
+    </reviews>
+    <total_downloads>16374</total_downloads>
+    <weekly_downloads>353</weekly_downloads>
+    <daily_users>16997</daily_users>
+    <created epoch="1311421164">
+      2011-07-23T11:39:24Z
+    </created>
+    <last_updated epoch="1334058007">
+      2012-04-10T11:40:07Z
+    </last_updated>
+    <homepage>https://nic-nac-project.org/~kaosmos/index-en.html</homepage>
+    <support></support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+    </searchresults>

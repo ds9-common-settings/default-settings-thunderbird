@@ -1,0 +1,11 @@
+Source: netrunner-artwork-thunderbird
+Section: admin
+Priority: optional
+Maintainer: Phoenix <phoenix@netrunner-os.com>
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.7.2
+
+Package: netrunner-artwork-thunderbird
+Architecture: all
+Description: Default configuration for Thunderbird in Netrunner
+ Default configuration for Thunderbird in Netrunner

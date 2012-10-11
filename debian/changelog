@@ -1,0 +1,11 @@
+netrunner-artwork-thunderbird (1.0.1) dryland-se; urgency=low
+
+  * Update toward 14.0 thunderbird version
+
+ -- Frederic Gaudet <fred@linuxmint.com>  Tue, 31 Jul 2012 21:01:22 +0200
+
+netrunner-artwork-thunderbird (1.0.0) dryland-se; urgency=low
+
+  * Initial dryland-se release
+
+ -- Frederic Gaudet <fred@linuxmint.com>  Wed, 09 May 2012 15:33:00 +0200

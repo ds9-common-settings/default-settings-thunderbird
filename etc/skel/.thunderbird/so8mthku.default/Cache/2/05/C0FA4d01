@@ -1,0 +1,2565 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<searchresults total_results="29">
+        <addon id="4623">
+  <name>Lightning Nightly Updater (Unofficial)</name>
+  <type id="1">Extension</type>
+  <guid>lightning-nightly-updater@olive</guid>
+  <slug>lightning-nightly-updater-unof</slug>
+  <version>0.11.110714</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="9337">
+      <name>Oliver S.</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/9337/?src=api</link>
+    </author>      </authors>
+  <summary>Quickly get to the latest nightly build of Lightning relevant to the version of Thunderbird and the OS you&#39;re on.</summary>
+
+  <description>Lightning Nightly Updater is an extension for Mozilla Thunderbird 3.1 and up. It adds a menu item to the Help toolbar menu, from which you can install the latest nightly build relevant to your OS and Tb version. You can also just check if today&#39;s build is out and open the corresponding Mozilla&#39;s FTP folder.
+Note: If you don&#39;t often download Lightning nightly builds (or are happy with a simple download link bloating your browser bookmarks), then this extension is essentially useless to you =)
+
+As far as I know, there are 6 different FTP directories for the latest Lightning nightly builds: For each Tb build (branch, trunk) there is one directory for each OS (Lin, Mac, Win). The extension is supposed to detect which OS and Tb build (version 3.1 or up) you&#39;re using, so you get to the relevant download location!</description>
+
+  <icon>https://static-cdn.addons.mozilla.net/en-US/firefox/images/addon_icon/4623-32.png?modified=1311092471</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>3.1pre</min_version>
+      <max_version>10.0a1</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application><application>
+      <name>SeaMonkey</name>
+      <application_id>59</application_id>
+      <min_version>2.1</min_version>
+      <max_version>2.5a1</max_version>
+      <appID>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula>- The acronym &#34;LNU&#34; below refers to this add-on [namely Lightning Nightly Updater (Unofficial)]
+
+- LNU is in the public domain, except the icon which is Lightning&#39;s
+
+- LNU comes with absolutely no warranty, use at your own risk.
+
+- LNU is pretty simple an extension, and not dangerous at all, as far as I know. However, be sure to backup your profile before using a nightly build for they often are on the bleeding edge, meaning that the blood on the edge may well end up being yours. As they say on the Calendar Project web site: &#34;Please be aware, that the use of nightly developer builds has risks associated with it. Don&#39;t use them with production data, as data loss and other scary things can occur. We&#39;re not kidding&#34;. Well that was scary indeed =)
+
+FYI: The stable Lightning builds are there: &lt;a href=&#34;http://outgoing.mozilla.org/v1/12c530870bad227553bca4e59463c714b43ce9a7/https%3A//addons.mozilla.org/en-US/thunderbird/addon/2313&#34; rel=&#34;nofollow&#34;&gt;https://addons.mozilla.org/en-US/thunderbird/addon/2313&lt;/a&gt;</eula><previews><preview position="0">
+      <full type="image/png" width="413" height="142">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/19/19335.png?src=api&amp;modified=1206199589
+      </full>
+      <thumbnail type="image/png" width="200" height="68">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/19/19335.png?src=api&amp;modified=1206199589
+      </thumbnail></preview><preview position="1">
+      <full type="image/png" width="416" height="383">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/25/25076.png?src=api&amp;modified=1219576195
+      </full>
+      <thumbnail type="image/png" width="162" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/25/25076.png?src=api&amp;modified=1219576195
+      </thumbnail><caption>Settings</caption></preview></previews><rating>4</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/lightning-nightly-updater-unof/?src=api</learnmore><install hash="sha256:7822d4a7856569bebd7f42f350430fb822104b7f973564994e1bb9454486a19b"
+    os="ALL"
+    size="15360">https://addons.mozilla.org/thunderbird/downloads/file/126295/lightning_nightly_updater_unofficial-0.11.110714-sm+tb.xpi?src=api</install>
+      <developer_comments>For bugs and suggestions, start a discussion or contact me.</developer_comments>
+    <reviews num="39">
+      https://addons.mozilla.org/en-US/thunderbird/addon/lightning-nightly-updater-unof/reviews/?src=api
+    </reviews>
+    <total_downloads>252253</total_downloads>
+    <weekly_downloads>2692</weekly_downloads>
+    <daily_users>15966</daily_users>
+    <created epoch="1173375188">
+      2007-03-08T17:33:08Z
+    </created>
+    <last_updated epoch="1311092399">
+      2011-07-19T16:19:59Z
+    </last_updated>
+    <homepage>http://ilpolipo.free.fr/addons/?sn=lnu</homepage>
+    <support>http://ilpolipo.free.fr/addons/?sn=lnu</support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="91129">
+  <name>LightningButton</name>
+  <type id="1">Extension</type>
+  <guid>lightningbutton@rsjtdrjgfuzkfg.com</guid>
+  <slug>lightningbutton</slug>
+  <version>1.5.2</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="5162928">
+      <name>rsjtdrjgfuzkfg</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/5162928/?src=api</link>
+    </author>      </authors>
+  <summary>Toolbar-Buttons for Lightning; advances the feature to get rid of the tabbar.</summary>
+
+  <description>Adds toolbar-buttons: Calendar, Tasks, New Event, New Task, Convert to Event, Convert to Task, Messages
+
+&lt;b&gt;Features:&lt;/b&gt;
+&lt;ul&gt;&lt;li&gt;Adds Toolbar buttons&lt;/li&gt;&lt;li&gt;Hides Calendar and Tasks Button in tab bar&lt;/li&gt;&lt;li&gt;Hides Tabbar also on Calendar and Tasks tab, if Messages button and Calendar/Tasks button is visible and tabbar hiding is enabled (&lt;a href=&#34;http://outgoing.mozilla.org/v1/897b278912591e2d4dbdf6f90ac8b7568a56c5c2/http%3A//www.tech-recipes.com/rx/5144/thunderbird-3-autohide-the-tab-bar-when-theres-only-one-tab/&#34; rel=&#34;nofollow&#34;&gt;How to enable auto-hiding?&lt;/a&gt;)&lt;/li&gt;&lt;/ul&gt;&lt;b&gt;Requires:&lt;/b&gt;
+&lt;ul&gt;&lt;li&gt;Lightning (currently min 1.0b1)&lt;/li&gt;&lt;/ul&gt;</description>
+
+  <icon>https://static-cdn.addons.mozilla.net/en-US/firefox/images/addon_icon/91129-32.png?modified=1318267384</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>3.0</min_version>
+      <max_version>9.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="" width="233" height="36">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/54/54969.png?src=api&amp;modified=1299972240
+      </full>
+      <thumbnail type="" width="200" height="30">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/54/54969.png?src=api&amp;modified=1299972240
+      </thumbnail><caption>The Toolbar Buttons (left to right):
+Messages, Calendar, New Event, Convert to Event, Tasks, New Task, Convert to Task</caption></preview></previews><rating>5</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/lightningbutton/?src=api</learnmore><install hash="sha256:93744f148035edd314c98362a21e98458ba9a82527465039e03bce8a85b762fd"
+    os="ALL"
+    size="21504">https://addons.mozilla.org/thunderbird/downloads/file/133733/lightningbutton-1.5.2-tb.xpi?src=api</install>
+      <developer_comments>Go get the buttons, do the following:
+&lt;ol&gt;&lt;li&gt;Right-click the toolbar&lt;/li&gt;
+&lt;li&gt;Choose Customize...&lt;/li&gt;
+&lt;li&gt;Search the button(s)&lt;/li&gt;
+&lt;li&gt;Drag it to the place on the toolbar you want it&lt;/li&gt;
+&lt;li&gt;Close the customize-window&lt;/li&gt;&lt;/ol&gt;
+
+If you don&#39;t want the tab bar buttons to be hidden, go to the advanced-tab in the preference window (Tools|Options). 
+Navigate to the General sub-tab and choose Config Editor (button).
+If you see a page with the warning message, This might void your warranty!, click the button labeled &#34;I&#39;ll be careful, I promise!&#34;, to continue.
+Enter &lt;code&gt;extensions.LightningButton.hideTabButton.&lt;/code&gt;, you will see two items in the list:
+&lt;code&gt;extensions.LightningButton.hideTabButton.Calendar&lt;/code&gt; If it is enabled, the Calendar-Button will be hidden.
+&lt;code&gt;extensions.LightningButton.hideTabButton.Tasks&lt;/code&gt; If it is enabled, the Tasks-Button will be hidden.
+You can change the values by double-clicking on it (Windows).</developer_comments>
+    <reviews num="8">
+      https://addons.mozilla.org/en-US/thunderbird/addon/lightningbutton/reviews/?src=api
+    </reviews>
+    <total_downloads>180758</total_downloads>
+    <weekly_downloads>2303</weekly_downloads>
+    <daily_users>27045</daily_users>
+    <created epoch="1267831883">
+      2010-03-05T23:31:23Z
+    </created>
+    <last_updated epoch="1318267379">
+      2011-10-10T17:22:59Z
+    </last_updated>
+    <homepage></homepage>
+    <support></support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="7517">
+  <name>Silvermel</name>
+  <type id="2">Theme</type>
+  <guid>silvermel@pardal.de</guid>
+  <slug>silvermel</slug>
+  <version>1.4.4</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="1346896">
+      <name>ShareBird</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/1346896/?src=api</link>
+    </author>      </authors>
+  <summary>A Creamy Silvery Experience</summary>
+
+  <description>This theme is a modification from the fantastic theme Charamel. Many thanks to Alex W. for inspiration, support and for giving me permissions to use and modify his icons, artwork and code.
+
+Silvermel is offered as bundle - it installs &#34;Silvermel and Charamel XT&#34; extension to support font uppercase and letter spacing for labels on Firefox&#39;s sidebars, Thunderbird&#39;s folder pane, Thunderbird&#39;s Address Book and Thunderbird&#39;s Account Configuration window. The extension  also colorizes the url bar according to security state.
+The extension only applies if Silvermel is the used theme. 
+
+Silvermel fully or partially supports following extensions:
+&#34;ChromEdit&#34;, &#34;IE View&#34;, &#34;IE View Lite&#34;, &#34;IE Tab&#34;, &#34;ChatZilla&#34;, &#34;DOM Inspector&#34;, &#34;Enhanced Bookmarks Search&#34;, &#34;Locate in Bookmarks Folder&#34;, &#34;Reporter&#34;, &#34;AIOS&#34;, &#34;MR Tech Local Install&#34;, &#34;MR Tech Toolkit&#34;, &#34;Edit Config Files&#34;, &#34;Flockmarks&#34;, &#34;Bookmarks Menu Button&#34;, &#34;Statusbar Buttons&#34;, &#34;Buttons!&#34;, &#34;Stylish&#34;, &#34;AdBlock Plus&#34;, &#34;Tab Mix Plus&#34;, &#34;Click2Tab&#34;, &#34;Who&#39;s ya Daddy&#34;, &#34;Scrapbook&#34;, &#34;Sage&#34;, &#34;Sage-Too&#34;, &#34;Classic Sidebar&#34;, &#34;MagicSLR&#34;, &#34;Contact Sidebar&#34;, &#34;QuickNote&#34;, &#34;Fission&#34;, &#34;Lightning&#34;, &#34;Download Helper&#34;, &#34;Colorful Tabs&#34;, &#34;Auto Hide Statusbar&#34;, &#34;Favicon Picker&#34;, &#34;Informational Tab&#34;, &#34;Custom Buttons&#34;, &#34;webmail&#34;, &#34;BiDi Mail UI&#34;, &#34;New Tab Button on Tab Right&#34;, &#34;Virtual Identity&#34;, &#34;Download Statusbar&#34;, &#34;All in One Gestures&#34;, &#34;NoSquint&#34;, &#34;Reminderfox&#34;, &#34;Speed Dial&#34;, &#34;Web Developer&#34;, &#34;Tree Style Tab&#34;, &#34;Personas&#34;, &#34;Fox Tab&#34;, &#34;Read It Later&#34;, &#34;MailRedirect&#34;, &#34;Remove Duplicate Messages&#34;
+
+IMPORTANT! PLEASE DON&#39;T REPORT BUGS OR MAKE REQUESTS HERE!
+If you want to report a bug or make suggestions, at my home page www.silvermel.net there are links to three different Forums at three different languages where you can do it:
+English - &lt;a href=&#34;http://outgoing.mozilla.org/v1/c91e90cc317a66c45a8d529983c00d45ab4c486e/http%3A//forums.mozillazine.org/viewtopic.php%3Ft%3D1520265&#34;&gt;http://forums.mozillazine.org/viewtopic.php?t=1520265&lt;/a&gt;
+German - &lt;a href=&#34;http://outgoing.mozilla.org/v1/9e021d2f0ebe5c92ee5a614991c129639d923e7c/http%3A//www.camp-firefox.de/forum/viewtopic.php%3Ft%3D75674&#34;&gt;http://www.camp-firefox.de/forum/viewtopic.php?t=75674&lt;/a&gt;
+Portuguese - &lt;a href=&#34;http://outgoing.mozilla.org/v1/b6da2a699b105f60e14ce686d0e6d711d515a4d3/http%3A//www.guiadohardware.net/comunidade/silvermel-charamel/1013375/&#34;&gt;http://www.guiadohardware.net/comunidade/silvermel-charamel/1013375/&lt;/a&gt;
+
+You can also send me an email.
+Thanks! 
+
+
+If you appreciate it and would like to support this project, considere a donation ;-)
+
+&lt;a href=&#34;http://outgoing.mozilla.org/v1/4526dccb43212360d357e6f890462f5a11a33ff1/https%3A//www.paypal.com/cgi-bin/webscr%3Fcmd%3D_xclick%26business%3Ddonations%2540silvermel.de&#34;&gt;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;amp;business=donations%40silvermel%2ede&lt;/a&gt;</description>
+
+  <icon>https://static-cdn.addons.mozilla.net/en-US/firefox/images/addon_icon/7517-32.png?modified=1319158323</icon>
+  <compatible_applications><application>
+      <name>Firefox</name>
+      <application_id>1</application_id>
+      <min_version>3.0</min_version>
+      <max_version>10.0a1</max_version>
+      <appID>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</appID>
+    </application><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>3.0</min_version>
+      <max_version>10.0a1</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="" width="200" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/60/60215.png?src=api&amp;modified=1310088213
+      </full>
+      <thumbnail type="" width="200" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/60/60215.png?src=api&amp;modified=1310088213
+      </thumbnail><caption>Silvermel</caption></preview><preview position="1">
+      <full type="image/png" width="346" height="372">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/30/30313.png?src=api&amp;modified=1310088209
+      </full>
+      <thumbnail type="image/png" width="139" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/30/30313.png?src=api&amp;modified=1310088209
+      </thumbnail><caption>Firefox - Thunderbird</caption></preview><preview position="2">
+      <full type="image/png" width="695" height="525">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/30/30314.png?src=api&amp;modified=1310088209
+      </full>
+      <thumbnail type="image/png" width="198" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/30/30314.png?src=api&amp;modified=1310088209
+      </thumbnail><caption>Firefox</caption></preview><preview position="3">
+      <full type="image/png" width="680" height="515">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/30/30315.png?src=api&amp;modified=1310088209
+      </full>
+      <thumbnail type="image/png" width="198" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/30/30315.png?src=api&amp;modified=1310088209
+      </thumbnail><caption>Thunderbird</caption></preview><preview position="4">
+      <full type="image/png" width="609" height="263">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/30/30316.png?src=api&amp;modified=1310088209
+      </full>
+      <thumbnail type="image/png" width="200" height="86">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/30/30316.png?src=api&amp;modified=1310088209
+      </thumbnail><caption>Firefox - Secure Site</caption></preview><preview position="5">
+      <full type="image/png" width="672" height="516">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/30/30317.png?src=api&amp;modified=1310088209
+      </full>
+      <thumbnail type="image/png" width="195" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/30/30317.png?src=api&amp;modified=1310088209
+      </thumbnail><caption>Firefox - Options</caption></preview><preview position="6">
+      <full type="image/png" width="694" height="525">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/30/30319.png?src=api&amp;modified=1310088209
+      </full>
+      <thumbnail type="image/png" width="198" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/30/30319.png?src=api&amp;modified=1310088209
+      </thumbnail><caption>Add-ons</caption></preview><preview position="7">
+      <full type="image/png" width="699" height="525">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/30/30334.png?src=api&amp;modified=1310088209
+      </full>
+      <thumbnail type="image/png" width="199" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/30/30334.png?src=api&amp;modified=1310088209
+      </thumbnail><caption>Thunderbird - Messages</caption></preview><preview position="8">
+      <full type="image/png" width="695" height="525">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/30/30336.png?src=api&amp;modified=1310088209
+      </full>
+      <thumbnail type="image/png" width="198" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/30/30336.png?src=api&amp;modified=1310088209
+      </thumbnail><caption>Firefox - Feeds</caption></preview><preview position="9">
+      <full type="image/png" width="697" height="525">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/30/30411.png?src=api&amp;modified=1310088209
+      </full>
+      <thumbnail type="image/png" width="199" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/30/30411.png?src=api&amp;modified=1310088209
+      </thumbnail><caption>Firefox - Private Browsing</caption></preview><preview position="10">
+      <full type="image/png" width="683" height="521">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/30/30693.png?src=api&amp;modified=1310088209
+      </full>
+      <thumbnail type="image/png" width="196" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/30/30693.png?src=api&amp;modified=1310088209
+      </thumbnail><caption>Firefox - Library</caption></preview><preview position="11">
+      <full type="image/png" width="665" height="509">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/51/51429.png?src=api&amp;modified=1310088209
+      </full>
+      <thumbnail type="image/png" width="195" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/51/51429.png?src=api&amp;modified=1310088209
+      </thumbnail><caption>Firefox 4.0</caption></preview></previews><rating>5</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/silvermel/?src=api</learnmore><install hash="sha256:df72df9629ab0bcbfee2da4bc1616a933cc74659b33b2610dc4de8a41ea20113"
+    os="ALL"
+    size="1948672">https://addons.mozilla.org/thunderbird/downloads/file/134387/silvermel-1.4.4-fx+tb.xpi?src=api</install>
+  <contribution_data>
+      <link>https://addons.mozilla.org/en-US/thunderbird/addon/silvermel/contribute/?src=api</link>
+                <suggested_amount currency="USD" amount="4.99">
+            $4.99
+          </suggested_amount>
+            <meet_developers>
+        https://addons.mozilla.org/en-US/thunderbird/addon/silvermel/developers?src=api
+      </meet_developers>
+    </contribution_data>    <developer_comments></developer_comments>
+    <reviews num="429">
+      https://addons.mozilla.org/en-US/thunderbird/addon/silvermel/reviews/?src=api
+    </reviews>
+    <total_downloads>2241896</total_downloads>
+    <weekly_downloads>14851</weekly_downloads>
+    <daily_users>212188</daily_users>
+    <created epoch="1212877796">
+      2008-06-07T22:29:56Z
+    </created>
+    <last_updated epoch="1319158208">
+      2011-10-21T00:50:08Z
+    </last_updated>
+    <homepage>http://www.silvermel.net</homepage>
+    <support>http://www.silvermel.net</support>
+    <featured>1</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="14313">
+  <name>Charamel</name>
+  <type id="2">Theme</type>
+  <guid>{961408A3-C970-4577-970A-D97C29839A67}</guid>
+  <slug>charamel</slug>
+  <version>1.4.4</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="1346896">
+      <name>ShareBird</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/1346896/?src=api</link>
+    </author>      </authors>
+  <summary>A Creamy Sugary Experience</summary>
+
+  <description>This theme is the further development from the legendary theme Charamel. Many thanks to Alex W. for inspiration, support and for giving me permissions to use and modify his icons, artwork and code.
+
+Charamel is offered as bundle - it installs &#34;Silvermel and Charamel XT&#34; extension to support font uppercase and letter spacing for labels on Firefox&#39;s sidebars, Thunderbird&#39;s folder pane, Thunderbird&#39;s Address Book and Thunderbird&#39;s Account Configuration window. The extension  also colorizes the url bar according to security state.
+The extension only applies if Charamel is the used theme. 
+
+Charamel fully or partially supports following extensions:
+&#34;ChromEdit&#34;, &#34;IE View&#34;, &#34;IE View Lite&#34;, &#34;IE Tab&#34;, &#34;ChatZilla&#34;, &#34;DOM Inspector&#34;, &#34;Enhanced Bookmarks Search&#34;, &#34;Locate in Bookmarks Folder&#34;, &#34;Reporter&#34;, &#34;AIOS&#34;, &#34;MR Tech Local Install&#34;, &#34;MR Tech Toolkit&#34;, &#34;Edit Config Files&#34;, &#34;Flockmarks&#34;, &#34;Bookmarks Menu Button&#34;, &#34;Statusbar Buttons&#34;, &#34;Buttons!&#34;, &#34;Stylish&#34;, &#34;AdBlock Plus&#34;, &#34;Tab Mix Plus&#34;, &#34;Click2Tab&#34;, &#34;Who&#39;s ya Daddy&#34;, &#34;Scrapbook&#34;, &#34;Sage&#34;, &#34;Sage-Too&#34;, &#34;Classic Sidebar&#34;, &#34;MagicSLR&#34;, &#34;Contact Sidebar&#34;, &#34;QuickNote&#34;, &#34;Fission&#34;, &#34;Lightning&#34;, &#34;Download Helper&#34;, &#34;Colorful Tabs&#34;, &#34;Auto Hide Statusbar&#34;, &#34;Favicon Picker&#34;, &#34;Informational Tab&#34;, &#34;Custom Buttons&#34;, &#34;webmail&#34;, &#34;BiDi Mail UI&#34;, &#34;New Tab Button on Tab Right&#34;, &#34;Virtual Identity&#34;, &#34;Download Statusbar&#34;, &#34;All in One Gestures&#34;, &#34;NoSquint&#34;, &#34;Reminderfox&#34;, &#34;Speed Dial&#34;, &#34;Web Developer&#34;, &#34;Tree Style Tab&#34;, &#34;Personas&#34;, &#34;Fox Tab&#34;, &#34;Read It Later&#34;, &#34;MailRedirect&#34;, &#34;Remove Duplicate Messages&#34;
+
+
+IMPORTANT! PLEASE DON&#39;T REPORT BUGS OR MAKE REQUESTS HERE!
+If you want to report a bug or make suggestions, at my home page www.silvermel.net there are links to three different Forums at three different languages where you can do it:
+English - &lt;a href=&#34;http://outgoing.mozilla.org/v1/c91e90cc317a66c45a8d529983c00d45ab4c486e/http%3A//forums.mozillazine.org/viewtopic.php%3Ft%3D1520265&#34;&gt;http://forums.mozillazine.org/viewtopic.php?t=1520265&lt;/a&gt;
+German - &lt;a href=&#34;http://outgoing.mozilla.org/v1/9e021d2f0ebe5c92ee5a614991c129639d923e7c/http%3A//www.camp-firefox.de/forum/viewtopic.php%3Ft%3D75674&#34;&gt;http://www.camp-firefox.de/forum/viewtopic.php?t=75674&lt;/a&gt;
+Portuguese - &lt;a href=&#34;http://outgoing.mozilla.org/v1/b6da2a699b105f60e14ce686d0e6d711d515a4d3/http%3A//www.guiadohardware.net/comunidade/silvermel-charamel/1013375/&#34;&gt;http://www.guiadohardware.net/comunidade/silvermel-charamel/1013375/&lt;/a&gt;
+
+You can also send me an email.
+Thanks! 
+
+
+If you appreciate it and would like to support this project, considere a donation ;-)
+
+&lt;a href=&#34;http://outgoing.mozilla.org/v1/4526dccb43212360d357e6f890462f5a11a33ff1/https%3A//www.paypal.com/cgi-bin/webscr%3Fcmd%3D_xclick%26business%3Ddonations%2540silvermel.de&#34;&gt;https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;amp;business=donations%40silvermel%2ede&lt;/a&gt;</description>
+
+  <icon>https://static-cdn.addons.mozilla.net/en-US/firefox/images/addon_icon/14313-32.png?modified=1319158264</icon>
+  <compatible_applications><application>
+      <name>Firefox</name>
+      <application_id>1</application_id>
+      <min_version>3.0</min_version>
+      <max_version>10.0a1</max_version>
+      <appID>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</appID>
+    </application><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>3.0</min_version>
+      <max_version>10.0a1</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="" width="200" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/60/60216.png?src=api&amp;modified=1310088291
+      </full>
+      <thumbnail type="" width="200" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/60/60216.png?src=api&amp;modified=1310088291
+      </thumbnail><caption>Charamel</caption></preview><preview position="1">
+      <full type="image/png" width="346" height="372">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/37/37774.png?src=api&amp;modified=1310088288
+      </full>
+      <thumbnail type="image/png" width="139" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/37/37774.png?src=api&amp;modified=1310088288
+      </thumbnail><caption>Firefox - Thunderbird</caption></preview><preview position="2">
+      <full type="image/png" width="695" height="525">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/37/37775.png?src=api&amp;modified=1310088288
+      </full>
+      <thumbnail type="image/png" width="198" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/37/37775.png?src=api&amp;modified=1310088288
+      </thumbnail><caption>Firefox</caption></preview><preview position="3">
+      <full type="image/png" width="680" height="515">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/37/37776.png?src=api&amp;modified=1310088288
+      </full>
+      <thumbnail type="image/png" width="198" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/37/37776.png?src=api&amp;modified=1310088288
+      </thumbnail><caption>Thunderbird</caption></preview><preview position="4">
+      <full type="image/png" width="609" height="263">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/37/37777.png?src=api&amp;modified=1310088288
+      </full>
+      <thumbnail type="image/png" width="200" height="86">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/37/37777.png?src=api&amp;modified=1310088288
+      </thumbnail><caption>Firefox - Secure Site</caption></preview><preview position="5">
+      <full type="image/png" width="672" height="516">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/37/37778.png?src=api&amp;modified=1310088288
+      </full>
+      <thumbnail type="image/png" width="195" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/37/37778.png?src=api&amp;modified=1310088288
+      </thumbnail><caption>Firefox - Options</caption></preview><preview position="6">
+      <full type="image/png" width="694" height="525">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/37/37779.png?src=api&amp;modified=1310088288
+      </full>
+      <thumbnail type="image/png" width="198" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/37/37779.png?src=api&amp;modified=1310088288
+      </thumbnail><caption>Add-ons</caption></preview><preview position="7">
+      <full type="image/png" width="699" height="525">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/37/37780.png?src=api&amp;modified=1310088288
+      </full>
+      <thumbnail type="image/png" width="199" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/37/37780.png?src=api&amp;modified=1310088288
+      </thumbnail><caption>Thunderbird - Messages</caption></preview><preview position="8">
+      <full type="image/png" width="695" height="525">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/37/37781.png?src=api&amp;modified=1310088288
+      </full>
+      <thumbnail type="image/png" width="198" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/37/37781.png?src=api&amp;modified=1310088288
+      </thumbnail><caption>Firefox - Feeds</caption></preview><preview position="9">
+      <full type="image/png" width="697" height="525">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/37/37782.png?src=api&amp;modified=1310088288
+      </full>
+      <thumbnail type="image/png" width="199" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/37/37782.png?src=api&amp;modified=1310088288
+      </thumbnail><caption>Firefox - Private Browsing</caption></preview><preview position="10">
+      <full type="image/png" width="683" height="521">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/37/37783.png?src=api&amp;modified=1310088288
+      </full>
+      <thumbnail type="image/png" width="196" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/37/37783.png?src=api&amp;modified=1310088288
+      </thumbnail><caption>Firefox - Library</caption></preview><preview position="11">
+      <full type="image/png" width="665" height="509">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/51/51430.png?src=api&amp;modified=1310088288
+      </full>
+      <thumbnail type="image/png" width="195" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/51/51430.png?src=api&amp;modified=1310088288
+      </thumbnail><caption>Firefox 4.0</caption></preview></previews><rating>5</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/charamel/?src=api</learnmore><install hash="sha256:a2dae33453a0db793e2c0f15853370f940f8fa1de0761e4a17ab69897b750bc2"
+    os="ALL"
+    size="2018304">https://addons.mozilla.org/thunderbird/downloads/file/134389/charamel-1.4.4-fx+tb.xpi?src=api</install>
+  <contribution_data>
+      <link>https://addons.mozilla.org/en-US/thunderbird/addon/charamel/contribute/?src=api</link>
+                <suggested_amount currency="USD" amount="4.99">
+            $4.99
+          </suggested_amount>
+            <meet_developers>
+        https://addons.mozilla.org/en-US/thunderbird/addon/charamel/developers?src=api
+      </meet_developers>
+    </contribution_data>    <developer_comments></developer_comments>
+    <reviews num="63">
+      https://addons.mozilla.org/en-US/thunderbird/addon/charamel/reviews/?src=api
+    </reviews>
+    <total_downloads>555532</total_downloads>
+    <weekly_downloads>4696</weekly_downloads>
+    <daily_users>75080</daily_users>
+    <created epoch="1252849707">
+      2009-09-13T13:48:27Z
+    </created>
+    <last_updated epoch="1319158223">
+      2011-10-21T00:50:23Z
+    </last_updated>
+    <homepage>http://www.silvermel.net</homepage>
+    <support>http://www.silvermel.net</support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="12514">
+  <name>Gantt View</name>
+  <type id="1">Extension</type>
+  <guid>{1510928E-A4FA-43C2-A9AF-99E521B90BC5}</guid>
+  <slug>gantt-view</slug>
+  <version>1.0.0.0b5</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="35213">
+      <name>Joe Brochu</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/35213/?src=api</link>
+    </author>      </authors>
+  <summary>Gantt Chart view for Sunbird/Lightning</summary>
+
+  <description>A Gantt Chart view for Sunbird/Lightning.  It is built from the same core components as the standard views and is generally designed to integrate seamlessly with the existing views and controls. 
+
+ 
+Features:
+- Selectable visible date range up to 2 years - although longer ranges may reduce performance. 
+- Intuitive Item selection, Drag/Drop, and view panning 
+- Select multiple events by dragging with a left-click 
+- All selected events manipulated in the same way when one is dragged 
+- Pan view with Middle-click 
+- View will auto-scroll when cursor is near an edge while dragging or panning.  This is configurable in the preferences. 
+- When clicking on an event header (at the left side of the view), the view will automatically scroll to the start of that event. 
+- Optional progress bar displays on Tasks and Events (Event progress is determined by current time) 
+- Quickly create a week-long or month-long event by double-clicking the week or month header 
+- Completed tasks and events shown with strikethrough 
+- &#34;Completed&#34; icons on tasks in view 
+- Uses prefs such as &#34;Hide Days Off&#34; and &#34;First Day Of Week&#34; from main calendar options. 
+- Current Day, Week, and Month highlighted. 
+- Localizable 
+
+Please see &lt;a href=&#34;http://outgoing.mozilla.org/v1/c97467783949b9dfbc35bf50b2748c87003b2bf5/http%3A//ganttview.mozdev.org&#34; rel=&#34;nofollow&#34;&gt;http://ganttview.mozdev.org&lt;/a&gt; for more details and bug reporting
+
+NOTE - Version 1.0.0.0b7 is available &lt;a href=&#34;http://outgoing.mozilla.org/v1/5afbd625b623be62f9786b80f711c413834c38a8/https%3A//addons.mozilla.org/en-US/thunderbird/addon/gantt-view/versions/%3Fpage=1%23version-1.0.0.0b7&#34; rel=&#34;nofollow&#34;&gt;here.&lt;/a&gt; 
+
+This version fixes the incorrect week numbers and introduces a japanese locale.  It is currently awaiting a full review and will appear on the main page once the review is complete.</description>
+
+  <icon>https://static-cdn.addons.mozilla.net/en-US/firefox/images/addon_icon/12514-32.png?modified=1321619907</icon>
+  <compatible_applications><application>
+      <name>Sunbird</name>
+      <application_id>52</application_id>
+      <min_version>1.0b1</min_version>
+      <max_version>1.0b1</max_version>
+      <appID>{718e30fb-e89b-41dd-9da7-e25a45638b28}</appID>
+    </application><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>1.5</min_version>
+      <max_version>9.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="image/png" width="566" height="525">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/33/33484.png?src=api&amp;modified=1245417392
+      </full>
+      <thumbnail type="image/png" width="161" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/33/33484.png?src=api&amp;modified=1245417392
+      </thumbnail><caption>Gantt View</caption></preview><preview position="1">
+      <full type="image/jpeg">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/33/33485.png?src=api&amp;modified=1245417392
+      </full>
+      <thumbnail type="image/png">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/33/33485.png?src=api&amp;modified=1245417392
+      </thumbnail><caption>Gantt View Selection Box can select multiple items</caption></preview><preview position="1">
+      <full type="image/jpeg">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/33/33486.png?src=api&amp;modified=1245417393
+      </full>
+      <thumbnail type="image/png">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/33/33486.png?src=api&amp;modified=1245417393
+      </thumbnail><caption>Dragging multiple items</caption></preview><preview position="1">
+      <full type="image/jpeg">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/33/33487.png?src=api&amp;modified=1245417393
+      </full>
+      <thumbnail type="image/png">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/33/33487.png?src=api&amp;modified=1245417393
+      </thumbnail><caption>Modifying item end date by dragging</caption></preview></previews><rating>4</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/gantt-view/?src=api</learnmore><install hash="sha256:62d3ccdb7ec56783da72a8f8263ec07d2314767167bc59ae671da1afa59b2cf3"
+    os="ALL"
+    size="69632">https://addons.mozilla.org/thunderbird/downloads/file/132239/gantt_view-1.0.0.0b5-sb+tb.xpi?src=api</install>
+  <install hash="sha256:15f8d71f244700e3dad719da4fabde0dc1fbabf3f72041a9e541030418c64897" os=""
+             size="73728"
+             status="Beta">
+      https://addons.mozilla.org/thunderbird/downloads/file/133979/gantt_view-1.0.0.1b7-tb+sb.xpi?src=api
+    </install>
+    <contribution_data>
+      <link>https://addons.mozilla.org/en-US/thunderbird/addon/gantt-view/contribute/?src=api</link>
+                <suggested_amount currency="USD" amount="4.00">
+            $4.00
+          </suggested_amount>
+            <meet_developers>
+        https://addons.mozilla.org/en-US/thunderbird/addon/gantt-view/developers?src=api
+      </meet_developers>
+    </contribution_data>    <developer_comments>Please see &lt;a href=&#34;http://outgoing.mozilla.org/v1/c97467783949b9dfbc35bf50b2748c87003b2bf5/http%3A//ganttview.mozdev.org&#34; rel=&#34;nofollow&#34;&gt;http://ganttview.mozdev.org&lt;/a&gt; for more details and bug reporting</developer_comments>
+    <reviews num="20">
+      https://addons.mozilla.org/en-US/thunderbird/addon/gantt-view/reviews/?src=api
+    </reviews>
+    <total_downloads>32046</total_downloads>
+    <weekly_downloads>2625</weekly_downloads>
+    <daily_users>5019</daily_users>
+    <created epoch="1245415967">
+      2009-06-19T12:52:47Z
+    </created>
+    <last_updated epoch="1316616934">
+      2011-09-21T14:55:34Z
+    </last_updated>
+    <homepage>http://ganttview.mozdev.org/</homepage>
+    <support>http://ganttview.mozdev.org/</support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="10910">
+  <name>Walnut2 for Thunderbird</name>
+  <type id="2">Theme</type>
+  <guid>{786ed4c5-a408-4066-ad19-9270ba42e4f3}</guid>
+  <slug>walnut2-for-thunderbird</slug>
+  <version>1.8.76</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="66">
+      <name>alfredkayser</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/66/?src=api</link>
+    </author>      </authors>
+  <summary>Walnut2 for Thunderbird, based on icons from &lt;a href=&#34;http://outgoing.mozilla.org/v1/906f6868cc3e33453f136b129b058fa8e8750e3a/http%3A//art.gnome.org&#34; rel=&#34;nofollow&#34;&gt;art.gnome.org&lt;/a&gt;. Walnut2 is based on Walnut but with better looking wood panels. Fully compatible with from 3.1 upto 10a1. Full support for Lightning/calendar.</summary>
+
+  <description>Walnut2 for Thunderbird 3.1 upto 10a1 is based on icons from &lt;a href=&#34;http://outgoing.mozilla.org/v1/906f6868cc3e33453f136b129b058fa8e8750e3a/http%3A//art.gnome.org&#34; rel=&#34;nofollow&#34;&gt;art.gnome.org&lt;/a&gt;. Includes support for DOMInspector, chatzilla, stumbleupon, downloadstatusbar, fission, forecastfox, downloadmgr, calendar, quicknote, offline, googlebar, MAB, and many more...
+
+Walnut2 is based on Walnut but with better looking wood panels.
+
+I you like this theme, you can use the &#39;Donate&#39; button on my homepage to show your appreciation!
+
+
+&lt;b&gt;To install:&lt;/b&gt;
+Download the file using the Firefox. But don&#39;t &#39;open&#39; it.
+Within Thunderbird, select Tools/Addons, and then &#39;Install...&#39; 
+Find the downloaded file, and click open. Thunderbird will then install it. 
+Restart Thunderbird to complete the installation. 
+
+Note: Drag&amp;amp;drop from a file explorer window or even from the &#39;Install Now&#39; link in Firefox into the Tools/Addons window also works (on Windows, Linux and Mac).
+
+
+Please don&#39;t use the &#39;review&#39; to report download errors. Download issues are not caused by the theme, but by one of the many AMO download mirrors.
+
+Please don&#39;t use the review box for any bug reports. Contact me through the email address provided under the &#39;Support&#39; heading. Using email is the quickest way to notify me, and generally I will try to make a fix available as quickly as possible.
+
+[b]Note, version 1.8.76 is available for Thunderbird 7.0 upto 10a1[b], see &#39;List all Versions&#39;[/b]</description>
+
+  <icon>https://static-cdn.addons.mozilla.net/en-US/firefox/images/addon_icon/10910-32.png?modified=1318024323</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>3.1</min_version>
+      <max_version>10.0a1</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="image/png" width="172" height="135">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/34/34593.png?src=api&amp;modified=1247745218
+      </full>
+      <thumbnail type="image/png" width="172" height="135">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/34/34593.png?src=api&amp;modified=1247745218
+      </thumbnail><caption>Preview Thumbnail</caption></preview><preview position="1">
+      <full type="image/png" width="700" height="372">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/34/34597.png?src=api&amp;modified=1247745262
+      </full>
+      <thumbnail type="image/png" width="200" height="106">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/34/34597.png?src=api&amp;modified=1247745262
+      </thumbnail><caption>Main window</caption></preview><preview position="1">
+      <full type="image/png" width="573" height="501">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/34/34598.png?src=api&amp;modified=1247745262
+      </full>
+      <thumbnail type="image/png" width="171" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/34/34598.png?src=api&amp;modified=1247745262
+      </thumbnail><caption>Options panel</caption></preview></previews><rating>5</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/walnut2-for-thunderbird/?src=api</learnmore><install hash="sha256:7df4f7a4dd38c5ab0a4df46bd9f68cb3b0432366fdf24779b5726cf117a8c5ff"
+    os="ALL"
+    size="941056">https://addons.mozilla.org/thunderbird/downloads/file/133422/walnut2_for_thunderbird-1.8.76-tb.jar?src=api</install>
+  <contribution_data>
+      <link>https://addons.mozilla.org/en-US/thunderbird/addon/walnut2-for-thunderbird/contribute/?src=api</link>
+                <suggested_amount currency="USD" amount="4.99">
+            $4.99
+          </suggested_amount>
+            <meet_developers>
+        https://addons.mozilla.org/en-US/thunderbird/addon/walnut2-for-thunderbird/developers?src=api
+      </meet_developers>
+    </contribution_data>    <developer_comments>Release 1.8.76 has been placed in the Sandbox awaiting review. Click on &#39;View all versions&#39; at the bottom of this page to find and install it.
+
+Note, TB 3.0 and lower are no longer supported, as TB 7.0 is the current release.</developer_comments>
+    <reviews num="22">
+      https://addons.mozilla.org/en-US/thunderbird/addon/walnut2-for-thunderbird/reviews/?src=api
+    </reviews>
+    <total_downloads>186290</total_downloads>
+    <weekly_downloads>1658</weekly_downloads>
+    <daily_users>23747</daily_users>
+    <created epoch="1235727360">
+      2009-02-27T09:36:00Z
+    </created>
+    <last_updated epoch="1318024263">
+      2011-10-07T21:51:03Z
+    </last_updated>
+    <homepage>https://addons.mozilla.org/en-US/seamonkey/addon/10910/developers</homepage>
+    <support>https://addons.mozilla.org/en-US/seamonkey/addon/10910/developers</support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="195279">
+  <name>Provider for Microsoft Exchange</name>
+  <type id="1">Extension</type>
+  <guid>lightning-exchange-provider@gitorious.org</guid>
+  <slug>provider-for-microsoft-exchang</slug>
+  <version>0.17</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="5389824">
+      <name>Simon Schubert</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/5389824/?src=api</link>
+    </author>      </authors>
+  <summary>The lightning-exchange-provider addon allows you to use Microsoft Exchange calendars in Thunderbird, via Exchange’s web services.
+
+This addon only works with Microsoft Exchange 2007 and above. Exchange 2003 is not supported.</summary>
+
+  <description>Features:
+&lt;ul&gt;&lt;li&gt;Creating, modifying, deleting calendar items.&lt;/li&gt;
+&lt;li&gt;Inviting attendees to meetings and sending meeting requests.&lt;/li&gt;
+&lt;li&gt;Free/Busy information when inviting other Exchange users to meetings.&lt;/li&gt;
+&lt;li&gt;Notifications for meeting requests&lt;/li&gt;
+&lt;li&gt;Configuration autodiscovery&lt;/li&gt;
+&lt;/ul&gt;</description>
+
+  <icon></icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>3.0a1pre</min_version>
+      <max_version>9.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application><application>
+      <name>Sunbird</name>
+      <application_id>52</application_id>
+      <min_version>1.0b1</min_version>
+      <max_version>1.0pre</max_version>
+      <appID>{718e30fb-e89b-41dd-9da7-e25a45638b28}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="image/png" width="590" height="469">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/48/48103.png?src=api&amp;modified=1281478662
+      </full>
+      <thumbnail type="image/png" width="188" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/48/48103.png?src=api&amp;modified=1281478662
+      </thumbnail><caption>Connect your calendar to Exchange!</caption></preview></previews><rating>4</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/provider-for-microsoft-exchang/?src=api</learnmore><install hash="sha256:a7ed21f1ab7f3833a28d0abc32ec119658c830b1ef1e719d901ebf6cc3b7c96d"
+    os="ALL"
+    size="29696">https://addons.mozilla.org/thunderbird/downloads/file/127651/provider_for_microsoft_exchange-0.17-tb+sb.xpi?src=api</install>
+  <contribution_data>
+      <link>https://addons.mozilla.org/en-US/thunderbird/addon/provider-for-microsoft-exchang/contribute/?src=api</link>
+                <suggested_amount currency="USD" amount="10.00">
+            $10.00
+          </suggested_amount>
+            <meet_developers>
+        https://addons.mozilla.org/en-US/thunderbird/addon/provider-for-microsoft-exchang/developers?src=api
+      </meet_developers>
+    </contribution_data>    <developer_comments></developer_comments>
+    <reviews num="41">
+      https://addons.mozilla.org/en-US/thunderbird/addon/provider-for-microsoft-exchang/reviews/?src=api
+    </reviews>
+    <total_downloads>81537</total_downloads>
+    <weekly_downloads>1427</weekly_downloads>
+    <daily_users>9658</daily_users>
+    <created epoch="1278776193">
+      2010-07-10T15:36:33Z
+    </created>
+    <last_updated epoch="1312302624">
+      2011-08-02T16:30:24Z
+    </last_updated>
+    <homepage>http://gitorious.org/lightning-exchange-provider/pages/Home</homepage>
+    <support>https://bugs.launchpad.net/lightning-exchange-provider</support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="1494">
+  <name>Nautipolis for Thunderbird</name>
+  <type id="2">Theme</type>
+  <guid>{E2F592C8-CCD4-4951-9F93-6DFA76C4B062}</guid>
+  <slug>nautipolis-for-thunderbird</slug>
+  <version>1.8.77</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="66">
+      <name>alfredkayser</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/66/?src=api</link>
+    </author>      </authors>
+  <summary>Nautipolis for Thunderbird: High-quality, solid theme based on icons from &lt;a href=&#34;http://outgoing.mozilla.org/v1/906f6868cc3e33453f136b129b058fa8e8750e3a/http%3A//art.gnome.org&#34; rel=&#34;nofollow&#34;&gt;art.gnome.org&lt;/a&gt;. 
+Fully compatible with from 3.1 upto 10a1. Full support for Lightning/calendar.</summary>
+
+  <description>Nautipolis for Thunderbird 3.1 upto 10a1: based on icons from &lt;a href=&#34;http://outgoing.mozilla.org/v1/906f6868cc3e33453f136b129b058fa8e8750e3a/http%3A//art.gnome.org&#34; rel=&#34;nofollow&#34;&gt;art.gnome.org&lt;/a&gt;. Includes full support for Lightning 1.0b5 and higher (and corresponding Provider for Google Calendar version 0.5.1 and higher).
+
+&lt;b&gt;To install:&lt;/b&gt;
+Download the file using the Firefox. But don&#39;t &#39;open&#39; it.
+Within Thunderbird, select Tools/Addons, and then &#39;Install...&#39; 
+Find the downloaded file, and click open. Thunderbird will then install it. 
+Restart Thunderbird to complete the installation. 
+
+Note: Drag&amp;amp;drop from a file explorer window or even from the &#39;Install Now&#39; link in Firefox into the Tools/Addons window also works (on Windows, Linux and Mac).
+
+Please don&#39;t use the &#39;review&#39; to report download errors. Download issues are not caused by the theme, but by one of the many AMO download mirrors.
+
+Please don&#39;t use the review box for any bug reports. Contact me through the email address provided under the &#39;Support&#39; heading. Using email is the quickest way to notify me, and generally I will try to make a fix available as quickly as possible.</description>
+
+  <icon>https://static-cdn.addons.mozilla.net/en-US/firefox/images/addon_icon/1494-32.png?modified=1318513072</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>3.1</min_version>
+      <max_version>10.0a1</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="image/png" width="172" height="135">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/34/34595.png?src=api&amp;modified=1247745210
+      </full>
+      <thumbnail type="image/png" width="172" height="135">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/34/34595.png?src=api&amp;modified=1247745210
+      </thumbnail><caption>Preview Thumbnail</caption></preview><preview position="1">
+      <full type="image/png" width="700" height="508">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/40/40209.png?src=api&amp;modified=1261992686
+      </full>
+      <thumbnail type="image/png" width="200" height="145">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/40/40209.png?src=api&amp;modified=1261992686
+      </thumbnail><caption>Main window (in TB3.0)</caption></preview><preview position="1">
+      <full type="image/png" width="700" height="508">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/40/40210.png?src=api&amp;modified=1261992686
+      </full>
+      <thumbnail type="image/png" width="200" height="145">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/40/40210.png?src=api&amp;modified=1261992686
+      </thumbnail><caption>Calendar view with Lightning 1.0</caption></preview><preview position="1">
+      <full type="image/png" width="700" height="508">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/40/40211.png?src=api&amp;modified=1261992686
+      </full>
+      <thumbnail type="image/png" width="200" height="145">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/40/40211.png?src=api&amp;modified=1261992686
+      </thumbnail><caption>Search view with Gloda Search (TB3)</caption></preview></previews><rating>5</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/nautipolis-for-thunderbird/?src=api</learnmore><install hash="sha256:08a309ea0baf16480d45d142f761566a785f6d02cf62c14648ca435ef8e42efa"
+    os="ALL"
+    size="873472">https://addons.mozilla.org/thunderbird/downloads/file/134516/nautipolis_for_thunderbird-1.8.77-tb.jar?src=api</install>
+  <contribution_data>
+      <link>https://addons.mozilla.org/en-US/thunderbird/addon/nautipolis-for-thunderbird/contribute/?src=api</link>
+                <suggested_amount currency="USD" amount="4.99">
+            $4.99
+          </suggested_amount>
+            <meet_developers>
+        https://addons.mozilla.org/en-US/thunderbird/addon/nautipolis-for-thunderbird/developers?src=api
+      </meet_developers>
+    </contribution_data>    <developer_comments>Release 1.8.76 has been placed in the Sandbox awaiting review. Click on &#39;View all versions&#39; at the bottom of this page to find and install it.
+
+Note, TB 3.0 and lower are no longer supported, as TB 7.0 is the current release.</developer_comments>
+    <reviews num="12">
+      https://addons.mozilla.org/en-US/thunderbird/addon/nautipolis-for-thunderbird/reviews/?src=api
+    </reviews>
+    <total_downloads>224010</total_downloads>
+    <weekly_downloads>1079</weekly_downloads>
+    <daily_users>17244</daily_users>
+    <created epoch="1132219701">
+      2005-11-17T09:28:21Z
+    </created>
+    <last_updated epoch="1318499993">
+      2011-10-13T09:59:53Z
+    </last_updated>
+    <homepage>https://addons.mozilla.org/en-US/seamonkey/addon/1494/developers</homepage>
+    <support>https://addons.mozilla.org/en-US/seamonkey/addon/1494/developers</support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="14384">
+  <name>Calendar Tweaks</name>
+  <type id="1">Extension</type>
+  <guid>calendartweaks@DW-dev</guid>
+  <slug>calendar-tweaks</slug>
+  <version>3.0</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="1236621">
+      <name>DW-dev</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/1236621/?src=api</link>
+    </author>      </authors>
+  <summary>Allows several tweaks to the Thunderbird/Lightning calendar user interface including new selection styles and repeating event icons. Mimics the colors and styles found in MS Outlook.
+</summary>
+
+  <description>&lt;b&gt;Latest Updates&lt;/b&gt;
+    • Updated to be compatible with Thunderbird 6.* and Lightning 1.0b5.
+    • Backwards compatible with Thunderbird 3.1.
+    • Improved styling of today&#39;s date in Mini-Month calendar.
+    • After initial installation all options are enabled (previously disabled).
+    • Numerous internal changes to conform with latest Mozilla guidelines.
+
+&lt;b&gt;Overview&lt;/b&gt;
+Calendar Tweaks allows several significant tweaks to the Thunderbird/Lightning calendar to improve usability, including:
+
+    &amp;amp;bull new styles for the &#39;Today&#39; indicator (and in Mini-Month)
+    &amp;amp;bull new styles for the currently &#39;Selected Day&#39; indicator (and in Mini-Month)
+    &amp;amp;bull applying styles for Today and Selected Day in Day View
+    &amp;amp;bull indicators (icons) for Repeating Events
+
+Calendar Tweaks mimics the colors and styles found in MS Outlook.
+
+The tweaks can be individually selected in the Options dialog box.</description>
+
+  <icon>https://static-cdn.addons.mozilla.net/en-US/firefox/images/addon_icon/14384-32.png?modified=1316025821</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>3.1</min_version>
+      <max_version>9.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="image/png" width="700" height="525">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/37/37017.png?src=api&amp;modified=1282410911
+      </full>
+      <thumbnail type="image/png" width="200" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/37/37017.png?src=api&amp;modified=1282410911
+      </thumbnail><caption>New today &amp; selection styles.
+Repeating events &amp; exceptions.</caption></preview></previews><rating>4</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/calendar-tweaks/?src=api</learnmore><install hash="sha256:ef8ef18a84bbd5a237b1529027345ab2dc802dad6021841bbb10d28b88d2360a"
+    os="ALL"
+    size="17408">https://addons.mozilla.org/thunderbird/downloads/file/130953/calendar_tweaks-3.0-tb.xpi?src=api</install>
+      <developer_comments></developer_comments>
+    <reviews num="18">
+      https://addons.mozilla.org/en-US/thunderbird/addon/calendar-tweaks/reviews/?src=api
+    </reviews>
+    <total_downloads>68179</total_downloads>
+    <weekly_downloads>907</weekly_downloads>
+    <daily_users>8408</daily_users>
+    <created epoch="1253105038">
+      2009-09-16T12:43:58Z
+    </created>
+    <last_updated epoch="1316015565">
+      2011-09-14T15:52:45Z
+    </last_updated>
+    <homepage></homepage>
+    <support></support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="1495">
+  <name>Walnut for Thunderbird</name>
+  <type id="2">Theme</type>
+  <guid>{F3A60010-0E28-4503-B4AA-0E5F90275F77}</guid>
+  <slug>walnut-for-thunderbird</slug>
+  <version>1.8.76</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="66">
+      <name>alfredkayser</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/66/?src=api</link>
+    </author>      </authors>
+  <summary>Walnut for Thunderbird, based on icons from &lt;a href=&#34;http://outgoing.mozilla.org/v1/906f6868cc3e33453f136b129b058fa8e8750e3a/http%3A//art.gnome.org&#34; rel=&#34;nofollow&#34;&gt;art.gnome.org&lt;/a&gt;, and sporting a wooden look. Fully compatible with from 3.1 upto 10a1. Full support for Lightning/calendar.</summary>
+
+  <description>Walnut2 for Thunderbird 3.1 upto 10a1 is based on icons from &lt;a href=&#34;http://outgoing.mozilla.org/v1/906f6868cc3e33453f136b129b058fa8e8750e3a/http%3A//art.gnome.org&#34; rel=&#34;nofollow&#34;&gt;art.gnome.org&lt;/a&gt;. Includes support for DOMInspector, chatzilla, stumbleupon, downloadstatusbar, fission, forecastfox, downloadmgr, calendar, quicknote, offline, googlebar, MAB, and many more...
+
+&lt;b&gt;To install:&lt;/b&gt;
+Download the file using the Firefox. But don&#39;t &#39;open&#39; it.
+Within Thunderbird, select Tools/Addons, and then &#39;Install...&#39; 
+Find the downloaded file, and click open. Thunderbird will then install it. 
+Restart Thunderbird to complete the installation. 
+
+Note: Drag&amp;amp;drop from a file explorer window or even from the &#39;Install Now&#39; link in Firefox into the Tools/Addons window also works (on Windows, Linux and Mac).
+
+Please don&#39;t use the &#39;review&#39; to report download errors. Download issues are not caused by the theme, but by one of the many AMO download mirrors.
+
+Please don&#39;t use the review box for any bug reports. Contact me through the email address provided under the &#39;Support&#39; heading. Using email is the quickest way to notify me, and generally I will try to make a fix available as quickly as possible.
+
+[b]Note, version 1.8.76 is available for Thunderbird 7.0 upto 10a1[b], see &#39;List all Versions&#39;[/b]</description>
+
+  <icon>https://static-cdn.addons.mozilla.net/en-US/firefox/images/addon_icon/1495-32.png?modified=1318245664</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>3.1</min_version>
+      <max_version>10.0a1</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="image/png" width="172" height="135">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/34/34592.png?src=api&amp;modified=1247745380
+      </full>
+      <thumbnail type="image/png" width="172" height="135">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/34/34592.png?src=api&amp;modified=1247745380
+      </thumbnail><caption>Preview Thumbnail</caption></preview><preview position="1">
+      <full type="image/png" width="700" height="518">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/26/26980.png?src=api&amp;modified=1225206418
+      </full>
+      <thumbnail type="image/png" width="200" height="148">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/26/26980.png?src=api&amp;modified=1225206418
+      </thumbnail><caption>Full screenshot, including the today pane of Lightning</caption></preview></previews><rating>5</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/walnut-for-thunderbird/?src=api</learnmore><install hash="sha256:16cc371c6ca031f843e0199b5f9a2ce64dda7e7836ae98d87113ab70a5295ef4"
+    os="ALL"
+    size="930816">https://addons.mozilla.org/thunderbird/downloads/file/133419/walnut_for_thunderbird-1.8.76-tb.jar?src=api</install>
+  <contribution_data>
+      <link>https://addons.mozilla.org/en-US/thunderbird/addon/walnut-for-thunderbird/contribute/?src=api</link>
+                <suggested_amount currency="USD" amount="4.99">
+            $4.99
+          </suggested_amount>
+            <meet_developers>
+        https://addons.mozilla.org/en-US/thunderbird/addon/walnut-for-thunderbird/developers?src=api
+      </meet_developers>
+    </contribution_data>    <developer_comments>Release 1.8.76 has been placed in the Sandbox awaiting review. Click on &#39;View all versions&#39; at the bottom of this page to find and install it.
+
+Note, TB 3.0 and lower are no longer supported, as TB 7.0 is the current release.</developer_comments>
+    <reviews num="24">
+      https://addons.mozilla.org/en-US/thunderbird/addon/walnut-for-thunderbird/reviews/?src=api
+    </reviews>
+    <total_downloads>620596</total_downloads>
+    <weekly_downloads>1175</weekly_downloads>
+    <daily_users>27116</daily_users>
+    <created epoch="1132219738">
+      2005-11-17T09:28:58Z
+    </created>
+    <last_updated epoch="1318245551">
+      2011-10-10T11:19:11Z
+    </last_updated>
+    <homepage>https://addons.mozilla.org/en-US/seamonkey/addon/1495/developers</homepage>
+    <support>https://addons.mozilla.org/en-US/seamonkey/addon/1495/developers</support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="3680">
+  <name>Birthday Reminder</name>
+  <type id="1">Extension</type>
+  <guid>birthdayreminder@sebastian.apel</guid>
+  <slug>birthday-reminder</slug>
+  <version>1.0.6.5</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="60998">
+      <name>Sebastian Apel</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/60998/?src=api</link>
+    </author>      </authors>
+  <summary>Birthday Reminder reminds of upcoming birthdays for all contacts in Thunderbird&#39;s address book. Supports Lightning, reminders and even Google Calendar :-)</summary>
+
+  <description>Birthday Reminder shows a list of upcoming birthdays for all contacts in Thunderbird&#39;s address book. The date of birth of a contact has to be provided in the custom fields of the contact data (&#34;Custom1&#34; by default, configurable). If a date of birth is provided in this field, the contact&#39;s name is added to the list along with the number of days until the birthday and the age of the contact. 
+
+If you use the Thunderbird calendar extension (&#34;Lightning&#34;), Birthday Reminder will create events for the birthdays of your contacts. You can choose the calendar you want to have the events in. Reminders are supported. 
+
+As of version 1.0.6.4, you can even use Google Calendar (with the Google Calendar Provider extension)... :-)</description>
+
+  <icon>https://static-cdn.addons.mozilla.net/media//img/addon-icons/posts-32.png</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>5.0</min_version>
+      <max_version>9.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="image/jpeg">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/10/10373.png?src=api&amp;modified=1318795696
+      </full>
+      <thumbnail type="image/png">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/10/10373.png?src=api&amp;modified=1318795696
+      </thumbnail><caption>Example of the list of birthdays</caption></preview><preview position="1">
+      <full type="image/jpeg">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/10/10374.png?src=api&amp;modified=1318795696
+      </full>
+      <thumbnail type="image/png">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/10/10374.png?src=api&amp;modified=1318795696
+      </thumbnail><caption>Example of the list of birthdays</caption></preview><preview position="2">
+      <full type="image/jpeg">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/10/10375.png?src=api&amp;modified=1318795696
+      </full>
+      <thumbnail type="image/png">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/10/10375.png?src=api&amp;modified=1318795696
+      </thumbnail><caption>Configuration Dialog</caption></preview></previews><rating>4</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/birthday-reminder/?src=api</learnmore><install hash="sha256:4475815b16da847d3d4a6adb41f6bea8e59a2d44f1ef5cb61ca619a3f76b02f0"
+    os="ALL"
+    size="137216">https://addons.mozilla.org/thunderbird/downloads/file/129313/birthday_reminder-1.0.6.5-tb.xpi?src=api</install>
+  <contribution_data>
+      <link>https://addons.mozilla.org/en-US/thunderbird/addon/birthday-reminder/contribute/?src=api</link>
+                <suggested_amount currency="USD" amount="10.00">
+            $10.00
+          </suggested_amount>
+            <meet_developers>
+        https://addons.mozilla.org/en-US/thunderbird/addon/birthday-reminder/developers?src=api
+      </meet_developers>
+    </contribution_data>    <developer_comments>Hi all,
+
+* Do you want to support the development of BirthdayReminder? I will not have a lot of time in the next year because I am starting a new job. This is why I am looking for people who are interested in helping to enhance BirthdayReminder. If you are interested please mail to birthdayreminderbeta@googlemail.com.
+
+* PLEASE DO NOT POST PROBLEM REPORTS HERE. Write an eMail to birthdayreminderbeta@googlemail.com instead. All Problem reports posted here will be ignored. 
+
+* If you can provide a translation into your language, I would appreciate it if you do so at &lt;a href=&#34;http://outgoing.mozilla.org/v1/6b19dff99479bcbd9920ed7d686e61e89e8c6b9f/http%3A//www.babelzilla.org&#34; rel=&#34;nofollow&#34;&gt;http://www.babelzilla.org&lt;/a&gt;. 
+
+* If you would like to become beta-tester, for example for testing BirthdayReminder with new Thunderbird versions, then send an eMail to birthdayreminderbeta@googlemail.com.
+
+Regards,
+Sebastian</developer_comments>
+    <reviews num="13">
+      https://addons.mozilla.org/en-US/thunderbird/addon/birthday-reminder/reviews/?src=api
+    </reviews>
+    <total_downloads>115008</total_downloads>
+    <weekly_downloads>413</weekly_downloads>
+    <daily_users>4829</daily_users>
+    <created epoch="1162130562">
+      2006-10-29T14:02:42Z
+    </created>
+    <last_updated epoch="1314289123">
+      2011-08-25T16:18:43Z
+    </last_updated>
+    <homepage></homepage>
+    <support></support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="4721">
+  <name>.vcs Support</name>
+  <type id="1">Extension</type>
+  <guid>{efcbec50-6821-11db-bd13-0800200c9a66}</guid>
+  <slug>vcs-support</slug>
+  <version>0.6.4</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="36228">
+      <name>Teester</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/36228/?src=api</link>
+    </author>      </authors>
+  <summary>Import and export calendar files in vCalendar (.vcs) format</summary>
+
+  <description>For use with Thunderbird, this extension requires the installation of the Lightning calendar extension, available from: &lt;a href=&#34;http://outgoing.mozilla.org/v1/6d2cc4cfceea4b451bec527921751fe81f2922aa/https%3A//addons.mozilla.org/thunderbird/addon/2313&#34; rel=&#34;nofollow&#34;&gt;here&lt;/a&gt;.
+
+This extension adds &#34;vCalendar (*.vcs)&#34; to the import and export dialogs of Thunderbird with Lightning and Sunbird which will export a selected calendar to a file in the vCalendar format, suitable for reading by many mobile devices.</description>
+
+  <icon>https://static-cdn.addons.mozilla.net/en-US/firefox/images/addon_icon/4721-32.png?modified=1313782445</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>5.0</min_version>
+      <max_version>9.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="image/png" width="542" height="419">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/25/25944.png?src=api&amp;modified=1221340532
+      </full>
+      <thumbnail type="image/png" width="194" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/25/25944.png?src=api&amp;modified=1221340532
+      </thumbnail><caption>vcs Export Options Dialog</caption></preview><preview position="1">
+      <full type="image/jpeg">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/13/13077.png?src=api&amp;modified=1174952671
+      </full>
+      <thumbnail type="image/png">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/13/13077.png?src=api&amp;modified=1174952671
+      </thumbnail><caption>The &#34;Save As&#34; Window for .vcs files</caption></preview></previews><rating>3</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/vcs-support/?src=api</learnmore><install hash="sha256:67cd98fc502274928398631cdeab687294b332b9f8f26d7278f6d453520d60af"
+    os="ALL"
+    size="39936">https://addons.mozilla.org/thunderbird/downloads/file/128931/vcs_support-0.6.4-tb.xpi?src=api</install>
+  <install hash="sha256:e581f3041ef7e163e8956caa1d9dc9f2042dc549413f91da5a9662f8fae38f0b" os=""
+             size="54272"
+             status="Beta">
+      https://addons.mozilla.org/thunderbird/downloads/file/75225/.vcs_support-0.7b1-tb+sb.xpi?src=api
+    </install>
+        <developer_comments></developer_comments>
+    <reviews num="14">
+      https://addons.mozilla.org/en-US/thunderbird/addon/vcs-support/reviews/?src=api
+    </reviews>
+    <total_downloads>140052</total_downloads>
+    <weekly_downloads>425</weekly_downloads>
+    <daily_users>8312</daily_users>
+    <created epoch="1174951119">
+      2007-03-26T23:18:39Z
+    </created>
+    <last_updated epoch="1313782395">
+      2011-08-19T19:33:15Z
+    </last_updated>
+    <homepage>http://vcssupport.blogspot.com</homepage>
+    <support>http://vcssupport.blogspot.com/2008/10/frequently-asked-questions.html</support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="162113">
+  <name>Gnome (Linux integration)</name>
+  <type id="2">Theme</type>
+  <guid>Gnome@elig</guid>
+  <slug>gnome-linux-integration</slug>
+  <version>1.5</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="5328020">
+      <name>meckermaus</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/5328020/?src=api</link>
+    </author>      </authors>
+  <summary>Gnome integration theme for practically every linux-distribution which uses gnome and its icons. Uses a lot of standard-theme icons, most icons should integrate fine in whatever icon-theme you&#39;re using. 
+
+</summary>
+
+  <description>It&#39;s based on the new thunderbird 3 standard theme and uses even more standard-theme icons - tested with clearlooks, but all gnome-based icons should look alright).
+It&#39;s best to just try out.
+
+Lightning-support is rudimentary at best, let me know what you would like to see in the next release.</description>
+
+  <icon>https://static-cdn.addons.mozilla.net/en-US/firefox/images/addon_icon/162113-32.png?modified=1320067265</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>3.0a1pre</min_version>
+      <max_version>10.0a1</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>Linux</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="image/png" width="700" height="437">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/46/46181.png?src=api&amp;modified=1275384433
+      </full>
+      <thumbnail type="image/png" width="200" height="125">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/46/46181.png?src=api&amp;modified=1275384433
+      </thumbnail><caption>main window</caption></preview><preview position="1">
+      <full type="image/png" width="700" height="437">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/46/46182.png?src=api&amp;modified=1275384433
+      </full>
+      <thumbnail type="image/png" width="200" height="125">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/46/46182.png?src=api&amp;modified=1275384433
+      </thumbnail><caption>inbox - note: answered &amp; replied icons are now in the read-col.</caption></preview><preview position="1">
+      <full type="image/png" width="700" height="437">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/46/46183.png?src=api&amp;modified=1275384433
+      </full>
+      <thumbnail type="image/png" width="200" height="125">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/46/46183.png?src=api&amp;modified=1275384433
+      </thumbnail><caption>write new e-mail dialog</caption></preview><preview position="1">
+      <full type="image/png" width="700" height="496">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/46/46184.png?src=api&amp;modified=1275384433
+      </full>
+      <thumbnail type="image/png" width="200" height="141">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/46/46184.png?src=api&amp;modified=1275384433
+      </thumbnail><caption>addressbook</caption></preview><preview position="1">
+      <full type="image/png" width="700" height="454">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/46/46185.png?src=api&amp;modified=1275384434
+      </full>
+      <thumbnail type="image/png" width="200" height="129">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/46/46185.png?src=api&amp;modified=1275384434
+      </thumbnail><caption>calendar view</caption></preview><preview position="1">
+      <full type="image/png" width="700" height="452">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/46/46186.png?src=api&amp;modified=1275384434
+      </full>
+      <thumbnail type="image/png" width="200" height="129">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/46/46186.png?src=api&amp;modified=1275384434
+      </thumbnail><caption>new appointment</caption></preview></previews><rating>4</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/gnome-linux-integration/?src=api</learnmore><install hash="sha256:f709b48def81ce3106f0f64a21c9e53d9fea09e653fa21e122d3d0bba92492c1"
+    os="Linux"
+    size="654336">https://addons.mozilla.org/thunderbird/downloads/file/134940/gnome_linux_integration-1.5-tb-linux.jar?src=api</install>
+  <contribution_data>
+      <link>https://addons.mozilla.org/en-US/thunderbird/addon/gnome-linux-integration/contribute/?src=api</link>
+                <suggested_amount currency="USD" amount="1.00">
+            $1.00
+          </suggested_amount>
+            <meet_developers>
+        https://addons.mozilla.org/en-US/thunderbird/addon/gnome-linux-integration/developers?src=api
+      </meet_developers>
+    </contribution_data>    <developer_comments></developer_comments>
+    <reviews num="5">
+      https://addons.mozilla.org/en-US/thunderbird/addon/gnome-linux-integration/reviews/?src=api
+    </reviews>
+    <total_downloads>21538</total_downloads>
+    <weekly_downloads>424</weekly_downloads>
+    <daily_users>2383</daily_users>
+    <created epoch="1275383015">
+      2010-06-01T09:03:35Z
+    </created>
+    <last_updated epoch="1320067200">
+      2011-10-31T13:20:00Z
+    </last_updated>
+    <homepage></homepage>
+    <support></support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="1493">
+  <name>Littlebird for Thunderbird</name>
+  <type id="2">Theme</type>
+  <guid>{247042CB-2281-483B-AC2D-230B2F3774CB}</guid>
+  <slug>littlebird-for-thunderbird</slug>
+  <version>1.8.76</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="66">
+      <name>alfredkayser</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/66/?src=api</link>
+    </author>      </authors>
+  <summary>Littlebird for Thunderbird, based on icons from &lt;a href=&#34;http://outgoing.mozilla.org/v1/906f6868cc3e33453f136b129b058fa8e8750e3a/http%3A//art.gnome.org&#34; rel=&#34;nofollow&#34;&gt;art.gnome.org&lt;/a&gt;. Fully compatible with from 3.1 upto 10a1. Full support for Lightning/calendar.</summary>
+
+  <description>Littlebird for Thunderbird 3.1 upto 10a1, based on icons from &lt;a href=&#34;http://outgoing.mozilla.org/v1/906f6868cc3e33453f136b129b058fa8e8750e3a/http%3A//art.gnome.org&#34; rel=&#34;nofollow&#34;&gt;art.gnome.org&lt;/a&gt;.
+
+&lt;b&gt;To install:&lt;/b&gt;
+Download the file using the Firefox. But don&#39;t &#39;open&#39; it.
+Within Thunderbird, select Tools/Addons, and then &#39;Install...&#39; 
+Find the downloaded file, and click open. Thunderbird will then install it. 
+Restart Thunderbird to complete the installation. 
+
+Note: Drag&amp;amp;drop from a file explorer window or even from the &#39;Install Now&#39; link in Firefox into the Tools/Addons window also works (on Windows, Linux and Mac).
+
+Please don&#39;t use the &#39;review&#39; to report download errors. Download issues are not caused by the theme, but by one of the many AMO download mirrors.
+
+Please don&#39;t use the review box for any bug reports. Contact me through the email address provided under the &#39;Support&#39; heading. Using email is the quickest way to notify me, and generally I will try to make a fix available as quickly as possible.
+
+[b]Note, version 1.8.76 is available for Thunderbird 7.0 upto 10a1[b], see &#39;List all Versions&#39;[/b]</description>
+
+  <icon>https://static-cdn.addons.mozilla.net/en-US/firefox/images/addon_icon/1493-32.png?modified=1318023963</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>3.1</min_version>
+      <max_version>10.0a1</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="image/png" width="172" height="135">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/34/34596.png?src=api&amp;modified=1247745568
+      </full>
+      <thumbnail type="image/png" width="172" height="135">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/34/34596.png?src=api&amp;modified=1247745568
+      </thumbnail><caption>Preview Thumbnail</caption></preview><preview position="1">
+      <full type="image/png" width="700" height="508">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/40/40206.png?src=api&amp;modified=1261992430
+      </full>
+      <thumbnail type="image/png" width="200" height="145">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/40/40206.png?src=api&amp;modified=1261992430
+      </thumbnail><caption>Calendar view with Lightning 1.0</caption></preview><preview position="1">
+      <full type="image/png" width="700" height="508">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/40/40207.png?src=api&amp;modified=1261992431
+      </full>
+      <thumbnail type="image/png" width="200" height="145">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/40/40207.png?src=api&amp;modified=1261992431
+      </thumbnail><caption>Search view (with Gloda Search of TB3)</caption></preview><preview position="1">
+      <full type="image/png" width="700" height="508">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/40/40208.png?src=api&amp;modified=1261992431
+      </full>
+      <thumbnail type="image/png" width="200" height="145">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/40/40208.png?src=api&amp;modified=1261992431
+      </thumbnail><caption>Main window</caption></preview></previews><rating>4</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/littlebird-for-thunderbird/?src=api</learnmore><install hash="sha256:a1e7bb3be8f0b3ea439c7504db78b00ba601b84e9a26b7003185020871f57faa"
+    os="ALL"
+    size="647168">https://addons.mozilla.org/thunderbird/downloads/file/133420/littlebird_for_thunderbird-1.8.76-tb.jar?src=api</install>
+  <contribution_data>
+      <link>https://addons.mozilla.org/en-US/thunderbird/addon/littlebird-for-thunderbird/contribute/?src=api</link>
+                <suggested_amount currency="USD" amount="4.99">
+            $4.99
+          </suggested_amount>
+            <meet_developers>
+        https://addons.mozilla.org/en-US/thunderbird/addon/littlebird-for-thunderbird/developers?src=api
+      </meet_developers>
+    </contribution_data>    <developer_comments>Release 1.8.76 has been placed in the Sandbox awaiting review. Click on &#39;View all versions&#39; at the bottom of this page to find and install it.
+
+Note, TB 3.0 and lower are no longer supported, as TB 7.0 is the current release.</developer_comments>
+    <reviews num="21">
+      https://addons.mozilla.org/en-US/thunderbird/addon/littlebird-for-thunderbird/reviews/?src=api
+    </reviews>
+    <total_downloads>165330</total_downloads>
+    <weekly_downloads>311</weekly_downloads>
+    <daily_users>8775</daily_users>
+    <created epoch="1132219689">
+      2005-11-17T09:28:09Z
+    </created>
+    <last_updated epoch="1318023930">
+      2011-10-07T21:45:30Z
+    </last_updated>
+    <homepage>https://addons.mozilla.org/en-US/seamonkey/addon/1493/about</homepage>
+    <support>https://addons.mozilla.org/en-US/seamonkey/addon/1493/developers</support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="1657">
+  <name>MicroThunderbird for Thunderbird</name>
+  <type id="2">Theme</type>
+  <guid>{59EAEC94-299A-43E3-BBE4-090880139DAA}</guid>
+  <slug>microthunderbird-for-thun-1657</slug>
+  <version>1.8.76</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="66">
+      <name>alfredkayser</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/66/?src=api</link>
+    </author>      </authors>
+  <summary>MicroThunderbird, for Thunderbird. Based on LittleBird, sporting the same screensaving, and with same &#39;retro&#39; design (8-bit colors). Fully compatible with from 3.1 upto 10a1. Full support for Lightning/calendar.</summary>
+
+  <description>MicroThunderbird, for Thunderbird 3.1 upto 10a1.
+This is based on LittleBird, sporting the same screenspace saving, but with images smaller in disk space, and more compression applied overall making the jar file very small. Net result is that TB responds much faster. 
+Note, includes full support for Lightning (1.0b5 and higher).
+
+&lt;b&gt;To install:&lt;/b&gt;
+Download the file using the Firefox. But don&#39;t &#39;open&#39; it.
+Within Thunderbird, select Tools/Addons, and then &#39;Install...&#39; 
+Find the downloaded file, and click open. Thunderbird will then install it. 
+Restart Thunderbird to complete the installation. 
+
+Note: Drag&amp;amp;drop from a file explorer window or even from the &#39;Install Now&#39; link in Firefox into the Tools/Addons window also works (on Windows, Linux and Mac).
+
+
+Please don&#39;t use the &#39;review&#39; to report download errors. Download issues are not caused by the theme, but by one of the many AMO download mirrors.
+
+Please don&#39;t use the review box for any bug reports. Contact me through the email address provided under the &#39;Support&#39; heading. Using email is the quickest way to notify me, and generally I will try to make a fix available as quickly as possible.
+
+[b]Note, version 1.8.76 is available for Thunderbird 7.0 upto 10a1[b], see &#39;List all Versions&#39;[/b]</description>
+
+  <icon>https://static-cdn.addons.mozilla.net/en-US/firefox/images/addon_icon/1657-32.png?modified=1317939904</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>3.1</min_version>
+      <max_version>10.0a1</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="image/jpeg">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/3/3386.png?src=api&amp;modified=0
+      </full>
+      <thumbnail type="image/png">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/3/3386.png?src=api&amp;modified=0
+      </thumbnail></preview><preview position="0">
+      <full type="image/jpeg">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/3/3387.png?src=api&amp;modified=0
+      </full>
+      <thumbnail type="image/png">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/3/3387.png?src=api&amp;modified=0
+      </thumbnail></preview><preview position="1">
+      <full type="image/jpeg">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/3/3388.png?src=api&amp;modified=0
+      </full>
+      <thumbnail type="image/png">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/3/3388.png?src=api&amp;modified=0
+      </thumbnail></preview></previews><rating>5</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/microthunderbird-for-thun-1657/?src=api</learnmore><install hash="sha256:1ecf9dff085206d490c98f9cc27cad89e1bd43b35fa1f2d530deb5658e6281a5"
+    os="ALL"
+    size="464896">https://addons.mozilla.org/thunderbird/downloads/file/133421/microthunderbird_for_thunderbird-1.8.76-tb.jar?src=api</install>
+      <developer_comments>Release 1.8.76 has been placed in the Sandbox awaiting review. Click on &#39;View all versions&#39; at the bottom of this page to find and install it.
+
+Note, TB 3.0 and lower are no longer supported, as TB 7.0 is the current release.</developer_comments>
+    <reviews num="3">
+      https://addons.mozilla.org/en-US/thunderbird/addon/microthunderbird-for-thun-1657/reviews/?src=api
+    </reviews>
+    <total_downloads>57216</total_downloads>
+    <weekly_downloads>171</weekly_downloads>
+    <daily_users>3362</daily_users>
+    <created epoch="1134382213">
+      2005-12-12T10:10:13Z
+    </created>
+    <last_updated epoch="1317939843">
+      2011-10-06T22:24:03Z
+    </last_updated>
+    <homepage>https://addons.mozilla.org/en-US/seamonkey/addon/1657/about</homepage>
+    <support>https://addons.mozilla.org/en-US/seamonkey/addon/1657/developers</support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="77491">
+  <name>Free/Busy</name>
+  <type id="1">Extension</type>
+  <guid>freebusy-thunderbird@d-wise.com</guid>
+  <slug>freebusy</slug>
+  <version>2.0</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="4912703">
+      <name>John Leveille</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/4912703/?src=api</link>
+    </author>      </authors>
+  <summary>Publish free/busy calendar file (*.ifb) via ftp or to a file.  View other people&#39;s free/busy info in meeting organizer window.  Integrate Thunderbird and Outlook calendars without Exchange server.</summary>
+
+  <description>This add-on allows you to automatically publish your Lightning calendar information (not the events, just busy times) to a file on your hard drive or on an ftp server.  Other users can use this file to determine when you are available for meetings and events.  Users in either Thunderbird or Outlook can consume this *.ifb file and use it to schedule meetings.  Once you publish, you can provide either a ftp or http link to your *.ifb file and the other users can plug that into their Outlook or Thunderbird to see your availability.
+
+The Lightning meeting scheduler (Invite Attendees...) can be enhanced by configuring the free/busy extension to read the free/busy information for other people.  First, have the other users publish their free/busy (*.ifb) files to a public web address.  How?  Using this addon (Thunderbird) or using a publishing step (Outlook).  Second, configure the Settings tab in your Free/Busy extension (under Tools in Thunderbird) to fetch their free/busy info from a http or ftp link.
+
+Finally, you may need to lobby the Outlook users to publish their free/busy information so that you can see if from Thunderbird.  Here is an information link to help with that: &lt;a href=&#34;http://outgoing.mozilla.org/v1/d446e7f4707be7dac1762de811405bca35496d9c/http%3A//support.microsoft.com/kb/291621&#34;&gt;http://support.microsoft.com/kb/291621&lt;/a&gt;</description>
+
+  <icon></icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>2.0a1</min_version>
+      <max_version>9.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application><application>
+      <name>Sunbird</name>
+      <application_id>52</application_id>
+      <min_version>0.8</min_version>
+      <max_version>1.0b1</max_version>
+      <appID>{718e30fb-e89b-41dd-9da7-e25a45638b28}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="image/png" width="564" height="494">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/42/42428.png?src=api&amp;modified=1280199584
+      </full>
+      <thumbnail type="image/png" width="171" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/42/42428.png?src=api&amp;modified=1280199584
+      </thumbnail><caption>Free/Busy dialog.  Accessible from the Tools menu.</caption></preview><preview position="1">
+      <full type="image/png" width="552" height="525">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/47/47686.png?src=api&amp;modified=1282068048
+      </full>
+      <thumbnail type="image/png" width="157" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/47/47686.png?src=api&amp;modified=1282068048
+      </thumbnail><caption>Second tab showing how you instruct the addon to read the free/busy information for other people.  Configuring this tab will enable the Invite Attendees window to show free/busy info and enable meeting planning.</caption></preview></previews><rating>3</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/freebusy/?src=api</learnmore><install hash="sha256:f754b02e23bbd29f0d81e4487d3268002b219d638d6680a4ab9b340c125beea4"
+    os="ALL"
+    size="21504">https://addons.mozilla.org/thunderbird/downloads/file/132203/freebusy-2.0-tb+sb.xpi?src=api</install>
+  <install hash="sha256:f7aaf3eb72549cc58d1b414280210151cf1b9abd8e6eb6eba1c4bc231d1a3602" os=""
+             size="20480"
+             status="Beta">
+      https://addons.mozilla.org/thunderbird/downloads/file/95119/free_busy-1.0b14-sb+tb.xpi?src=api
+    </install>
+        <developer_comments></developer_comments>
+    <reviews num="6">
+      https://addons.mozilla.org/en-US/thunderbird/addon/freebusy/reviews/?src=api
+    </reviews>
+    <total_downloads>11910</total_downloads>
+    <weekly_downloads>159</weekly_downloads>
+    <daily_users>702</daily_users>
+    <created epoch="1266117564">
+      2010-02-14T03:19:24Z
+    </created>
+    <last_updated epoch="1317142656">
+      2011-09-27T16:57:36Z
+    </last_updated>
+    <homepage>http://www.d-wise.com/</homepage>
+    <support></support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="10149">
+  <name>New Tab Button</name>
+  <type id="1">Extension</type>
+  <guid>{3AB03506-4329-483F-BA03-EA5493232260}</guid>
+  <slug>new-tab-button</slug>
+  <version>0.1.25</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="7226">
+      <name>H.Ogi</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/7226/?src=api</link>
+    </author>      </authors>
+  <summary>It provide you the following functionalities:
+    * Open a selected message in a tab by a toolbar button
+    * Open a message in a tab by double-clicking its header view (disabled by default)
+    * Hide Lightning&#39;s Today Pane on opening a tab</summary>
+
+  <description>It provide you the following functionalities:
+    * Open a selected message in a tab by a toolbar button
+    * Open a message in a tab by double-clicking its header view (disabled by default)
+    * Hide Lightning&#39;s Today Pane on opening a tab</description>
+
+  <icon>https://static-cdn.addons.mozilla.net/en-US/firefox/images/addon_icon/10149-32.png?modified=1320684184</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>3.0b4pre</min_version>
+      <max_version>9.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="image/png" width="322" height="130">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/31/31160.png?src=api&amp;modified=1239114925
+      </full>
+      <thumbnail type="image/png" width="200" height="80">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/31/31160.png?src=api&amp;modified=1239114925
+      </thumbnail></preview><preview position="1">
+      <full type="image/png" width="321" height="204">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/33/33024.png?src=api&amp;modified=1248274435
+      </full>
+      <thumbnail type="image/png" width="200" height="127">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/33/33024.png?src=api&amp;modified=1248274435
+      </thumbnail></preview></previews><rating>5</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/new-tab-button/?src=api</learnmore><install hash="sha256:b0f3edbe44ddc92b86a9e132b735ddc6212fabfd6a9f49c17187d4dd69993dc1"
+    os="ALL"
+    size="9216">https://addons.mozilla.org/thunderbird/downloads/file/136453/new_tab_button-0.1.25-tb.xpi?src=api</install>
+      <developer_comments></developer_comments>
+    <reviews num="8">
+      https://addons.mozilla.org/en-US/thunderbird/addon/new-tab-button/reviews/?src=api
+    </reviews>
+    <total_downloads>17594</total_downloads>
+    <weekly_downloads>136</weekly_downloads>
+    <daily_users>2237</daily_users>
+    <created epoch="1230213995">
+      2008-12-25T14:06:35Z
+    </created>
+    <last_updated epoch="1320684144">
+      2011-11-07T16:42:24Z
+    </last_updated>
+    <homepage>http://hogi.sakura.ne.jp/en/</homepage>
+    <support>http://hogiblog.blogspot.com/2008/12/open-new-tab-extension-for-thunderbird3.html</support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="161710">
+  <name>More Snooze</name>
+  <type id="1">Extension</type>
+  <guid>moresnooze@cyrille.nocus</guid>
+  <slug>more-snooze</slug>
+  <version>1.1.1</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="2657359">
+      <name>Cyrille Nocus</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/2657359/?src=api</link>
+    </author>      </authors>
+  <summary>This add allow to customize the snooze delay when snooze popup appears (lightning required).</summary>
+
+  <description>This add allow to customize the snooze delay when snooze popup appears (lightning required).
+You have to check your favorites snoozes in the preferences panel.
+Then, they will automatically appear in the snooze popup (replacing the defaults snoozes). </description>
+
+  <icon>https://static-cdn.addons.mozilla.net/en-US/firefox/images/addon_icon/161710-32.png?modified=1314148329</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>5.0</min_version>
+      <max_version>9.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="image/png" width="692" height="341">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/45/45587.png?src=api&amp;modified=1273561094
+      </full>
+      <thumbnail type="image/png" width="200" height="98">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/45/45587.png?src=api&amp;modified=1273561094
+      </thumbnail><caption>Snooze popup.</caption></preview><preview position="1">
+      <full type="image/png" width="465" height="261">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/45/45586.png?src=api&amp;modified=1273561093
+      </full>
+      <thumbnail type="image/png" width="200" height="112">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/45/45586.png?src=api&amp;modified=1273561093
+      </thumbnail><caption>Pref panel.</caption></preview></previews><rating>5</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/more-snooze/?src=api</learnmore><install hash="sha256:f07a38603029b9d0bf724bb1d0dcbdbc7999909bbd6bff6757f4ff81f9e44f0d"
+    os="ALL"
+    size="28672">https://addons.mozilla.org/thunderbird/downloads/file/129481/more_snooze-1.1.1-tb.xpi?src=api</install>
+  <install hash="sha256:9afe4984ecb9d1d46d19b1531bfc1955b9a34540dfa7b8c6eb2957ecc48c4364" os=""
+             size="24576"
+             status="Beta">
+      https://addons.mozilla.org/thunderbird/downloads/file/93473/more_snooze-1.0.2-sb+tb-linux.xpi?src=api
+    </install>
+    <install hash="sha256:9afe4984ecb9d1d46d19b1531bfc1955b9a34540dfa7b8c6eb2957ecc48c4364" os=""
+             size="24576"
+             status="Beta">
+      https://addons.mozilla.org/thunderbird/downloads/file/93474/more_snooze-1.0.2-sb+tb-win.xpi?src=api
+    </install>
+        <developer_comments>Contact me for orthography problems please! :-)</developer_comments>
+    <reviews num="3">
+      https://addons.mozilla.org/en-US/thunderbird/addon/more-snooze/reviews/?src=api
+    </reviews>
+    <total_downloads>8663</total_downloads>
+    <weekly_downloads>43</weekly_downloads>
+    <daily_users>552</daily_users>
+    <created epoch="1273526264">
+      2010-05-10T21:17:44Z
+    </created>
+    <last_updated epoch="1314148277">
+      2011-08-24T01:11:17Z
+    </last_updated>
+    <homepage>http://cyrille-nocus.over-blog.com/pages/Developments-3356856.html</homepage>
+    <support></support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="162114">
+  <name>Humanity</name>
+  <type id="2">Theme</type>
+  <guid>Humanity1.1@meckermaus</guid>
+  <slug>humanity-162114</slug>
+  <version>1.3</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="5328020">
+      <name>meckermaus</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/5328020/?src=api</link>
+    </author>      </authors>
+  <summary>A Humanity-Theme for linux-users. Works well with elementary or Humanity iconsets. Uses a lot of gtk-standard icons.</summary>
+
+  <description>An extension of my previous theme (elementary.Human), with the difference that it uses more of your standard-icontheme, which means it will integrate better into your workspace. 
+
+Lightning is also supported, though only rudimentary. Tell me about features you&#39;d like to see in the next release. 
+
+Disclaimer: This will only work with Linux-distributions!
+
+</description>
+
+  <icon>https://static-cdn.addons.mozilla.net/en-US/firefox/images/addon_icon/162114-32.png?modified=1320067263</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>3.0a1pre</min_version>
+      <max_version>9.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>Linux</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="image/png" width="700" height="430">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/46/46187.png?src=api&amp;modified=1275388498
+      </full>
+      <thumbnail type="image/png" width="200" height="123">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/46/46187.png?src=api&amp;modified=1275388498
+      </thumbnail><caption>Inbox view</caption></preview><preview position="1">
+      <full type="image/png" width="700" height="431">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/46/46188.png?src=api&amp;modified=1275388498
+      </full>
+      <thumbnail type="image/png" width="200" height="123">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/46/46188.png?src=api&amp;modified=1275388498
+      </thumbnail><caption>Main Window</caption></preview><preview position="1">
+      <full type="image/png" width="700" height="430">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/46/46189.png?src=api&amp;modified=1275388498
+      </full>
+      <thumbnail type="image/png" width="200" height="123">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/46/46189.png?src=api&amp;modified=1275388498
+      </thumbnail><caption>Calendar view</caption></preview><preview position="1">
+      <full type="image/png" width="700" height="494">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/46/46190.png?src=api&amp;modified=1275388498
+      </full>
+      <thumbnail type="image/png" width="200" height="141">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/46/46190.png?src=api&amp;modified=1275388498
+      </thumbnail><caption>Addressbook</caption></preview></previews><rating>4</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/humanity-162114/?src=api</learnmore><install hash="sha256:643f35448842651a43680f7909d9672d58c11f5f20835b4a135055faf8c70280"
+    os="Linux"
+    size="697344">https://addons.mozilla.org/thunderbird/downloads/file/134934/humanity-1.3-tb-linux.jar?src=api</install>
+      <developer_comments></developer_comments>
+    <reviews num="5">
+      https://addons.mozilla.org/en-US/thunderbird/addon/humanity-162114/reviews/?src=api
+    </reviews>
+    <total_downloads>7053</total_downloads>
+    <weekly_downloads>112</weekly_downloads>
+    <daily_users>724</daily_users>
+    <created epoch="1275386822">
+      2010-06-01T10:07:02Z
+    </created>
+    <last_updated epoch="1320067207">
+      2011-10-31T13:20:07Z
+    </last_updated>
+    <homepage></homepage>
+    <support></support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="14380">
+  <name>Repeat Borders</name>
+  <type id="1">Extension</type>
+  <guid>repeatborders@DW-dev</guid>
+  <slug>repeat-borders</slug>
+  <version>3.0</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="1236621">
+      <name>DW-dev</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/1236621/?src=api</link>
+    </author>      </authors>
+  <summary>Adds darker borders to repeat events to distinguish them from single events.</summary>
+
+  <description>&lt;b&gt;Latest Updates&lt;/b&gt;
+    • Updated to be compatible with Thunderbird 6.* and Lightning 1.0b5.
+    • Backwards compatible with Thunderbird 3.1.
+
+&lt;b&gt;Overview&lt;/b&gt;
+Extension to Thunderbird/Lightning calendar. Adds darker borders to repeat events to distinguish them from single events. These borders appear in all calendar views (day, week, multiweek and month views). When a repeat event is created, a solid darker border is added to all occurrences of the event. If subsequently, any of the occurrences are edited individually (rather than all together), then on those occurrences the solid darker border is replaced by a dashed darker border.
+
+&lt;b&gt;Note&lt;/b&gt;
+A similar facility is provided in the &#39;Calendar Tweaks&#39; extension (also by DW-dev) using icons rather than borders.</description>
+
+  <icon>https://static-cdn.addons.mozilla.net/en-US/firefox/images/addon_icon/14380-32.png?modified=1314992586</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>3.1</min_version>
+      <max_version>9.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="image/png" width="400" height="300">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/37/37013.png?src=api&amp;modified=1282240256
+      </full>
+      <thumbnail type="image/png" width="200" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/37/37013.png?src=api&amp;modified=1282240256
+      </thumbnail><caption>Solid borders on all occurrences of repeat event, except those occurrences that have been individually edited which have dashed borders.</caption></preview></previews><rating>4</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/repeat-borders/?src=api</learnmore><install hash="sha256:cb718f29864f26aca74b9bf779543b8d8191c4dc07dcc3404b1577b82383b7d7"
+    os="ALL"
+    size="5120">https://addons.mozilla.org/thunderbird/downloads/file/130306/repeat_borders-3.0-tb.xpi?src=api</install>
+      <developer_comments></developer_comments>
+    <reviews num="1">
+      https://addons.mozilla.org/en-US/thunderbird/addon/repeat-borders/reviews/?src=api
+    </reviews>
+    <total_downloads>8008</total_downloads>
+    <weekly_downloads>60</weekly_downloads>
+    <daily_users>617</daily_users>
+    <created epoch="1253102435">
+      2009-09-16T12:00:35Z
+    </created>
+    <last_updated epoch="1314808030">
+      2011-08-31T16:27:10Z
+    </last_updated>
+    <homepage></homepage>
+    <support></support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="5337">
+  <name>ThunderBirthDay</name>
+  <type id="1">Extension</type>
+  <guid>{4C9FE6FE-2C83-11DC-90B4-DC8456D89593}</guid>
+  <slug>thunderbirthday</slug>
+  <version>0.8.0</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="184482">
+      <name>ingomueller.net</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/184482/?src=api</link>
+    </author>      </authors>
+  <summary>Display birthdays from the Thunderbird addressbooks as events in Lightning.</summary>
+
+  <description>&lt;strong&gt;+++ Quick install: +++&lt;/strong&gt;
+
+Install Lightning and ThunderBirthDay, then create a new local calendar choosing ThunderBirthDay as provider.
+
+&lt;strong&gt;+++ Prerequisites: +++&lt;/strong&gt;
+
+The &lt;a href=&#34;http://outgoing.mozilla.org/v1/12c530870bad227553bca4e59463c714b43ce9a7/https%3A//addons.mozilla.org/en-US/thunderbird/addon/2313&#34; rel=&#34;nofollow&#34;&gt;Lightning extension&lt;/a&gt; needs to be installed.
+
+&lt;strong&gt;+++ How to use: +++&lt;/strong&gt;
+
+Create a new calendar in Lightning by clicking File&amp;gt;New&amp;gt;Calendar... in the menu bar. Then choose &#34;On My Computer&#34; as location and &#34;Birthdays from the Thunderbird addressbook&#34; as type for your calendar. Also specify the address book to use as a source for birthdays. Finally choose a name for the new calendar.
+
+Now open the &#34;Edit Card&#34; dialog of an address book card, go to the &#34;Private&#34; tab and set the birthday including the year. Note that these changes don&#39;t take effect in the calendar until it gets reloaded. To do this either restart Thunderbird or right click on a calendar from the list, then choose &#34;Reload Remote Calendars&#34;.
+
+Also note that the events generated by ThunderBirthDay cannot be modified with Lightning for the moment. Maybe future versions of the extension will be bidirectional.
+
+&lt;strong&gt;+++ Any questions? +++&lt;/strong&gt;
+
+If you have any questions about how to install or use the extension, about technical details, bugs or anything else, please let me know! Suggestions for new features are also very welcome! Just send me a mail to thunderbirthday@(mydomain) replacing (mydomain) by &lt;a href=&#34;http://outgoing.mozilla.org/v1/eceb0df3bff29a0ab2e023be17b15fa255054a4b/http%3A//ingomueller.net&#34; rel=&#34;nofollow&#34;&gt;ingomueller.net&lt;/a&gt;.
+
+&lt;strong&gt;+++ Localizing: +++&lt;/strong&gt;
+
+If you wish to add a translation for a new language or if you found a mistake in an existing one (including the one in English), I&#39;d be really glad, if you could have a look at the translation portal &lt;a href=&#34;http://outgoing.mozilla.org/v1/73b66f64dd0a3166fe3fe849a7234dc65a718309/http%3A//www.babelzilla.org/forum/index.php%3Fshowtopic=3436&#34; rel=&#34;nofollow&#34;&gt;Babelzilla&lt;/a&gt;. Thanks a lot!</description>
+
+  <icon>https://static-cdn.addons.mozilla.net/en-US/firefox/images/addon_icon/5337-32.png?modified=1319108464</icon>
+  <compatible_applications><application>
+      <name>SeaMonkey</name>
+      <application_id>59</application_id>
+      <min_version>2.0</min_version>
+      <max_version>2.5.*</max_version>
+      <appID>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</appID>
+    </application><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>3.0a1pre</min_version>
+      <max_version>9.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="image/png" width="200" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/16/16392.png?src=api&amp;modified=1251550880
+      </full>
+      <thumbnail type="image/png" width="200" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/16/16392.png?src=api&amp;modified=1251550880
+      </thumbnail><caption>A birthday event generated by ThunderBirthDay according to a birthday set in the addressbook.</caption></preview><preview position="1">
+      <full type="image/png" width="438" height="350">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/16/16393.png?src=api&amp;modified=1251550880
+      </full>
+      <thumbnail type="image/png" width="187" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/16/16393.png?src=api&amp;modified=1251550880
+      </thumbnail><caption>Creating a new ThunderBirthDay calendar.</caption></preview><preview position="1">
+      <full type="image/png" width="600" height="450">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/16/16394.png?src=api&amp;modified=1251550880
+      </full>
+      <thumbnail type="image/png" width="200" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/16/16394.png?src=api&amp;modified=1251550880
+      </thumbnail><caption>Notice the new ThunderBirthDay calendar in the list at the left.</caption></preview></previews><rating>4</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/thunderbirthday/?src=api</learnmore><install hash="sha256:7d1f04e6c6756126c1d61b1aa7eace86f05463bf2de38697cddd15371d0fd8c3"
+    os="ALL"
+    size="56320">https://addons.mozilla.org/thunderbird/downloads/file/134210/thunderbirthday-0.8.0-sm.xpi?src=api</install>
+      <developer_comments>PLEASE review my code! Look at the readme.txt file in the XPI to see details about the development.
+
+Developpers may want to increase verbosity by changing extensions.thunderbirthday.verbosity in the about:config dialog (0 means only exceptions are being reported, 5 means the error console is flooded with information).</developer_comments>
+    <reviews num="58">
+      https://addons.mozilla.org/en-US/thunderbird/addon/thunderbirthday/reviews/?src=api
+    </reviews>
+    <total_downloads>386087</total_downloads>
+    <weekly_downloads>1298</weekly_downloads>
+    <daily_users>30815</daily_users>
+    <created epoch="1184362943">
+      2007-07-13T21:42:23Z
+    </created>
+    <last_updated epoch="1319108408">
+      2011-10-20T11:00:08Z
+    </last_updated>
+    <homepage>http://ingomueller.net/mozilla/thunderbirthday</homepage>
+    <support>http://ingomueller.net/mozilla/thunderbirthday</support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="519">
+  <name>SyncKolab</name>
+  <type id="1">Extension</type>
+  <guid>{571CFACF-0F7D-49b4-BD77-E6FC7B209ADC}</guid>
+  <slug>sync-kolab</slug>
+  <version>1.5.2</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="463">
+      <name>Niko Berger</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/463/?src=api</link>
+    </author>      </authors>
+  <summary>SyncKolab reads a selected Imap folder and synchronizes it with the local address book and calendar. It uses vCard/iCal/xml as format in the mail messages. 
+</summary>
+
+  <description>SyncKolab reads a selected Imap folder and synchronizes it with the local address book and calendar. It uses vCard/iCal/xml as format. Using shared-IMAP folders or a Kolab server (www.kolab.org) you can achieve almost fully collaboration functionality (there is an autosync option).
+
+It is a good idea to install lightning &lt;a href=&#34;http://outgoing.mozilla.org/v1/62200f3952c329ec2fa77173961c52bff2076b9f/http%3A//www.mozilla.org/projects/calendar/lightning/index.html&#34;&gt;http://www.mozilla.org/projects/calendar/lightning/index.html&lt;/a&gt; in order to be able to use the full functionality (calendar and task sync) - but it works without it if you only need contact sync.
+
+SyncKolab is compatible with a lot of other mail/calendar clients see &lt;a href=&#34;http://outgoing.mozilla.org/v1/1d9e17d570734607f1a50772776fc2fe052494bc/http%3A//www.kolab.org/about-kolab-clients.html&#34;&gt;http://www.kolab.org/about-kolab-clients.html&lt;/a&gt; .
+
+Make sure that you specify a different folder for each type of sync (one for calendar one for contacts and one for tasks) - mixing types is not a good idea!
+For nightly builds check out htttp://www.gargan.org/extensions/ - there is also a mideum active mailing list at &lt;a href=&#34;http://outgoing.mozilla.org/v1/38301397789319de47a71857dd2f08d14975fe80/http%3A//synckolab.mozdev.org/list.html&#34;&gt;http://synckolab.mozdev.org/list.html&lt;/a&gt;
+
+Calendar and Task sync are a little unstable (Also because lightning isnt yet fully stable). It should work for most entries - if you find problems please submit a bug to &lt;a href=&#34;http://outgoing.mozilla.org/v1/7e9a0c76fcbb9943c3872c129f5d69161df5b511/http%3A//synckolab.mozdev.org/bugs.html&#34;&gt;http://synckolab.mozdev.org/bugs.html&lt;/a&gt;
+If you enable Leak Monitor+Lightning it may cause Thunderbird to crash.</description>
+
+  <icon>https://static-cdn.addons.mozilla.net/en-US/firefox/images/addon_icon/519-32.png?modified=1313172125</icon>
+  <compatible_applications><application>
+      <name>SeaMonkey</name>
+      <application_id>59</application_id>
+      <min_version>2.0</min_version>
+      <max_version>2.8a1</max_version>
+      <appID>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</appID>
+    </application><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>2.0</min_version>
+      <max_version>11.0a1</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="image/jpeg">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/7/7431.png?src=api&amp;modified=0
+      </full>
+      <thumbnail type="image/png">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/7/7431.png?src=api&amp;modified=0
+      </thumbnail><caption>synckolab main window</caption></preview><preview position="1">
+      <full type="image/jpeg">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/7/7432.png?src=api&amp;modified=0
+      </full>
+      <thumbnail type="image/png">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/7/7432.png?src=api&amp;modified=0
+      </thumbnail><caption>synckolab icon</caption></preview><preview position="1">
+      <full type="image/png" width="517" height="404">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/14/14549.png?src=api&amp;modified=1181572441
+      </full>
+      <thumbnail type="image/png" width="191" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/14/14549.png?src=api&amp;modified=1181572441
+      </thumbnail><caption>Settings</caption></preview></previews><rating>4</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/sync-kolab/?src=api</learnmore><install hash="sha256:98c8a8ba372efbe9e57c86b923536f25a36aa4290202c108fbc1f6a67bfa226f"
+    os="ALL"
+    size="145408">https://addons.mozilla.org/thunderbird/downloads/file/128674/synckolab-1.5.2-tb+sm.xpi?src=api</install>
+  <contribution_data>
+      <link>https://addons.mozilla.org/en-US/thunderbird/addon/sync-kolab/contribute/?src=api</link>
+                <suggested_amount currency="USD" amount="5.00">
+            $5.00
+          </suggested_amount>
+            <meet_developers>
+        https://addons.mozilla.org/en-US/thunderbird/addon/sync-kolab/developers?src=api
+      </meet_developers>
+    </contribution_data>    <developer_comments>Since 0.4.20 lightning is required. Download the lightning plugin from &lt;a href=&#34;http://outgoing.mozilla.org/v1/62200f3952c329ec2fa77173961c52bff2076b9f/http%3A//www.mozilla.org/projects/calendar/lightning/index.html&#34;&gt;http://www.mozilla.org/projects/calendar/lightning/index.html&lt;/a&gt; 
+
+For all having problems or found bug: please refer to the homepage &lt;a href=&#34;http://outgoing.mozilla.org/v1/206ca716135e638f7a67e5d908bd274daef8d9d6/http%3A//www.gargan.org/extensions/synckolab.html&#34;&gt;http://www.gargan.org/extensions/synckolab.html&lt;/a&gt; and/or joing the mailing list &lt;a href=&#34;http://outgoing.mozilla.org/v1/38301397789319de47a71857dd2f08d14975fe80/http%3A//synckolab.mozdev.org/list.html&#34;&gt;http://synckolab.mozdev.org/list.html&lt;/a&gt;
+
+Installation notice:
+After installing/restarting tbird: rightclick on the icon bar (next to Stop) go to customize and drag the &#34;Sync Kolab&#34; Icon to the bar, this way you can also include the calendar icon.
+also make sure you read the webpage for further instructions.</developer_comments>
+    <reviews num="53">
+      https://addons.mozilla.org/en-US/thunderbird/addon/sync-kolab/reviews/?src=api
+    </reviews>
+    <total_downloads>187769</total_downloads>
+    <weekly_downloads>734</weekly_downloads>
+    <daily_users>9181</daily_users>
+    <created epoch="1113770612">
+      2005-04-17T20:43:32Z
+    </created>
+    <last_updated epoch="1313172077">
+      2011-08-12T18:01:17Z
+    </last_updated>
+    <homepage>http://www.gargan.org/extensions/synckolab.html</homepage>
+    <support>http://synckolab.mozdev.org/</support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="337435">
+  <name>Exchange 2007/2010 Calendar and Tasks Provider</name>
+  <type id="1">Extension</type>
+  <guid>exchangecalendar@extensions.1st-setup.nl</guid>
+  <slug>exchange-20072010-calendar-</slug>
+  <version>1.7.2</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="5906065">
+      <name>Michel Verbraak</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/5906065/?src=api</link>
+    </author>      </authors>
+  <summary>Allows you to sync Calendar and Tasks with your Microsoft Exchange 2007/2010 EWS server using Lightning.
+
+You can view, delete, create and update calendar and task/todo items. And manage &#34;Out of Office&#34; settings.
+
+Dutch and English localizations.</summary>
+
+  <description>Will allow syncing and working with your Microsoft Exchange 2007/2010 EWS server using the Lightning add-on.
+
+What can it do:
+&lt;ul&gt;&lt;li&gt;Sync Calendar and Task/Todo items from an EWS (Exchange) server.  Syncing is done on the &#34;Calendar refresh&#34; interval. It will track changes on the server and update the local cache.&lt;/li&gt;&lt;li&gt;Create, modify and delete calendar and task/todo items. They will get synced immediately with the EWS server.&lt;/li&gt;&lt;li&gt;During creation of a new calendar you can use the EWS Autodiscover functionality to find the right server and mailbox settings. Use the build in browser to select the right folder.&lt;/li&gt;&lt;li&gt;You can access any Calendar or Task folder on your EWS server as long as you have the right primarySMTP or alias email address and enough rights for the used user.&lt;/li&gt;&lt;li&gt;Let it poll your inbox for meeting invitation request or cancellations. They will show up in your calendar.&lt;/li&gt;&lt;li&gt;Manage how meeting invitations or cancellations are automatically handled (responded to).&lt;/li&gt;&lt;li&gt;Add as many calendars objects as you wish Or Lightning will allow.&lt;/li&gt;&lt;li&gt;Manage &#34;Out of Office&#34;settings for each calendar mailbox (new since version 0.7.34).&lt;/li&gt;&lt;li&gt;Currently in Dutch and English localizations. More following.&lt;/li&gt;&lt;/ul&gt;
+Bugzilla: &lt;a href=&#34;http://outgoing.mozilla.org/v1/8a39b3ad03c15b2c6472e94b45ed62278ff0c3d5/https%3A//www.1st-setup.nl/bugzilla/&#34; rel=&#34;nofollow&#34;&gt;https://www.1st-setup.nl/bugzilla/&lt;/a&gt;</description>
+
+  <icon>https://static-cdn.addons.mozilla.net/en-US/firefox/images/addon_icon/337435-32.png?modified=1322417786</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>6.0</min_version>
+      <max_version>9.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="" width="594" height="471">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/63/63161.png?src=api&amp;modified=1321790694
+      </full>
+      <thumbnail type="" width="189" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/63/63161.png?src=api&amp;modified=1321790694
+      </thumbnail></preview><preview position="1">
+      <full type="" width="590" height="460">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/65/65006.png?src=api&amp;modified=1321790694
+      </full>
+      <thumbnail type="" width="192" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/65/65006.png?src=api&amp;modified=1321790694
+      </thumbnail></preview><preview position="2">
+      <full type="" width="590" height="460">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/65/65004.png?src=api&amp;modified=1321790694
+      </full>
+      <thumbnail type="" width="192" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/65/65004.png?src=api&amp;modified=1321790694
+      </thumbnail></preview><preview position="3">
+      <full type="" width="642" height="400">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/65/65007.png?src=api&amp;modified=1321790694
+      </full>
+      <thumbnail type="" width="200" height="124">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/65/65007.png?src=api&amp;modified=1321790694
+      </thumbnail></preview><preview position="4">
+      <full type="" width="226" height="249">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/65/65005.png?src=api&amp;modified=1321790694
+      </full>
+      <thumbnail type="" width="136" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/65/65005.png?src=api&amp;modified=1321790694
+      </thumbnail></preview><preview position="5">
+      <full type="" width="700" height="509">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/65/65008.png?src=api&amp;modified=1321790694
+      </full>
+      <thumbnail type="" width="200" height="145">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/65/65008.png?src=api&amp;modified=1321790694
+      </thumbnail></preview><preview position="6">
+      <full type="" width="700" height="452">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/65/65009.png?src=api&amp;modified=1321790700
+      </full>
+      <thumbnail type="" width="200" height="129">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/65/65009.png?src=api&amp;modified=1321790700
+      </thumbnail></preview><preview position="7">
+      <full type="" width="342" height="397">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/65/65010.png?src=api&amp;modified=1321790698
+      </full>
+      <thumbnail type="" width="129" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/65/65010.png?src=api&amp;modified=1321790698
+      </thumbnail></preview></previews><rating>5</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/exchange-20072010-calendar-/?src=api</learnmore><install hash="sha256:8c0d91579a60a9b2c51f311a7c36e9a4ff3683e9bb6013305180940b20f0cbcc"
+    os="ALL"
+    size="172032">https://addons.mozilla.org/thunderbird/downloads/file/137601/exchange_20072010_calendar_and_tasks_provider-1.7.2-tb.xpi?src=api</install>
+  <contribution_data>
+      <link>https://addons.mozilla.org/en-US/thunderbird/addon/exchange-20072010-calendar-/contribute/?src=api</link>
+                <suggested_amount currency="USD" amount="9.99">
+            $9.99
+          </suggested_amount>
+            <meet_developers>
+        https://addons.mozilla.org/en-US/thunderbird/addon/exchange-20072010-calendar-/developers?src=api
+      </meet_developers>
+    </contribution_data>    <developer_comments>On startup of Thunderbird or when you just added a new EWS folder it can take some time until all information is fetched from the EWS server.
+
+You need at least the following details to connect to an EWS server and a folder on that server:
+- a mailbox address (someone@somewhere.com).
+--The autodiscovery function will use the domain part (&lt;a href=&#34;http://outgoing.mozilla.org/v1/bc612fb52b82cdb3c20239e676fc04a3165e7950/http%3A//somewhere.com&#34; rel=&#34;nofollow&#34;&gt;somewhere.com&lt;/a&gt;) of the mailbox address for the discovery. 
+--When you select a non public basefolder it will use the mailbox address as a starting point for the basefolder and path.
+- a username, domainname and password to authenticate against the EWS server.
+-- The username will determine your rights to the mailbox/basefolder combination. These rights are managed within your domain and exchage server.
+- a server url. You only need to specify this when you do not use the autodiscoveryfunction. This must be the full path to your EWS server. (e.g. &lt;a href=&#34;http://outgoing.mozilla.org/v1/05f9f23ac7b44a59feb694a726360857e7473526/http%3A//yourserver.com/EWS/Exchange.asmx%29&#34; rel=&#34;nofollow&#34;&gt;http://yourserver.com/EWS/Exchange.asmx)&lt;/a&gt;
+
+- a basefolder. This is one of the predefined basefolder. It is the starting point seen from the mailbox for non-public folders.
+- a folder path. This is the location of the final folder in which the calendar items or tasks life.</developer_comments>
+    <reviews num="1">
+      https://addons.mozilla.org/en-US/thunderbird/addon/exchange-20072010-calendar-/reviews/?src=api
+    </reviews>
+    <total_downloads>955</total_downloads>
+    <weekly_downloads>731</weekly_downloads>
+    <daily_users>67</daily_users>
+    <created epoch="1316593382">
+      2011-09-21T08:23:02Z
+    </created>
+    <last_updated epoch="1322173450">
+      2011-11-24T22:24:10Z
+    </last_updated>
+    <homepage>http://www.1st-setup.nl/wordpress/?page_id=133</homepage>
+    <support>http://www.1st-setup.nl/wordpress/?page_id=133</support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="3740">
+  <name>Automatic Export</name>
+  <type id="1">Extension</type>
+  <guid>{A79E82DD-9CE6-87C7-0006-87D0FD2FCD42}</guid>
+  <slug>automatic-export</slug>
+  <version>0.5.1</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="63819">
+      <name>Steffen</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/63819/?src=api</link>
+    </author>      </authors>
+  <summary>exports by an intervall or after pressing the button selected calendars in a defined folder in two modes - normal and backup...
+
+On my homepage is the current version.
+Here on this site it takes a long time after i publish a new version.</summary>
+
+  <description>exports on close or after pressing the button selected calendars in a defined folder in two modes - normal and backup
+
+normal mode is for users who use Sunbird to manage their events and use Rainlendar for desktopview like me and need one file each calendar. The names of the files: calendarname.ics
+
+backup mode is for users who want backup files from their calendars with a maximum number of backup files each calendars. The names of the files: calendarname_date.ics
+
+You can costumize the toolbar with buttons. with this button you can do an export anytime. additional you can set a cyclic export with an arrow on the button.
+
+On my homepage is the current version.
+Here on this site it takes a long time after i publish a new version.</description>
+
+  <icon>https://static-cdn.addons.mozilla.net/en-US/firefox/images/addon_icon/3740-32.png?modified=1312213874</icon>
+  <compatible_applications><application>
+      <name>Sunbird</name>
+      <application_id>52</application_id>
+      <min_version>0.3</min_version>
+      <max_version>5.0b2pre</max_version>
+      <appID>{718e30fb-e89b-41dd-9da7-e25a45638b28}</appID>
+    </application><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>1.5</min_version>
+      <max_version>9.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="1">
+      <full type="image/png" width="700" height="525">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/12/12737.png?src=api&amp;modified=1173701789
+      </full>
+      <thumbnail type="image/png" width="200" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/12/12737.png?src=api&amp;modified=1173701789
+      </thumbnail></preview></previews><rating>4</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/automatic-export/?src=api</learnmore><install hash="sha256:be5fa4fa84c025f088ecf7751b4abf877752e7c003825e707932d78eec419d62"
+    os="ALL"
+    size="64512">https://addons.mozilla.org/thunderbird/downloads/file/127041/automatic_export-0.5.1-sb.xpi?src=api</install>
+  <contribution_data>
+      <link>https://addons.mozilla.org/en-US/thunderbird/addon/automatic-export/contribute/?src=api</link>
+                <suggested_amount currency="USD" amount="5.00">
+            $5.00
+          </suggested_amount>
+            <meet_developers>
+        https://addons.mozilla.org/en-US/thunderbird/addon/automatic-export/developers?src=api
+      </meet_developers>
+    </contribution_data>    <developer_comments></developer_comments>
+    <reviews num="34">
+      https://addons.mozilla.org/en-US/thunderbird/addon/automatic-export/reviews/?src=api
+    </reviews>
+    <total_downloads>235106</total_downloads>
+    <weekly_downloads>864</weekly_downloads>
+    <daily_users>4575</daily_users>
+    <created epoch="1162501289">
+      2006-11-02T21:01:29Z
+    </created>
+    <last_updated epoch="1312213843">
+      2011-08-01T15:50:43Z
+    </last_updated>
+    <homepage>http://autoexport.sunbird-kalender.de</homepage>
+    <support></support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="161819">
+  <name>elementary.Human - a Humanity Theme</name>
+  <type id="2">Theme</type>
+  <guid>Humanity@meckermaus</guid>
+  <slug>elementaryhuman-a-humanity-the</slug>
+  <version>1.3</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="5328020">
+      <name>meckermaus</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/5328020/?src=api</link>
+    </author>      </authors>
+  <summary>Humanity/elementary theme for Thunderbird 3 and Lightning</summary>
+
+  <description>This is a Theme for Thunderbird version 3.* as well as the Lightning-AddOn 0.9.
+Because I&#39;m a sucker for integration into my desktop-environment, I made this specifically for Ubuntu 10.4 users: its based on the elementary/Humanity Icon-Sets, which are set to default. This is simply a collection, since i feel that there are little fitting Thunderbird-Themes out there.
+If you have buttons that you fell I left out, do tell me. this is really not complete, but it should cover the icons that are displayed by default. 
+Also, if anyone knows a suitable Newsgroup SVG-picture, I&#39;d be much obliged. 
+
+Try the newer version for better support of the standard-iconset (and better lightning support:) &lt;a href=&#34;http://outgoing.mozilla.org/v1/d13ccad122bac7d26deecc453cc529e016870193/%3A//&#34;&gt;&lt;/a&gt;&lt;a href=&#34;http://outgoing.mozilla.org/v1/4851c3865571ef767ad9fe8e3b70a99f10d441e4/https%3A//addons.mozilla.org/de/thunderbird/addon/162114/&#34;&gt;https://addons.mozilla.org/de/thunderbird/addon/162114/&lt;/a&gt;
+
+Enjoy</description>
+
+  <icon>https://static-cdn.addons.mozilla.net/en-US/firefox/images/addon_icon/161819-32.png?modified=1319054944</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>3.0</min_version>
+      <max_version>9.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>Linux</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="image/png" width="700" height="457">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/46/46089.png?src=api&amp;modified=1275038927
+      </full>
+      <thumbnail type="image/png" width="200" height="130">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/46/46089.png?src=api&amp;modified=1275038927
+      </thumbnail><caption>main window with lightning extension</caption></preview><preview position="1">
+      <full type="image/png" width="700" height="437">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/46/46090.png?src=api&amp;modified=1275038927
+      </full>
+      <thumbnail type="image/png" width="200" height="125">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/46/46090.png?src=api&amp;modified=1275038927
+      </thumbnail><caption>fullscreen with edit-window.</caption></preview></previews><rating>4</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/elementaryhuman-a-humanity-the/?src=api</learnmore><install hash="sha256:146afb2cba1332986baf4c86ca6515fc866042fd4b1d57d968fc240884bc5606"
+    os="Linux"
+    size="698368">https://addons.mozilla.org/thunderbird/downloads/file/134937/elementaryhuman_a_humanity_theme-1.3-tb-linux.jar?src=api</install>
+      <developer_comments></developer_comments>
+    <reviews num="1">
+      https://addons.mozilla.org/en-US/thunderbird/addon/elementaryhuman-a-humanity-the/reviews/?src=api
+    </reviews>
+    <total_downloads>9075</total_downloads>
+    <weekly_downloads>195</weekly_downloads>
+    <daily_users>937</daily_users>
+    <created epoch="1274132149">
+      2010-05-17T21:35:49Z
+    </created>
+    <last_updated epoch="1319054808">
+      2011-10-19T20:06:48Z
+    </last_updated>
+    <homepage></homepage>
+    <support></support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="9656">
+  <name>Evolution Mirror</name>
+  <type id="1">Extension</type>
+  <guid>{531b5d09-9f8e-452b-8681-2fc03c9c150e}</guid>
+  <slug>evolution-mirror</slug>
+  <version>0.2.3</version>
+  <status id="8">Preliminarily Reviewed</status>
+  <authors>
+        <author id="36228">
+      <name>Teester</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/36228/?src=api</link>
+    </author>      </authors>
+  <summary>Mirrors calendars to Evolution Database Server to allow them to be viewed through the gnome clock applet</summary>
+
+  <description>This add-on mirrors the addition, deletion or modification of items (tasks or events) in Lightning or Sunbird with the Evolution Data Server.  This allows events and tasks added in Sunbird or Lightning to be shown in the Gnome Clock Applet.  Note that this is a one way sync only.  Events changed in Sunbird or Lightning will be copied to Evolution, but changes made in Evolution will not be reflected in Sunbird or Lightning.
+
+Note also that, for now, this is global i.e. events from all calendars get copied to evolution, but they only get copied to the default evolution calendar, not to separate calendars.  
+
+Version 0.2 now supports non-roman characters properly and also adds all existing calendar events to Evolution on its first run (which may slow the first restart after installation down a little if there are a lot of large calendars).</description>
+
+  <icon></icon>
+  <compatible_applications><application>
+      <name>Sunbird</name>
+      <application_id>52</application_id>
+      <min_version>0.9</min_version>
+      <max_version>1.0pre</max_version>
+      <appID>{718e30fb-e89b-41dd-9da7-e25a45638b28}</appID>
+    </application><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>1.5</min_version>
+      <max_version>9.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>Linux</os></all_compatible_os>
+  <eula></eula><previews></previews><rating>4</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/evolution-mirror/?src=api</learnmore><install hash="sha256:cec37501a15811d4a513fbaf3287ce4d9abf80c04cfaabbcc7b88fdef5d35dd5"
+    os="Linux"
+    size="7168">https://addons.mozilla.org/thunderbird/downloads/file/119708/evolution_mirror-0.2.3-tb+sb-linux.xpi?src=api</install>
+      <developer_comments>Users need to ensure that the &#34;python bindings for evolution data server&#34; package is installed (through their package manager) to ensure that Evolution Mirror works properly. (&lt;i&gt;python-evolution&lt;/i&gt; in Ubuntu)
+
+Users should also ensure that they have run Evolution at least once. Evolution does all sorts of calendar set-up for the Gnome Clock applet on its first run which is required fr the Clock applet to run properly.  Once Evolution has been run once, it can even be removed if you wish, but the &lt;i&gt;evolution-data-server&lt;/i&gt; package is required for the clock applet to function, so this should not be removed.</developer_comments>
+    <reviews num="32">
+      https://addons.mozilla.org/en-US/thunderbird/addon/evolution-mirror/reviews/?src=api
+    </reviews>
+    <total_downloads>19167</total_downloads>
+    <weekly_downloads>331</weekly_downloads>
+    <daily_users>1602</daily_users>
+    <created epoch="1227060029">
+      2008-11-19T02:00:29Z
+    </created>
+    <last_updated epoch="1308080158">
+      2011-06-14T19:35:58Z
+    </last_updated>
+    <homepage></homepage>
+    <support></support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="8618">
+  <name>Purge Events</name>
+  <type id="1">Extension</type>
+  <guid>{2d686c2a-3eeb-4aa1-a8a4-aaf6214c79a4}</guid>
+  <slug>purge-events</slug>
+  <version>0.1.3</version>
+  <status id="8">Preliminarily Reviewed</status>
+  <authors>
+        <author id="36228">
+      <name>Teester</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/36228/?src=api</link>
+    </author>      </authors>
+  <summary>Purge events from Sunbird and Lightning calendars</summary>
+
+  <description>This addon allows you to delete all events and tasks (which have a start date) older than a week, a month or a year from a specific calendar.
+
+To use it, choose the &#34;Purge Events&#34; option from the File menu.
+
+Note that this is permanent deletion of events, so be careful!</description>
+
+  <icon></icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>1.5</min_version>
+      <max_version>9.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application><application>
+      <name>Sunbird</name>
+      <application_id>52</application_id>
+      <min_version>0.8</min_version>
+      <max_version>1.0pre</max_version>
+      <appID>{718e30fb-e89b-41dd-9da7-e25a45638b28}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews></previews><rating>2</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/purge-events/?src=api</learnmore><install hash="sha256:4a06b1acba0f54697027d9e934fbf2547553354d6bd22df39c847f405d1c1d74"
+    os="ALL"
+    size="4096">https://addons.mozilla.org/thunderbird/downloads/file/113146/purge_events-0.1.3-sb+tb.xpi?src=api</install>
+      <developer_comments></developer_comments>
+    <reviews num="5">
+      https://addons.mozilla.org/en-US/thunderbird/addon/purge-events/reviews/?src=api
+    </reviews>
+    <total_downloads>5333</total_downloads>
+    <weekly_downloads>35</weekly_downloads>
+    <daily_users>219</daily_users>
+    <created epoch="1219683798">
+      2008-08-25T17:03:18Z
+    </created>
+    <last_updated epoch="1300213388">
+      2011-03-15T18:23:08Z
+    </last_updated>
+    <homepage></homepage>
+    <support></support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="317539">
+  <name>Follow Up</name>
+  <type id="1">Extension</type>
+  <guid>followup@amulya.com</guid>
+  <slug>follow-up</slug>
+  <version>2.0</version>
+  <status id="8">Preliminarily Reviewed</status>
+  <authors>
+        <author id="5758310">
+      <name>Amulya</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/5758310/?src=api</link>
+    </author>      </authors>
+  <summary>This add-on provides a follow-up email feature for Thunderbird.</summary>
+
+  <description>This extension provides a &#39;Follow-Up&#39; toolbar. When a user is unable to reply to an email at a time and wants to follow up on it later, all he needs to do is click on the follow up button. A dialog box pops up asking for a date for which the user wants to add a follow up reminder for. The user enters a date and clicks on the button. That&#39;s all the user needs to do.
+
+The extension provides the following features:
+
+1) The email will appear in a different color in the Inbox to visually differentiate it from the others.
+
+2) At any time the user can click on the view today button in the follow up toolbar to view those emails that he is supposed to reply by today. This way the user would be able to get rid of all the clutter and see what emails are awaiting his replies.
+
+3) The feature automatically keeps track of the current day and moves emails that were to be followed up at a previous date to the &#39;pending&#39; group.
+
+4) The email appears in the user&#39;s lightning calendar as an event. When the day arrives and the user logins he receives a pop-up window to remind him of the email to follow up.
+
+5) When the user has replied to the email, he can mark the follow up as done by clicking on the &#39;Mark Done&#39; button.
+
+&lt;b&gt;Keyboard Shortcuts&lt;/b&gt;
+
+Key Combination (Mac) : Command + Option
+Key Combination (Windows) : Ctrl + Alt
+
+Add Follow Up : Key Combination + F
+Mark Done : Key Combination + G
+View Pending : Key Combination + R
+View All : Key Combination + E
+View Today : Key Combination + W
+
+You can also manage follow ups by &lt;b&gt;right click&lt;/b&gt; on any message.
+
+This feature does not already exist in Thunderbird. People who want to achieve this follow a lot of methods like using tags and adding manual reminders. The proposed extension serves for better user interaction and efficiency as it works by a click of two buttons. The rest of the process is undertaken automatically and the user does not have to care or know about it.
+
+Watch it in action: &lt;a href=&#34;http://outgoing.mozilla.org/v1/0edb5ab419b4e4858d0562b7f538cf28bb72db73/http%3A//www.youtube.com/watch%3Fv=6SxTWx9QLo0&#34; rel=&#34;nofollow&#34;&gt;http://www.youtube.com/watch?v=6SxTWx9QLo0&lt;/a&gt;
+
+--------------------------------------------------------------------------------------------------------
+
+&lt;strong&gt;Known Problems:&lt;/strong&gt; 
+
+1) The toolbar buttons do not appear by default. Kindly go to toolbar menu option and drag and drop the buttons to your toolbar.
+
+2) If date changes overnight, pending tags are not updated. Thunderbird must be re-started to ensure changes.
+
+3) Clean up unused tags deletes even used tags if mails with these tags are in a different folder. DO NOT use this feature if u use follow-ups for many folders in your Thunderbird.
+
+4) You need to have Lightning Calendar Installed for this extension to work.
+--------------------------------------------------------------------------------------------------------
+
+&lt;strong&gt;Help and Support&lt;/strong&gt;
+
+If you are having any issues you can report them at my github repository at : &lt;a href=&#34;http://outgoing.mozilla.org/v1/7cdafb7cd718244c34e4d9e36902505ed094ea7f/https%3A//github.com/amulyakhare/Thunderbird-Follow-Up-Extension/issues&#34; rel=&#34;nofollow&#34;&gt;https://github.com/amulyakhare/Thunderbird-Follow-Up-Extension/issues&lt;/a&gt;
+
+You can also send me a personal email. 
+
+If you like my extension, please rate it or leave a comment below. :)</description>
+
+  <icon>https://static-cdn.addons.mozilla.net/media//img/addon-icons/posts-32.png</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>3.1</min_version>
+      <max_version>9.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="" width="700" height="386">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/58/58237.png?src=api&amp;modified=1312315700
+      </full>
+      <thumbnail type="" width="200" height="110">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/58/58237.png?src=api&amp;modified=1312315700
+      </thumbnail><caption>Follow Up Emails</caption></preview><preview position="1">
+      <full type="" width="700" height="341">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/58/58238.png?src=api&amp;modified=1312315700
+      </full>
+      <thumbnail type="" width="200" height="97">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/58/58238.png?src=api&amp;modified=1312315700
+      </thumbnail><caption>Emails get flagged</caption></preview><preview position="2">
+      <full type="" width="700" height="286">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/58/58239.png?src=api&amp;modified=1312315700
+      </full>
+      <thumbnail type="" width="200" height="81">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/58/58239.png?src=api&amp;modified=1312315700
+      </thumbnail><caption>Pending emails appear in red</caption></preview><preview position="3">
+      <full type="" width="700" height="345">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/58/58240.png?src=api&amp;modified=1312315700
+      </full>
+      <thumbnail type="" width="200" height="98">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/58/58240.png?src=api&amp;modified=1312315700
+      </thumbnail><caption>Added as calendar event / task</caption></preview><preview position="4">
+      <full type="" width="700" height="131">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/61/61403.png?src=api&amp;modified=1312315700
+      </full>
+      <thumbnail type="" width="200" height="37">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/61/61403.png?src=api&amp;modified=1312315700
+      </thumbnail><caption>Use the tags button in the quick filter bar to easily view / filter follow ups.</caption></preview><preview position="5">
+      <full type="" width="496" height="522">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/full/61/61405.png?src=api&amp;modified=1312315700
+      </full>
+      <thumbnail type="" width="142" height="150">
+        https://static-cdn.addons.mozilla.net/img/uploads/previews/thumbs/61/61405.png?src=api&amp;modified=1312315700
+      </thumbnail><caption>Right click on any message to manage follow-ups.</caption></preview></previews><rating>3</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/follow-up/?src=api</learnmore><install hash="sha256:9729438242d7c3fa24c99171bb165a39b0b4ac3c03ddf27644ecf67e500744da"
+    os="ALL"
+    size="39936">https://addons.mozilla.org/thunderbird/downloads/file/127968/follow_up-2.0-tb.xpi?src=api</install>
+      <developer_comments></developer_comments>
+    <reviews num="6">
+      https://addons.mozilla.org/en-US/thunderbird/addon/follow-up/reviews/?src=api
+    </reviews>
+    <total_downloads>4028</total_downloads>
+    <weekly_downloads>172</weekly_downloads>
+    <daily_users>945</daily_users>
+    <created epoch="1306208181">
+      2011-05-24T03:36:21Z
+    </created>
+    <last_updated epoch="1313034935">
+      2011-08-11T03:55:35Z
+    </last_updated>
+    <homepage>https://github.com/amulyakhare/Thunderbird-Follow-Up-Extension</homepage>
+    <support>https://github.com/amulyakhare/Thunderbird-Follow-Up-Extension/issues</support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+<addon id="329131">
+  <name>Purge Events Plus</name>
+  <type id="1">Extension</type>
+  <guid>{2d686c2a-3eeb-4aa1-a8a4-aaf6214c79a6}</guid>
+  <slug>purge-events-plus</slug>
+  <version>0.1.4</version>
+  <status id="8">Preliminarily Reviewed</status>
+  <authors>
+        <author id="5610911">
+      <name>MPK</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/5610911/?src=api</link>
+    </author>      </authors>
+  <summary>Purge events from Sunbird and Lightning files</summary>
+
+  <description>This is a mod of Teester Purge Events
+&lt;a href=&#34;http://outgoing.mozilla.org/v1/c4c966f2d08f150a5ea1f5c2e7fe1c724a8696b1/https%3A//addons.mozilla.org/de/thunderbird/addon/purge-events/&#34; rel=&#34;nofollow&#34;&gt;https://addons.mozilla.org/de/thunderbird/addon/purge-events/&lt;/a&gt;
+
+!!! fixed bug that plugin is deliting all recurring events !!!
+
+
+This addon allows you to delete all events and tasks (which have a start date) older than a week, a month or a year from a specific calendar.
+
+To use it, choose the &#34;Purge Events&#34; option from the File menu.
+
+Note that this is permanent deletion of events, so be careful!</description>
+
+  <icon></icon>
+  <compatible_applications><application>
+      <name>Sunbird</name>
+      <application_id>52</application_id>
+      <min_version>0.8</min_version>
+      <max_version>1.0pre</max_version>
+      <appID>{718e30fb-e89b-41dd-9da7-e25a45638b28}</appID>
+    </application><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>1.5</min_version>
+      <max_version>9.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews></previews><rating>2</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/purge-events-plus/?src=api</learnmore><install hash="sha256:048689c3dc22a88597ceabbefe9f2b0ec03099724c886aeec984e1a945de7489"
+    os="ALL"
+    size="4096">https://addons.mozilla.org/thunderbird/downloads/file/126545/purge_events_plus-0.1.4-tb+sb.xpi?src=api</install>
+      <developer_comments></developer_comments>
+    <reviews num="2">
+      https://addons.mozilla.org/en-US/thunderbird/addon/purge-events-plus/reviews/?src=api
+    </reviews>
+    <total_downloads>544</total_downloads>
+    <weekly_downloads>42</weekly_downloads>
+    <daily_users>78</daily_users>
+    <created epoch="1310919725">
+      2011-07-17T16:22:05Z
+    </created>
+    <last_updated epoch="1313014848">
+      2011-08-10T22:20:48Z
+    </last_updated>
+    <homepage></homepage>
+    <support></support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+    </searchresults>
