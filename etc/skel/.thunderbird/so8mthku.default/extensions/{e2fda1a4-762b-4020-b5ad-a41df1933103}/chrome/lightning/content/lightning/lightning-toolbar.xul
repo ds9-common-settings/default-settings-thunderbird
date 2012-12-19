@@ -4,11 +4,15 @@
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 
 <!DOCTYPE overlay [
+  <!ENTITY % messengerDTD SYSTEM "chrome://messenger/locale/messenger.dtd"> %messengerDTD;
   <!ENTITY % mailOverlayDTD SYSTEM "chrome://messenger/locale/mailOverlay.dtd"> %mailOverlayDTD;
   <!ENTITY % menuOverlayDTD SYSTEM "chrome://calendar/locale/menuOverlay.dtd" > %menuOverlayDTD;
   <!ENTITY % lightningDTD SYSTEM "chrome://lightning/locale/lightning.dtd"> %lightningDTD;
   <!ENTITY % calendarDTD SYSTEM "chrome://calendar/locale/calendar.dtd" > %calendarDTD;
   <!ENTITY % toolbarDTD SYSTEM "chrome://lightning/locale/lightning-toolbar.dtd" > %toolbarDTD;
+  <!-- This two entities are to not break SM -->
+  <!ENTITY appmenuButton.label "AppMenu">
+  <!ENTITY appmenuButton.tooltip "Displays the Application Menu">
 ]>
 
 <?xml-stylesheet href="chrome://lightning/skin/lightning.css" type="text/css"?>
@@ -104,15 +108,19 @@
                      class="toolbarbutton-1 calbar-toolbarbutton-1"
                      label="&showUnifinderCmd.label;"
                      observes="calendar_show_unifinder_command"/>
+      <toolbarbutton id="calendar-appmenu-button"
+                     class="toolbarbutton-1 button-appmenu"
+                     label="&appmenuButton.label;"
+                     tooltiptext="&appmenuButton.tooltip;"/>
     </toolbarpalette>
 
     <toolbar id="calendar-toolbar2" class="inline-toolbar chromeclass-toolbar"
              toolbarname="&lightning.toolbar.calendar.name;"
-             accesskey="&lightning.toolbar.calendar.accesskey;"
+             accesskey="&lightning.toolbar.calendar.name.accesskey;"
              fullscreentoolbar="true" mode="full"
              customizable="true"
              context="calendar-toolbar-context"
-             defaultset="calendar-synchronize-button,calendar-newevent-button,calendar-newtask-button,calendar-edit-button,calendar-delete-button,spring"/>
+             defaultset="calendar-synchronize-button,calendar-newevent-button,calendar-newtask-button,calendar-edit-button,calendar-delete-button,spring,calendar-appmenu-button"/>
     <toolbarset id="calendarToolbars" context="calendar-toolbar-context"/>
   </toolbox>
 
@@ -122,7 +130,7 @@
            defaultmode="full"
            labelalign="end"
            defaultlabelalign="end">
-    <toolbarpalette id="CalendarToolbarPalette">
+    <toolbarpalette id="TaskToolbarPalette">
       <toolbarbutton id="task-synchronize-button"
                      class="toolbarbutton-1 calbar-toolbarbutton-1"
                      label="&lightning.toolbar.sync.label;"
@@ -147,15 +155,19 @@
                      class="toolbarbutton-1 calbar-toolbarbutton-1"
                      label="&lightning.toolbar.print.label;"
                      observes="cmd_print"/>
+      <toolbarbutton id="task-appmenu-button"
+                     class="toolbarbutton-1 button-appmenu"
+                     label="&appmenuButton.label;"
+                     tooltiptext="&appmenuButton.tooltip;"/>
     </toolbarpalette>
 
     <toolbar id="task-toolbar2" class="inline-toolbar chromeclass-toolbar"
              toolbarname="&lightning.toolbar.task.name;"
-             accesskey="&lightning.toolbar.task.accesskey;"
+             accesskey="&lightning.toolbar.task.name.accesskey;"
              fullscreentoolbar="true" mode="full"
              customizable="true"
              context="task-toolbar-context"
-             defaultset="task-synchronize-button,task-newevent-button,task-newtask-button,task-edit-button,task-delete-button,spring"/>
+             defaultset="task-synchronize-button,task-newevent-button,task-newtask-button,task-edit-button,task-delete-button,spring,task-appmenu-button"/>
     <toolbarset id="taskToolbars" context="task-toolbar-context"/>
   </toolbox>
 </overlay>

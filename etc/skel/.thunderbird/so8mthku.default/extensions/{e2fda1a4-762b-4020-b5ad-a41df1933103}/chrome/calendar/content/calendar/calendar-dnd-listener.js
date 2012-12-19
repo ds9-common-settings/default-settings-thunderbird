@@ -203,6 +203,7 @@ calDNDBaseObserver.prototype = {
     onDrop: function calDNDDrop(aEvent, aTransferData, aDragSession) {
         var transferable = Components.classes["@mozilla.org/widget/transferable;1"]
                            .createInstance(Components.interfaces.nsITransferable);
+        transferable.init(null);
         transferable.addDataFlavor("text/calendar");
         transferable.addDataFlavor("text/x-moz-url");
         transferable.addDataFlavor("text/x-moz-message");
@@ -231,7 +232,7 @@ calDNDBaseObserver.prototype = {
         var destCal = getSelectedCalendar();
         switch (bestFlavor.value) {
             case "text/calendar":
-//@line 238 "/buildbot/linux_build/build/calendar/base/content/calendar-dnd-listener.js"
+//@line 239 "/buildbot/linux_build/build/calendar/base/content/calendar-dnd-listener.js"
                 var parser = Components.classes["@mozilla.org/calendar/ics-parser;1"]
                              .createInstance(Components.interfaces.calIIcsParser);
                 parser.parseString(data);
@@ -545,6 +546,7 @@ calTaskButtonDNDObserver.prototype = {
 function invokeEventDragSession(aItem, aXULBox) {
     let transfer = Components.classes["@mozilla.org/widget/transferable;1"]
                    .createInstance(Components.interfaces.nsITransferable);
+    transfer.init(null);
     transfer.addDataFlavor("text/calendar");
 
     let flavourProvider = {

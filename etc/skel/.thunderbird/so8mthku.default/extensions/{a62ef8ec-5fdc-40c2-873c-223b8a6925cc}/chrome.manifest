@@ -1,12 +1,12 @@
 locale gdata-provider de chrome/gdata-provider-de/locale/de/
 locale gdata-provider lt chrome/gdata-provider-lt/locale/lt/
 skin gdata-provider classic/1.0 chrome/gdata-provider/skin/
-locale gdata-provider en-GB chrome/gdata-provider-en-GB/locale/en-GB/
 locale gdata-provider sk chrome/gdata-provider-sk/locale/sk/
 overlay chrome://calendar/content/calendar-event-dialog.xul chrome://gdata-provider/content/gdata-calendar-event-dialog.xul
 locale gdata-provider hr chrome/gdata-provider-hr/locale/hr/
 locale gdata-provider fy-NL chrome/gdata-provider-fy-NL/locale/fy-NL/
 overlay chrome://calendar/content/calendar-event-dialog-reminder.xul chrome://gdata-provider/content/gdata-event-dialog-reminder.xul
+locale gdata-provider sq chrome/gdata-provider-sq/locale/sq/
 locale gdata-provider is chrome/gdata-provider-is/locale/is/
 locale gdata-provider tr chrome/gdata-provider-tr/locale/tr/
 locale gdata-provider hu chrome/gdata-provider-hu/locale/hu/
@@ -18,16 +18,17 @@ overlay chrome://sunbird/content/calendar.xul chrome://gdata-provider/content/gd
 locale gdata-provider nl chrome/gdata-provider-nl/locale/nl/
 content gdata-provider chrome/gdata-provider/content/
 overlay chrome://messenger/content/messenger.xul chrome://gdata-provider/content/gdata-migration-overlay.xul  application={3550f703-e582-4d05-9a08-453d09bdfdc6}
+locale gdata-provider gd chrome/gdata-provider-gd/locale/gd/
 locale gdata-provider zh-TW chrome/gdata-provider-zh-TW/locale/zh-TW/
 locale gdata-provider nn-NO chrome/gdata-provider-nn-NO/locale/nn-NO/
 locale gdata-provider ga-IE chrome/gdata-provider-ga-IE/locale/ga-IE/
 locale gdata-provider ca chrome/gdata-provider-ca/locale/ca/
-locale gdata-provider gd chrome/gdata-provider-gd/locale/gd/
+locale gdata-provider en-GB chrome/gdata-provider-en-GB/locale/en-GB/
 style chrome://calendar/content/calendar-event-dialog.xul chrome://gdata-provider/skin/gdata-event-dialog-reminder.css
-locale gdata-provider fi chrome/gdata-provider-fi/locale/fi/
+locale gdata-provider es-AR chrome/gdata-provider-es-AR/locale/es-AR/
 locale gdata-provider zh-CN chrome/gdata-provider-zh-CN/locale/zh-CN/
 locale gdata-provider da chrome/gdata-provider-da/locale/da/
-locale gdata-provider es-AR chrome/gdata-provider-es-AR/locale/es-AR/
+locale gdata-provider fi chrome/gdata-provider-fi/locale/fi/
 locale gdata-provider et chrome/gdata-provider-et/locale/et/
 locale gdata-provider pt-PT chrome/gdata-provider-pt-PT/locale/pt-PT/
 style chrome://calendar/content/calendar.xul chrome://gdata-provider/skin/gdata-event-dialog-reminder.css     application={718e30fb-e89b-41dd-9da7-e25a45638b28}
@@ -35,14 +36,15 @@ locale gdata-provider pl chrome/gdata-provider-pl/locale/pl/
 locale gdata-provider bg chrome/gdata-provider-bg/locale/bg/
 style chrome://messenger/content/messenger.xul chrome://gdata-provider/skin/gdata-event-dialog-reminder.css   application={3550f703-e582-4d05-9a08-453d09bdfdc6}
 manifest components/calGoogleCalendarModule.manifest
+locale gdata-provider sv-SE chrome/gdata-provider-sv-SE/locale/sv-SE/
 locale gdata-provider it chrome/gdata-provider-it/locale/it/
 locale gdata-provider ja-JP-mac chrome/gdata-provider-ja-JP-mac/locale/ja-JP-mac/
+locale gdata-provider en-US chrome/gdata-provider-en-US/locale/en-US/
 overlay chrome://calendar/content/calendarCreation.xul chrome://gdata-provider/content/calendarCreation.xul
 locale gdata-provider eu chrome/gdata-provider-eu/locale/eu/
 locale gdata-provider fr chrome/gdata-provider-fr/locale/fr/
 locale gdata-provider cs chrome/gdata-provider-cs/locale/cs/
-locale gdata-provider sl chrome/gdata-provider-sl/locale/sl/
 locale gdata-provider nb-NO chrome/gdata-provider-nb-NO/locale/nb-NO/
-locale gdata-provider en-US chrome/gdata-provider-en-US/locale/en-US/
-locale gdata-provider es-ES chrome/gdata-provider-es-ES/locale/es-ES/
 manifest components/interfaces.manifest
+locale gdata-provider es-ES chrome/gdata-provider-es-ES/locale/es-ES/
+locale gdata-provider uk chrome/gdata-provider-uk/locale/uk/
