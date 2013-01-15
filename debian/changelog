@@ -1,3 +1,9 @@
+netrunner-artwork-thunderbird (1.0.4) dryland-te; urgency=low
+
+  * update against version 17.0.2
+
+ -- Frédéric Gaudet <fred@linuxmint.com>  Tue, 15 Jan 2013 14:52:58 +0100
+
 netrunner-artwork-thunderbird (1.0.3) dryland-te; urgency=low
 
   * update against version 17.0.1
