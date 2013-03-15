@@ -1,3 +1,9 @@
+netrunner-artwork-thunderbird (1.0.5) enigma-1306; urgency=low
+
+  * Initial enigma release
+
+ -- Frédéric Gaudet <fred@linuxmint.com>  Fri, 15 Mar 2013 10:29:04 +0100
+
 netrunner-artwork-thunderbird (1.0.4) dryland-te; urgency=low
 
   * update against version 17.0.2

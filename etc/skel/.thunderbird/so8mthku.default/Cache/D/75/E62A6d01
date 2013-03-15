@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<searchresults total_results="6">
+                    <addon id="367989">
+  <name>Rise of the Tools</name>
+  <type id="1">Extension</type>
+  <guid>riseofthetools@rsjtdrjgfuzkfg.com</guid>
+  <slug>rise-of-the-tools</slug>
+  <version>1.0.1.0</version>
+  <status id="8">Preliminarily Reviewed</status>
+  <authors>
+        <author id="5162928">
+      <name>rsjtdrjgfuzkfg</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/5162928/?src=api</link>
+    </author>      </authors>
+  <summary>Moves the toolbar back above the tabbar.</summary>
+  <description>Moves the toolbar for mails back up above the tabbar. Note that this might cause the design to suffer when using a theme not supporting this extsion. So the default theme has issues with aero on windows (and looks as terrible as it looked before the changes in 1.11).
+
+Note that additional custom toolbars might still go into the tab, and tabs still do have toolbars other than the toolbar for mails (like the calendar when &lt;a href=&#34;https://addons.mozilla.org/thunderbird/addon/lightning/&#34; rel=&#34;nofollow&#34;&gt;Lightning&lt;/a&gt; is installed). I personally use it with my theme &lt;a href=&#34;https://addons.mozilla.org/thunderbird/addon/ignore-aero/?src=external-riseofthetools&#34; rel=&#34;nofollow&#34;&gt;Ignore Aero&lt;/a&gt; on windows, to prevent the aero glitch to reappear.</description><license>
+    <name>Mozilla Public License, version 1.1</name>
+    <url>http://www.mozilla.org/MPL/MPL-1.1.html</url>
+  </license>  <icon size="64">https://addons.cdn.mozilla.net/img/uploads/addon_icons/367/367989-64.png?modified=1347054159</icon>
+  <icon size="32">https://addons.cdn.mozilla.net/img/uploads/addon_icons/367/367989-32.png?modified=1347054159</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>11.0</min_version>
+      <max_version>17.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="" width="180" height="120">
+        https://addons.cdn.mozilla.net/img/uploads/previews/full/68/68782.png?src=api&amp;modified=1331827815
+      </full>
+      <thumbnail type="" width="180" height="120">
+        https://addons.cdn.mozilla.net/img/uploads/previews/thumbs/68/68782.png?src=api&amp;modified=1331827815
+      </thumbnail></preview></previews><rating>5</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/rise-of-the-tools/?src=api</learnmore><install hash="sha256:52b98b54aa63ba9249d12a3bc27c53a9c3373f0036770b3d5f684d6f27b24971"
+    os="ALL"
+    size="3072">https://addons.mozilla.org/thunderbird/downloads/file/148063/rise_of_the_tools-1.0.1.0-tb.xpi?src=api</install>
+      <developer_comments>As I stated above, there are design issues. By altering the &lt;a href=&#34;http://outgoing.mozilla.org/v1/15b4463647f48aa765283206f29b4d5e2214337f/http%3A//kb.mozillazine.org/UserChrome.css&#34; rel=&#34;nofollow&#34;&gt;userchrome.css&lt;/a&gt; file you can insert own style rules fixing them. As inserting them for all users causes a risk of breaks in rare cases, I do not include fixes for that, that&#39;s the theme&#39;s authors buissness. Maybe you want to contact the author of your favorite theme and ask him/her to support this extension?
+
+&lt;b&gt;Missing toolbar divider line in default theme on Windows XP or earlier&lt;/b&gt;
+This fix was provided by &lt;a href=&#34;https://addons.mozilla.org/user/178407/&#34; rel=&#34;nofollow&#34;&gt;RDL&lt;/a&gt;. Thanks!
+&lt;code&gt;#mail-bar3 {
+border-bottom-style: solid !important;
+border-bottom-width: 1px !important;
+border-bottom-color: threeDShadow !important;
+}
+#tabs-toolbar {
+border-top-style: solid !important;
+border-top-width: 1px !important;
+border-top-color: threeDHighlight !important;
+}&lt;/code&gt;
+
+&lt;b&gt;Transparent menu bar with the default theme&lt;/b&gt;
+This fix was provided by rctgamer3. Thanks!
+&lt;code&gt;@media all and (-moz-windows-compositor) {
+  #mail-toolbar-menubar2 {
+    background: transparent !important;
+  }
+  #messengerWindow:not([sizemode=&#34;maximized&#34;]) #mail-toolbar-menubar2 {
+    margin: 0 1px !important;
+    border: 0 !important;
+  }
+
+  #menubar-items {
+    background-color: rgba(255, 255, 255, .5) !important;
+    border-radius: 4px !important;
+  }
+
+  menubar &amp;gt; menu:-moz-window-inactive {
+    color: ThreeDShadow !important;
+  }
+}&lt;/code&gt;
+
+&lt;b&gt;Background for the Toolbar with the default theme&lt;/b&gt;
+This fix was provided by CryingByte. Thanks!
+&lt;code&gt;#mail-bar3 {
+  background-color: #e9eff5 !important;
+}&lt;/code&gt;
+
+&lt;b&gt;Remove empty space with Oxybird2 theme without custom toolbars&lt;/b&gt;
+This fix was provided by &lt;a href=&#34;http://addons.mozilla.org/user/5712893/&#34; rel=&#34;nofollow&#34;&gt;uyar&lt;/a&gt;. Thanks!
+&lt;code&gt;#mail-toolbox { display: none !important; }&lt;/code&gt;</developer_comments>
+    <reviews num="44">
+      https://addons.mozilla.org/en-US/thunderbird/addon/rise-of-the-tools/reviews/?src=api
+    </reviews>
+    <total_downloads>14778</total_downloads>
+    <weekly_downloads>207</weekly_downloads>
+    <daily_users>3398</daily_users>
+    <created epoch="1331827352">
+      2012-03-15T16:02:32Z
+    </created>
+    <last_updated epoch="1334580562">
+      2012-04-16T12:49:22Z
+    </last_updated>
+    <homepage></homepage>
+    <support></support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+
+                  <addon id="358060">
+  <name>MS Office 2003 JB Edition</name>
+  <type id="2">Complete Theme</type>
+  <guid>{35f30c40-35d4-11d9-8dbc-000c6e787ef9}</guid>
+  <slug>ms-office-2003-jb-edition</slug>
+  <version>1.17.2</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="2166711">
+      <name>Jarek Bialkowski</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/2166711/?src=api</link>
+    </author>      </authors>
+  <summary>MS Office 2003 Theme. This theme is based on following themes: &#39;Office Black&#39;, &#39;own&#39; and &#39;Outlook 2003 BlueTB&#39;</summary>
+  <description>Microsoft Office 2003 Theme. This theme is a compilation of the following themes:: 
+&lt;ul&gt;&lt;li&gt;Office Black - &lt;a href=&#34;https://addons.mozilla.org/pl/thunderbird/addon/office-black/&#34; rel=&#34;nofollow&#34;&gt;https://addons.mozilla.org/pl/thunderbird/addon/office-black/&lt;/a&gt;&lt;/li&gt;&lt;li&gt;own - &lt;a href=&#34;https://addons.mozilla.org/pl/thunderbird/addon/own/&#34; rel=&#34;nofollow&#34;&gt;https://addons.mozilla.org/pl/thunderbird/addon/own/&lt;/a&gt;&lt;/li&gt;&lt;li&gt;Outlook 2003 BlueTB - &lt;a href=&#34;https://addons.mozilla.org/pl/thunderbird/addon/outlook-2003-bluetb/&#34; rel=&#34;nofollow&#34;&gt;https://addons.mozilla.org/pl/thunderbird/addon/outlook-2003-bluetb/&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description><license>
+    <name>Mozilla Public License, version 1.1</name>
+    <url>http://www.mozilla.org/MPL/MPL-1.1.html</url>
+  </license>  <icon size="64">https://addons.cdn.mozilla.net/img/uploads/addon_icons/358/358060-64.png?modified=1353915991</icon>
+  <icon size="32">https://addons.cdn.mozilla.net/img/uploads/addon_icons/358/358060-32.png?modified=1353915991</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>17.0</min_version>
+      <max_version>18.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="" width="400" height="249">
+        https://addons.cdn.mozilla.net/img/uploads/previews/full/69/69521.png?src=api&amp;modified=1333771116
+      </full>
+      <thumbnail type="" width="200" height="124">
+        https://addons.cdn.mozilla.net/img/uploads/previews/thumbs/69/69521.png?src=api&amp;modified=1333771116
+      </thumbnail></preview><preview position="1">
+      <full type="" width="700" height="435">
+        https://addons.cdn.mozilla.net/img/uploads/previews/full/69/69522.png?src=api&amp;modified=1333771116
+      </full>
+      <thumbnail type="" width="200" height="124">
+        https://addons.cdn.mozilla.net/img/uploads/previews/thumbs/69/69522.png?src=api&amp;modified=1333771116
+      </thumbnail></preview></previews><rating>5</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/ms-office-2003-jb-edition/?src=api</learnmore><install hash="sha256:2c75875e5937f061a0a89f24bbd74bc2805288c469f5e97e53a857f43c47b161"
+    os="ALL"
+    size="1339586">https://addons.mozilla.org/thunderbird/downloads/file/179210/ms_office_2003_jb_edition-1.17.2-tb.xpi?src=api</install>
+  <contribution_data>
+      <link>https://addons.mozilla.org/en-US/thunderbird/addon/ms-office-2003-jb-edition/contribute/?src=api</link>
+                <suggested_amount currency="USD" amount="3.00">
+            $3.00
+          </suggested_amount>
+            <meet_developers>
+        https://addons.mozilla.org/en-US/thunderbird/addon/ms-office-2003-jb-edition/developers?src=api
+      </meet_developers>
+    </contribution_data>    <developer_comments></developer_comments>
+    <reviews num="17">
+      https://addons.mozilla.org/en-US/thunderbird/addon/ms-office-2003-jb-edition/reviews/?src=api
+    </reviews>
+    <total_downloads>103177</total_downloads>
+    <weekly_downloads>1289</weekly_downloads>
+    <daily_users>19081</daily_users>
+    <created epoch="1326577137">
+      2012-01-14T21:38:57Z
+    </created>
+    <last_updated epoch="1353784459">
+      2012-11-24T19:14:19Z
+    </last_updated>
+    <homepage>https://addons.mozilla.org/pl/firefox/addon/ms-office-2003-jb-edition/</homepage>
+    <support></support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+
+                  <addon id="337472">
+  <name>Classic TB2</name>
+  <type id="2">Complete Theme</type>
+  <guid>{2A95E724-F74E-46D3-93FD-3E9850382E52}</guid>
+  <slug>classic-tb2</slug>
+  <version>1.2.1</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="5908274">
+      <name>Corey Drechsler</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/5908274/?src=api</link>
+    </author>      </authors>
+  <summary>Theme using mostly TB2 icons plus the best of TB1.5, TB3, and later versions.</summary>
+  <description>Based on the icons in &lt;a href=&#34;http://outgoing.mozilla.org/v1/d567dced2b6cb2385266954e89c7f57d57f2a97c64c718d2c99f04b900cd8866/http%3A//forums.mozillazine.org/viewtopic.php%3Ff=29&amp;amp;t=1396025&#34; rel=&#34;nofollow&#34;&gt;TB3 Classic&lt;/a&gt; by &lt;a href=&#34;http://outgoing.mozilla.org/v1/542a91d3924fff2981156215d74668e8a7aa3587e0547d1c9382821fb6db4972/http%3A//forums.mozillazine.org/memberlist.php%3Fmode=viewprofile&amp;amp;u=520895&amp;amp;sid=eb406984494307a46036541d0da49ff1&#34; rel=&#34;nofollow&#34;&gt;Zamula&lt;/a&gt;. Updated using the some of the css and icons of &lt;a href=&#34;http://addons.mozilla.org/en-US/thunderbird/addon/classic-reloaded/&#34; rel=&#34;nofollow&#34;&gt;Classic Reloaded&lt;/a&gt; by &lt;a href=&#34;http://addons.mozilla.org/en-US/thunderbird/user/154445/&#34; rel=&#34;nofollow&#34;&gt;Christoph Wirsching&lt;/a&gt; and &lt;a href=&#34;http://addons.mozilla.org/en-US/thunderbird/addon/xpdefault/&#34; rel=&#34;nofollow&#34;&gt;xpDefault&lt;/a&gt; by &lt;a href=&#34;http://addons.mozilla.org/en-US/thunderbird/user/5571966/&#34; rel=&#34;nofollow&#34;&gt;Michal Stanke&lt;/a&gt;. Icons from TB6, TB12 and TB17 have been used for newer portions of the application.
+
+This extension prevents buttons from displaying in the message pane. To restore them to the main toolbar, as in TB2, go to Help &amp;gt; Migration Assistant, then select Next &amp;gt; Keep your original Toolbar buttons, or use the Customize menu option.
+
+The &lt;a href=&#34;https://addons.mozilla.org/en-US/thunderbird/addon/extra-folder-columns/&#34; rel=&#34;nofollow&#34;&gt;Extra Folder Columns&lt;/a&gt; and &lt;a href=&#34;http://addons.mozilla.org/en-US/thunderbird/addon/titlebar-cleaner/&#34; rel=&#34;nofollow&#34;&gt;Titlebar Tabs Cleaner&lt;/a&gt; extensions are also recommended.</description><license>
+    <name>Mozilla Public License, version 1.1</name>
+    <url>http://www.mozilla.org/MPL/MPL-1.1.html</url>
+  </license>  <icon size="64">https://addons.cdn.mozilla.net/img/uploads/addon_icons/337/337472-64.png?modified=1357887764</icon>
+  <icon size="32">https://addons.cdn.mozilla.net/img/uploads/addon_icons/337/337472-32.png?modified=1357887764</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>17.0</min_version>
+      <max_version>20.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="" width="275" height="160">
+        https://addons.cdn.mozilla.net/img/uploads/previews/full/63/63258.png?src=api&amp;modified=1357887322
+      </full>
+      <thumbnail type="" width="200" height="116">
+        https://addons.cdn.mozilla.net/img/uploads/previews/thumbs/63/63258.png?src=api&amp;modified=1357887322
+      </thumbnail></preview><preview position="1">
+      <full type="" width="643" height="525">
+        https://addons.cdn.mozilla.net/img/uploads/previews/full/86/86964.png?src=api&amp;modified=1357916127
+      </full>
+      <thumbnail type="" width="184" height="150">
+        https://addons.cdn.mozilla.net/img/uploads/previews/thumbs/86/86964.png?src=api&amp;modified=1357916127
+      </thumbnail></preview><preview position="2">
+      <full type="" width="601" height="500">
+        https://addons.cdn.mozilla.net/img/uploads/previews/full/86/86966.png?src=api&amp;modified=1357916127
+      </full>
+      <thumbnail type="" width="180" height="150">
+        https://addons.cdn.mozilla.net/img/uploads/previews/thumbs/86/86966.png?src=api&amp;modified=1357916127
+      </thumbnail></preview><preview position="3">
+      <full type="" width="643" height="525">
+        https://addons.cdn.mozilla.net/img/uploads/previews/full/86/86968.png?src=api&amp;modified=1357916127
+      </full>
+      <thumbnail type="" width="184" height="150">
+        https://addons.cdn.mozilla.net/img/uploads/previews/thumbs/86/86968.png?src=api&amp;modified=1357916127
+      </thumbnail></preview><preview position="4">
+      <full type="" width="564" height="525">
+        https://addons.cdn.mozilla.net/img/uploads/previews/full/86/86970.png?src=api&amp;modified=1357916126
+      </full>
+      <thumbnail type="" width="161" height="150">
+        https://addons.cdn.mozilla.net/img/uploads/previews/thumbs/86/86970.png?src=api&amp;modified=1357916126
+      </thumbnail></preview></previews><rating>4</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/classic-tb2/?src=api</learnmore><install hash="sha256:2c30e22ff7b037f7a4f9a4c3e1ee6e155c48be22f50fc14d524afaf0091178e2"
+    os="ALL"
+    size="880516">https://addons.mozilla.org/thunderbird/downloads/file/186572/classic_tb2-1.2.1-tb.xpi?src=api</install>
+      <developer_comments>It looks like TB17 has improved handling of the buttons in the message pane, so those may get added back in..</developer_comments>
+    <reviews num="16">
+      https://addons.mozilla.org/en-US/thunderbird/addon/classic-tb2/reviews/?src=api
+    </reviews>
+    <total_downloads>32980</total_downloads>
+    <weekly_downloads>242</weekly_downloads>
+    <daily_users>4942</daily_users>
+    <created epoch="1316761060">
+      2011-09-23T06:57:40Z
+    </created>
+    <last_updated epoch="1357943551">
+      2013-01-11T22:32:31Z
+    </last_updated>
+    <homepage></homepage>
+    <support></support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+
+                  <addon id="2313">
+  <name>Lightning</name>
+  <type id="1">Extension</type>
+  <guid>{e2fda1a4-762b-4020-b5ad-a41df1933103}</guid>
+  <slug>lightning</slug>
+  <version>1.9.1</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="133">
+      <name>Mozilla Calendar Project</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/133/?src=api</link>
+    </author>      </authors>
+  <summary>Organize your schedule and life&#39;s important events in a calendar that&#39;s fully integrated with your Thunderbird email.  Manage multiple calendars, create your daily to do list, invite friends to events, and subscribe to public calendars.</summary>
+  <description>Make Thunderbird even more powerful with the fully integrated Lightning Calendar.  Lightning allows you to organize your schedule directly within Thunderbird.
+
+=====================================================
+&lt;b&gt;Lighting 1.2.3 for Thunderbird 10 &lt;a href=&#34;https://addons.mozilla.org/addon/lightning/versions/1.2.3&#34; rel=&#34;nofollow&#34;&gt;is available here&lt;/a&gt;&lt;/b&gt;
+=====================================================
+
+Lightning also supports &lt;b&gt;older versions&lt;/b&gt; of Thunderbird like 9 or 3.1, please see the &lt;a href=&#34;https://addons.mozilla.org/thunderbird/addon/lightning/versions/&#34; rel=&#34;nofollow&#34;&gt;complete version history&lt;/a&gt; for details.</description><license>
+    <name>Mozilla Public License, version 1.1</name>
+    <url>http://www.mozilla.org/MPL/MPL-1.1.html</url>
+  </license>  <icon size="64">https://addons.cdn.mozilla.net/img/uploads/addon_icons/2/2313-64.png?modified=1354195918</icon>
+  <icon size="32">https://addons.cdn.mozilla.net/img/uploads/addon_icons/2/2313-32.png?modified=1354195918</icon>
+  <compatible_applications><application>
+      <name>SeaMonkey</name>
+      <application_id>59</application_id>
+      <min_version>2.14</min_version>
+      <max_version>2.14.*</max_version>
+      <appID>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</appID>
+    </application><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>17.0</min_version>
+      <max_version>17.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>Linux</os><os>Darwin</os><os>WINNT</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="image/png" width="700" height="499">
+        https://addons.cdn.mozilla.net/img/uploads/previews/full/18/18246.png?src=api&amp;modified=1331247702
+      </full>
+      <thumbnail type="image/png" width="200" height="142">
+        https://addons.cdn.mozilla.net/img/uploads/previews/thumbs/18/18246.png?src=api&amp;modified=1331247702
+      </thumbnail><caption>Lightning in calendar mode - showing the week view</caption></preview><preview position="1">
+      <full type="image/png" width="700" height="499">
+        https://addons.cdn.mozilla.net/img/uploads/previews/full/18/18247.png?src=api&amp;modified=1331247702
+      </full>
+      <thumbnail type="image/png" width="200" height="142">
+        https://addons.cdn.mozilla.net/img/uploads/previews/thumbs/18/18247.png?src=api&amp;modified=1331247702
+      </thumbnail><caption>Lightning in calendar mode - showing the multiweek view and the today pane</caption></preview></previews><rating>3</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/lightning/?src=api</learnmore><install hash="sha256:5f190e99ce21de00a173bf37e0b76904a0306756075e72c779c42cee65cde4c6"
+    os="Linux"
+    size="2715111">https://addons.mozilla.org/thunderbird/downloads/file/196666/lightning-1.9.1-sm+tb-linux.xpi?src=api</install>
+  <install hash="sha256:99ed977117f97eef30dfab396733f8654b177ccf204fed76c7b2977a1e86e9e1"
+    os="Darwin"
+    size="2842100">https://addons.mozilla.org/thunderbird/downloads/file/196668/lightning-1.9.1-sm+tb-mac.xpi?src=api</install>
+  <install hash="sha256:ccab724d3911386de4fea0be7153dce1707a8e09df9dd52472bcafeab353c41b"
+    os="WINNT"
+    size="2876043">https://addons.mozilla.org/thunderbird/downloads/file/196670/lightning-1.9.1-sm+tb-windows.xpi?src=api</install>
+  <install hash="sha256:e98aea4068042c8b09746b91fde5d79aeccc1d55fbb67129144e162e8c5c71de" os=""
+             size="2029559"
+             status="Beta">
+      https://addons.mozilla.org/thunderbird/downloads/file/196536/lightning-2.2b1-sm+tb-linux.xpi?src=api
+    </install>
+    <install hash="sha256:68370171a12218919ec9a144cb2d28eae0da6e602de64ffa1a25fa1527e78760" os=""
+             size="2145551"
+             status="Beta">
+      https://addons.mozilla.org/thunderbird/downloads/file/196538/lightning-2.2b1-sm+tb-mac.xpi?src=api
+    </install>
+    <install hash="sha256:bcbe879ea6ffc7b66393fce8bddf25a4e28adfb02ab29fbb0bc9abbde88907e0" os=""
+             size="2189690"
+             status="Beta">
+      https://addons.mozilla.org/thunderbird/downloads/file/196540/lightning-2.2b1-sm+tb-windows.xpi?src=api
+    </install>
+        <developer_comments>Be sure to read the release notes (pointed to by the Homepage link here) before installing, it contains valuable information about the current release and also a few known issues.</developer_comments>
+    <reviews num="1474">
+      https://addons.mozilla.org/en-US/thunderbird/addon/lightning/reviews/?src=api
+    </reviews>
+    <total_downloads>15496239</total_downloads>
+    <weekly_downloads>51551</weekly_downloads>
+    <daily_users>1234713</daily_users>
+    <created epoch="1143757298">
+      2006-03-30T22:21:38Z
+    </created>
+    <last_updated epoch="1363207780">
+      2013-03-13T20:49:40Z
+    </last_updated>
+    <homepage>http://www.mozilla.org/projects/calendar/</homepage>
+    <support>https://blog.mozilla.com/calendar/</support>
+    <featured>1</featured>
+        <performance>
+      </performance>
+    </addon>
+
+                  <addon id="358670">
+  <name>Oxygenate</name>
+  <type id="2">Complete Theme</type>
+  <guid>neo@acanac.net</guid>
+  <slug>oxygenate</slug>
+  <version>2.4</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="6055712">
+      <name>neo14515</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/6055712/?src=api</link>
+    </author>      </authors>
+  <summary>An Oxygen icon theme for Thunderbird and Lightning</summary>
+  <description>This is my first theme for Thunderbird, it is based on the oxybird2 theme and the oxygen theme for Firefox.</description><license>
+    <name>GNU General Public License, version 3.0</name>
+    <url>http://www.gnu.org/licenses/gpl-3.0.html</url>
+  </license>  <icon size="64">https://addons.cdn.mozilla.net/img/uploads/addon_icons/358/358670-64.png?modified=1353687870</icon>
+  <icon size="32">https://addons.cdn.mozilla.net/img/uploads/addon_icons/358/358670-32.png?modified=1353687870</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>3.1</min_version>
+      <max_version>17.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="0">
+      <full type="" width="700" height="393">
+        https://addons.cdn.mozilla.net/img/uploads/previews/full/66/66892.png?src=api&amp;modified=1327107258
+      </full>
+      <thumbnail type="" width="200" height="112">
+        https://addons.cdn.mozilla.net/img/uploads/previews/thumbs/66/66892.png?src=api&amp;modified=1327107258
+      </thumbnail><caption>Main Screen</caption></preview><preview position="1">
+      <full type="" width="700" height="393">
+        https://addons.cdn.mozilla.net/img/uploads/previews/full/66/66893.png?src=api&amp;modified=1327107258
+      </full>
+      <thumbnail type="" width="200" height="112">
+        https://addons.cdn.mozilla.net/img/uploads/previews/thumbs/66/66893.png?src=api&amp;modified=1327107258
+      </thumbnail><caption>Settings</caption></preview><preview position="2">
+      <full type="" width="700" height="393">
+        https://addons.cdn.mozilla.net/img/uploads/previews/full/66/66894.png?src=api&amp;modified=1327107258
+      </full>
+      <thumbnail type="" width="200" height="112">
+        https://addons.cdn.mozilla.net/img/uploads/previews/thumbs/66/66894.png?src=api&amp;modified=1327107258
+      </thumbnail><caption>Lightening Addon</caption></preview></previews><rating>5</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/oxygenate/?src=api</learnmore><install hash="sha256:0ae7a131d76d7a34fcd9aeb1a809754f680a28798b482b53e9e9fb8f1b77a2ec"
+    os="ALL"
+    size="1458176">https://addons.mozilla.org/thunderbird/downloads/file/166556/oxygenate-2.4-tb.xpi?src=api</install>
+      <developer_comments></developer_comments>
+    <reviews num="23">
+      https://addons.mozilla.org/en-US/thunderbird/addon/oxygenate/reviews/?src=api
+    </reviews>
+    <total_downloads>45645</total_downloads>
+    <weekly_downloads>389</weekly_downloads>
+    <daily_users>5747</daily_users>
+    <created epoch="1327106871">
+      2012-01-21T00:47:51Z
+    </created>
+    <last_updated epoch="1347144537">
+      2012-09-08T22:48:57Z
+    </last_updated>
+    <homepage></homepage>
+    <support></support>
+    <featured>0</featured>
+        <performance>
+      </performance>
+    </addon>
+
+                  <addon id="4631">
+  <name>Provider for Google Calendar</name>
+  <type id="1">Extension</type>
+  <guid>{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}</guid>
+  <slug>provider-for-google-calendar</slug>
+  <version>0.18</version>
+  <status id="4">Fully Reviewed</status>
+  <authors>
+        <author id="85036">
+      <name>Philipp Kewisch</name>
+      <link>https://addons.mozilla.org/en-US/thunderbird/user/85036/?src=api</link>
+    </author>      </authors>
+  <summary>Allows bidirectional access to Google Calendar</summary>
+  <description>This extension allows Sunbird and Lightning to read and write events to a Google Calendar.
+
+Please read &lt;a href=&#34;http://outgoing.mozilla.org/v1/6bda6f16d505f4787d411814974f8b9be141bc72/http%3A//wiki.mozilla.org/Calendar%3AGDATA_Provider&#34; rel=&#34;nofollow&#34;&gt;http://wiki.mozilla.org/Calendar:GDATA_Provider&lt;/a&gt; for more details and before filing a bug. Also, be sure to visit the dicussion forums, maybe your bug already has a solution!
+
+Please use &lt;a href=&#34;http://outgoing.mozilla.org/v1/4448dc5aa136faebc2d7bf5457d94b988675cb21/http%3A//bugzilla.mozilla.org/&#34; rel=&#34;nofollow&#34;&gt;http://bugzilla.mozilla.org/&lt;/a&gt; to submit bugs.
+
+Product: Calendar
+Component: Provider: GData
+
+Please read the version notes below for any outstanding issues. The current version doesn&#39;t support the Tasks API yet, but I&#39;m working on it. There are a few issues with Google&#39;s API access rules I need to overcome.</description><license>
+    <name>Mozilla Public License, version 1.1</name>
+    <url>http://www.mozilla.org/MPL/MPL-1.1.html</url>
+  </license>  <icon size="64">https://addons.cdn.mozilla.net/img/uploads/addon_icons/4/4631-64.png?modified=1353920150</icon>
+  <icon size="32">https://addons.cdn.mozilla.net/img/uploads/addon_icons/4/4631-32.png?modified=1353920150</icon>
+  <compatible_applications><application>
+      <name>Thunderbird</name>
+      <application_id>18</application_id>
+      <min_version>17.0</min_version>
+      <max_version>17.*</max_version>
+      <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+    </application><application>
+      <name>SeaMonkey</name>
+      <application_id>59</application_id>
+      <min_version>2.14</min_version>
+      <max_version>2.14.*</max_version>
+      <appID>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</appID>
+    </application></compatible_applications>
+  <all_compatible_os><os>ALL</os></all_compatible_os>
+  <eula></eula><previews><preview position="1">
+      <full type="image/png" width="652" height="356">
+        https://addons.cdn.mozilla.net/img/uploads/previews/full/24/24542.png?src=api&amp;modified=1331247702
+      </full>
+      <thumbnail type="image/png" width="200" height="109">
+        https://addons.cdn.mozilla.net/img/uploads/previews/thumbs/24/24542.png?src=api&amp;modified=1331247702
+      </thumbnail><caption>Google Calendar and Sunbird</caption></preview></previews><rating>4</rating>
+  <learnmore>https://addons.mozilla.org/en-US/thunderbird/addon/provider-for-google-calendar/?src=api</learnmore><install hash="sha256:0c35c2e26e1ee6eea50997f3bfd7b63ddbfbf55086fc3d0e286aac3756386882"
+    os="ALL"
+    size="128986">https://addons.mozilla.org/thunderbird/downloads/file/177478/provider_for_google_calendar-0.18-tb+sm.xpi?src=api</install>
+  <install hash="sha256:dd8db41e1e011e805e52b62a7a3559a8bcb3f5f4c364db1e5e1b2f58b41468aa" os=""
+             size="87430"
+             status="Beta">
+      https://addons.mozilla.org/thunderbird/downloads/file/197416/provider_for_google_calendar-0.21pre-tb+sm.xpi?src=api
+    </install>
+    <contribution_data>
+      <link>https://addons.mozilla.org/en-US/thunderbird/addon/provider-for-google-calendar/contribute/?src=api</link>
+                <suggested_amount currency="USD" amount="10.00">
+            $10.00
+          </suggested_amount>
+            <meet_developers>
+        https://addons.mozilla.org/en-US/thunderbird/addon/provider-for-google-calendar/developers?src=api
+      </meet_developers>
+    </contribution_data>    <developer_comments></developer_comments>
+    <reviews num="457">
+      https://addons.mozilla.org/en-US/thunderbird/addon/provider-for-google-calendar/reviews/?src=api
+    </reviews>
+    <total_downloads>3505504</total_downloads>
+    <weekly_downloads>12299</weekly_downloads>
+    <daily_users>305433</daily_users>
+    <created epoch="1173529509">
+      2007-03-10T12:25:09Z
+    </created>
+    <last_updated epoch="1352925782">
+      2012-11-14T20:43:02Z
+    </last_updated>
+    <homepage>http://wiki.mozilla.org/Calendar:GDATA_Provider</homepage>
+    <support>http://groups.google.com/group/provider-for-google-calendar</support>
+    <featured>0</featured>
+        <performance>
+            <application name="fx" version="8.0.1">
+                <platform name="Fedora" version="12 - Constantine">
+          <result type="ts" baseline="479.26" average="486.42"
+                  above_threshold="false" />
+        </platform>        <platform name="WINNT" version="6.1">
+          <result type="ts" baseline="548.47" average="577.84"
+                  above_threshold="false" />
+        </platform>        <platform name="MacOSX" version="10.6 (rev4)">
+          <result type="ts" baseline="637.58" average="659.68"
+                  above_threshold="false" />
+        </platform></application>      <application name="fx" version="4.0.1">
+                <platform name="MacOSX" version="10.5.8">
+          <result type="ts" baseline="687.21" average="685.47"
+                  above_threshold="false" />
+        </platform>        <platform name="WINNT" version="5.1">
+          <result type="ts" baseline="409.26" average="414.32"
+                  above_threshold="false" />
+        </platform></application>      <application name="fx" version="5.0">
+                <platform name="Fedora" version="12 - Constantine">
+          <result type="ts" baseline="506.0" average="509.63"
+                  above_threshold="false" />
+        </platform>        <platform name="WINNT" version="5.1">
+          <result type="ts" baseline="388.11" average="406.53"
+                  above_threshold="false" />
+        </platform>        <platform name="MacOSX" version="10.5.8">
+          <result type="ts" baseline="679.89" average="699.95"
+                  above_threshold="false" />
+        </platform>        <platform name="WINNT" version="6.1">
+          <result type="ts" baseline="522.0" average="549.21"
+                  above_threshold="false" />
+        </platform></application>      <application name="fx" version="6.0.2">
+                <platform name="MacOSX" version="10.6.2">
+          <result type="ts" baseline="654.42" average="655.95"
+                  above_threshold="false" />
+        </platform>        <platform name="WINNT" version="6.1">
+          <result type="ts" baseline="519.79" average="555.63"
+                  above_threshold="false" />
+        </platform>        <platform name="Fedora" version="12 - Constantine">
+          <result type="ts" baseline="476.21" average="482.11"
+                  above_threshold="false" />
+        </platform></application>      <application name="fx" version="7.0.1">
+                <platform name="WINNT" version="6.1">
+          <result type="ts" baseline="547.16" average="585.37"
+                  above_threshold="false" />
+        </platform>        <platform name="Fedora" version="12 - Constantine">
+          <result type="ts" baseline="479.68" average="488.47"
+                  above_threshold="false" />
+        </platform>        <platform name="MacOSX" version="10.6.2 (rev3)">
+          <result type="ts" baseline="667.37" average="677.16"
+                  above_threshold="false" />
+        </platform>        <platform name="MacOSX" version="10.6.2">
+          <result type="ts" baseline="671.16" average="668.95"
+                  above_threshold="false" />
+        </platform></application>      <application name="fx" version="8.0">
+                <platform name="MacOSX" version="10.6 (rev4)">
+          <result type="ts" baseline="624.84" average="661.16"
+                  above_threshold="false" />
+        </platform>        <platform name="WINNT" version="6.1">
+          <result type="ts" baseline="541.58" average="586.53"
+                  above_threshold="false" />
+        </platform>        <platform name="Fedora" version="12 - Constantine">
+          <result type="ts" baseline="477.95" average="499.74"
+                  above_threshold="false" />
+        </platform>        <platform name="MacOSX" version="10.6.2 (rev3)">
+          <result type="ts" baseline="657.21" average="683.79"
+                  above_threshold="false" />
+        </platform></application></performance>
+    </addon>
+
+          <addon_compatibility
+    hosted="true"
+    id="4631">
+    <guid>{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}</guid>
+    <name>Provider for Google Calendar</name>
+    <version_ranges>
+              <version_range type="incompatible">
+          <min_version>0</min_version>
+          <max_version>0.17</max_version>
+          <compatible_applications>
+                          <application>
+                <name>Thunderbird</name>
+                <application_id>18</application_id>
+                <min_version>17.0</min_version>
+                <max_version>*</max_version>
+                <appID>{3550f703-e582-4d05-9a08-453d09bdfdc6}</appID>
+              </application>
+                      </compatible_applications>
+        </version_range>
+          </version_ranges>
+</addon_compatibility>
+</searchresults>
