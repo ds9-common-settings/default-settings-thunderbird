@@ -30,10 +30,10 @@
 
     <em:id>{e2fda1a4-762b-4020-b5ad-a41df1933103}</em:id>
     <em:name>Lightning</em:name>
-    <em:version>1.9</em:version> <!-- BuildID=20121114003930 -->
+    <em:version>1.9.1</em:version> <!-- BuildID=20130211072820 -->
     <em:description>An integrated calendar for Thunderbird</em:description>
     <em:creator>Mozilla Calendar Project</em:creator>
-    <em:homepageURL>http://www.mozilla.org/projects/calendar/releases/lightning1.9.html</em:homepageURL>
+    <em:homepageURL>http://www.mozilla.org/projects/calendar/releases/lightning1.9.1.html</em:homepageURL>
     <em:iconURL>chrome://calendar/skin/cal-icon32.png</em:iconURL>
     <em:optionsURL>chrome://messenger/content/preferences/preferences.xul</em:optionsURL>
     <em:targetPlatform>Linux_x86-gcc3</em:targetPlatform>
