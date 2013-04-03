@@ -1,3 +1,9 @@
+netrunner-artwork-thunderbird (1.0.6) enigma-1306; urgency=low
+
+  * Update oxygenate add-on
+
+ -- Frédéric Gaudet <fred@linuxmint.com>  Wed, 03 Apr 2013 12:12:49 +0200
+
 netrunner-artwork-thunderbird (1.0.5) enigma-1306; urgency=low
 
   * Initial enigma release
