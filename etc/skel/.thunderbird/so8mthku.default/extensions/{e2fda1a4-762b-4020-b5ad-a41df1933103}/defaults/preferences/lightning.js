@@ -119,7 +119,7 @@ pref("calendar.threading.latency ", 250);
 pref("calendar.network.multirealm", false);
 
 // Set up user agent
-pref("calendar.useragent.extra", "Lightning/1.9.1");
+pref("calendar.useragent.extra", "Lightning/2.6b3");
 
 // Disable use of system colors in minimonth and calendar views
 pref("calendar.view.useSystemColors", false);
@@ -127,3 +127,6 @@ pref("calendar.view.useSystemColors", false);
 // Maximum number of iterations allowed when searching for the next matching
 // occurrence of a repeating item in calFilter
 pref("calendar.filter.maxiterations", 50);
+
+// Backend to use. false: libical, true: ical.js
+pref("calendar.icaljs", false);

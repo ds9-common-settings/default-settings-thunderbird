@@ -4,6 +4,8 @@
 
 Components.utils.import("resource://calendar/modules/calUtils.jsm");
 Components.utils.import("resource://calendar/modules/calAlarmUtils.jsm");
+Components.utils.import("resource://gre/modules/Services.jsm");
+Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
 
 var itemConversion = {
 
@@ -140,7 +142,12 @@ var itemConversion = {
         // Dates and alarms
         item.startDate = aTask.entryDate;
         if (!item.startDate) {
-            item.startDate = getDefaultStartDate();
+            if (aTask.dueDate) {
+                item.startDate = aTask.dueDate.clone();
+                item.startDate.minute -= getPrefSafe("calendar.event.defaultlength", 60);
+            } else {
+                item.startDate = cal.getDefaultStartDate();
+            }
         }
 
         item.endDate = aTask.dueDate;
@@ -232,7 +239,7 @@ calDNDBaseObserver.prototype = {
         var destCal = getSelectedCalendar();
         switch (bestFlavor.value) {
             case "text/calendar":
-//@line 239 "/buildbot/linux_build/build/calendar/base/content/calendar-dnd-listener.js"
+//@line 246 "/builds/slave/tb-rel-c-beta-lx_bld-000000000/build/calendar/base/content/calendar-dnd-listener.js"
                 var parser = Components.classes["@mozilla.org/calendar/ics-parser;1"]
                              .createInstance(Components.interfaces.calIIcsParser);
                 parser.parseString(data);
@@ -270,10 +277,10 @@ calDNDBaseObserver.prototype = {
                 break;
             case "application/x-moz-file-promise":
             case "text/x-moz-url":
-                var uri = cal.getIOService().newURI(data.toString(), null, null);
+                var uri = Services.io.newURI(data.toString(), null, null);
                 var loader = Components.classes["@mozilla.org/network/unichar-stream-loader;1"]
                              .createInstance(Components.interfaces.nsIUnicharStreamLoader);
-                var channel = cal.getIOService().newChannelFromURI(uri);
+                var channel = Services.io.newChannelFromURI(uri);
                 channel.loadFlags |= Components.interfaces.nsIRequest.LOAD_BYPASS_CACHE;
 
                 var self = this;
@@ -550,11 +557,9 @@ function invokeEventDragSession(aItem, aXULBox) {
     transfer.addDataFlavor("text/calendar");
 
     let flavourProvider = {
-        QueryInterface: function(aIID) {
-            return doQueryInterface(aXULBox, null, aIID, [Components.interfaces.nsIFlavorDataProvider]);
-        },
-        item: aItem,
+        QueryInterface: XPCOMUtils.generateQI([Components.interfaces.nsIFlavorDataProvider]),
 
+        item: aItem,
         getFlavorData: function(aInTransferable, aInFlavor, aOutData, aOutDataLen) {
             if ((aInFlavor == "application/vnd.x-moz-cal-event") ||
                 (aInFlavor == "application/vnd.x-moz-cal-task")) {
