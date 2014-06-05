@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description RDF:about="urn:mimetype:handler:application/vnd.oasis.opendocument.text"
+                   NC:alwaysAsk="true"
+                   NC:saveToDisk="false"
+                   NC:useSystemDefault="false"
+                   NC:handleInternal="false">
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/vnd.oasis.opendocument.text"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/vnd.ms-excel"
+                   NC:path="/usr/bin/libreoffice"
+                   NC:prettyName="libreoffice" />
+  <RDF:Description RDF:about="urn:scheme:mailbox"
+                   NC:value="mailbox">
+    <NC:handlerProp RDF:resource="urn:scheme:handler:mailbox"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/vnd.oasis.opendocument.presentation"
+                   NC:path="/usr/bin/libreoffice"
+                   NC:prettyName="libreoffice" />
+  <RDF:Description RDF:about="urn:handler:local:/usr/bin/okular"
+                   NC:prettyName="okular"
+                   NC:path="/usr/bin/okular" />
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/vnd.oasis.opendocument.text"
+                   NC:path="/usr/bin/libreoffice"
+                   NC:prettyName="libreoffice" />
+  <RDF:Description RDF:about="urn:mimetype:application/vnd.oasis.opendocument.text"
+                   NC:fileExtensions="odt"
+                   NC:description="ODT-Dokument"
+                   NC:value="application/vnd.oasis.opendocument.text"
+                   NC:editable="true">
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/vnd.oasis.opendocument.text"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:application/msword"
+                   NC:description="Word-Dokument"
+                   NC:value="application/msword"
+                   NC:editable="true">
+    <NC:fileExtensions>doc</NC:fileExtensions>
+    <NC:fileExtensions>dot</NC:fileExtensions>
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/msword"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:{%22application/octet-stream%22}"
+                   NC:value="{%22application/octet-stream%22}"
+                   NC:editable="true"
+                   NC:description="PDF-Dokument">
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:{%22application/octet-stream%22}"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:scheme:handler:http"
+                   NC:alwaysAsk="false">
+    <NC:possibleApplication RDF:resource="urn:handler:local:/usr/bin/firefox"/>
+    <NC:possibleApplication RDF:resource="urn:handler:local:/usr/bin/chromium"/>
+    <NC:externalApplication RDF:resource="urn:scheme:externalApplication:http"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:scheme:externalApplication:mailbox"
+                   NC:prettyName="kate"
+                   NC:path="/usr/bin/kate" />
+  <RDF:Description RDF:about="urn:mimetype:application/vnd.ms-excel"
+                   NC:value="application/vnd.ms-excel"
+                   NC:editable="true"
+                   NC:description="">
+    <NC:fileExtensions>xls</NC:fileExtensions>
+    <NC:fileExtensions>xlb</NC:fileExtensions>
+    <NC:fileExtensions>xlt</NC:fileExtensions>
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/vnd.ms-excel"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:image/jpeg"
+                   NC:alwaysAsk="true"
+                   NC:saveToDisk="false"
+                   NC:useSystemDefault="false"
+                   NC:handleInternal="false">
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:image/jpeg"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/pdf"
+                   NC:alwaysAsk="true"
+                   NC:saveToDisk="false"
+                   NC:useSystemDefault="false"
+                   NC:handleInternal="false">
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/pdf"/>
+  </RDF:Description>
+  <RDF:Seq RDF:about="urn:mimetypes:root">
+    <RDF:li RDF:resource="urn:mimetype:application/msword"/>
+    <RDF:li RDF:resource="urn:mimetype:{%22application/octet-stream%22}"/>
+    <RDF:li RDF:resource="urn:mimetype:image/jpeg"/>
+    <RDF:li RDF:resource="urn:mimetype:application/pdf"/>
+    <RDF:li RDF:resource="urn:mimetype:application/vnd.oasis.opendocument.text"/>
+    <RDF:li RDF:resource="urn:mimetype:application/vnd.ms-excel"/>
+    <RDF:li RDF:resource="urn:mimetype:application/vnd.oasis.opendocument.presentation"/>
+  </RDF:Seq>
+  <RDF:Description RDF:about="urn:scheme:handler:mailbox"
+                   NC:alwaysAsk="false">
+    <NC:externalApplication RDF:resource="urn:scheme:externalApplication:mailbox"/>
+  </RDF:Description>
+  <RDF:Seq RDF:about="urn:schemes:root">
+  </RDF:Seq>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/pdf"
+                   NC:path="/usr/bin/okular"
+                   NC:prettyName="Okular" />
+  <RDF:Description RDF:about="urn:mimetype:handler:application/vnd.oasis.opendocument.presentation"
+                   NC:alwaysAsk="true"
+                   NC:saveToDisk="false"
+                   NC:useSystemDefault="false"
+                   NC:handleInternal="false">
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/vnd.oasis.opendocument.presentation"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetypes">
+    <NC:MIME-types RDF:resource="urn:mimetypes:root"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/vnd.ms-excel"
+                   NC:alwaysAsk="true"
+                   NC:saveToDisk="false"
+                   NC:useSystemDefault="false"
+                   NC:handleInternal="false">
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/vnd.ms-excel"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:image/jpeg"
+                   NC:path="/usr/bin/gwenview"
+                   NC:prettyName="Gwenview" />
+  <RDF:Description RDF:about="urn:schemes">
+    <NC:Protocol-Schemes RDF:resource="urn:schemes:root"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:application/msword"
+                   NC:path="/usr/bin/libreoffice"
+                   NC:prettyName="libreoffice" />
+  <RDF:Description RDF:about="urn:mimetype:application/vnd.oasis.opendocument.presentation"
+                   NC:value="application/vnd.oasis.opendocument.presentation"
+                   NC:editable="true"
+                   NC:fileExtensions="odp"
+                   NC:description="">
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/vnd.oasis.opendocument.presentation"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:{%22application/octet-stream%22}"
+                   NC:alwaysAsk="true">
+    <NC:possibleApplication RDF:resource="urn:handler:local:/usr/bin/okular"/>
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:{%22application/octet-stream%22}"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:image/jpeg"
+                   NC:value="image/jpeg"
+                   NC:editable="true"
+                   NC:description="JPEG Image">
+    <NC:fileExtensions>jpg</NC:fileExtensions>
+    <NC:fileExtensions>jpeg</NC:fileExtensions>
+    <NC:fileExtensions>jpe</NC:fileExtensions>
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:image/jpeg"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:root"
+                   NC:en-US_defaultHandlersVersion="-1" />
+  <RDF:Description RDF:about="urn:handler:local:/usr/bin/firefox"
+                   NC:prettyName="firefox"
+                   NC:path="/usr/bin/firefox" />
+  <RDF:Description RDF:about="urn:mimetype:handler:application/msword"
+                   NC:saveToDisk="false"
+                   NC:handleInternal="false"
+                   NC:alwaysAsk="true"
+                   NC:useSystemDefault="true">
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/msword"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:application/pdf"
+                   NC:fileExtensions="pdf"
+                   NC:description="PDF-Dokument"
+                   NC:value="application/pdf"
+                   NC:editable="true">
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/pdf"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:externalApplication:{%22application/octet-stream%22}"
+                   NC:prettyName="okular"
+                   NC:path="/usr/bin/okular" />
+</RDF:RDF>
