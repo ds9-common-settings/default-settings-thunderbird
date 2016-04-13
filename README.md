@@ -1,3 +1,3 @@
-netrunner-artwork-thunderbird
+netrunner-settings-thunderbird
 =============================
-Netrunner Artwork Thunderbird containing the thunderbird profile with artwork
+Containing the thunderbird profile with settings
