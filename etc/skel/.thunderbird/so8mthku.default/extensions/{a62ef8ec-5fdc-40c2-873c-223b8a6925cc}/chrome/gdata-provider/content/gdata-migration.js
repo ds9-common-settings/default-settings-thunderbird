@@ -2,7 +2,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-Components.utils.import("resource://calendar/modules/calUtils.jsm");
+Components.utils.import("resource://gdata-provider/modules/shim/Loader.jsm").shimIt(this);
+
+CuImport("resource://calendar/modules/calUtils.jsm", this);
+CuImport("resource://gre/modules/Preferences.jsm", this);
 
 /**
  * Migrate the calendar selected in the wizard from ics to gdata.
@@ -16,8 +19,13 @@ function migrateSelectedCalendars() {
         if (item.checked) {
             // Migrate the calendar to a gdata calendar
             let newCal = calmgr.createCalendar("gdata", item.calendar.uri);
-            calmgr.unregisterCalendar(item.calendar);
-            calmgr.deleteCalendar(item.calendar);
+            if (calmgr.removeCalendar) {
+                // Lightning 4.0+
+                calmgr.removeCalendar(item.calendar);
+            } else {
+                calmgr.unregisterCalendar(item.calendar);
+                calmgr.deleteCalendar(item.calendar);
+            }
 
             // Copy some properties to the new calendar
             newCal.name = item.calendar.name;
@@ -39,8 +47,8 @@ function migrateSelectedCalendars() {
     }
 
     // Only bring up the dialog on the next startup if the user wants us to.
-    cal.setPref("calendar.google.migrate",
-                document.getElementById("showagain-checkbox").checked);
+    Preferences.set("calendar.google.migrate",
+                    document.getElementById("showagain-checkbox").checked);
 }
 
 /**
@@ -61,7 +69,7 @@ function getMigratableCalendars() {
 }
 
 /**
- * Load Handler for both the wizard and the Sunbird/Thunderbird main windows.
+ * Load Handler for both the wizard and the Thunderbird main window.
  */
 function gdata_migration_loader() {
     // Only load once
@@ -79,11 +87,11 @@ function gdata_migration_loader() {
 
         // Set up the "always check" field
         document.getElementById("showagain-checkbox").checked =
-            cal.getPrefSafe("calendar.google.migrate", true);
+            Preferences.get("calendar.google.migrate", true);
     } else {
         // This is not the migration wizard, so it must be a main window. Check
         // if the migration wizard needs to be shown.
-        if (cal.getPrefSafe("calendar.google.migrate", true)) {
+        if (Preferences.get("calendar.google.migrate", true)) {
             // Check if there are calendars that are worth migrating.
             if (getMigratableCalendars().length > 0) {
                 // Do this after load, so the calendar window appears before the

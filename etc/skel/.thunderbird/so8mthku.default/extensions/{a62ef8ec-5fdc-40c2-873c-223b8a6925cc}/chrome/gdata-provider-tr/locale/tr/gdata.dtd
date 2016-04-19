@@ -15,3 +15,13 @@
 
 <!ENTITY gdata.reminder.action.sms.label "Metin ileti olarak gönder">
 
+
+
+
+
+<!ENTITY gdata.reminder.default "Default Reminder">
+<!ENTITY gdata.wizard.calendars.description "Please select the calendars and task lists you would like to subscribe to.">
+
+<!ENTITY gdata.wizard.nextstep.description "Please advance to the next step to set up your calendars.">
+
+<!ENTITY gdata.wizard.session.description "Please pick an existing session or enter your email address to create a new session. You only need one session per account.">

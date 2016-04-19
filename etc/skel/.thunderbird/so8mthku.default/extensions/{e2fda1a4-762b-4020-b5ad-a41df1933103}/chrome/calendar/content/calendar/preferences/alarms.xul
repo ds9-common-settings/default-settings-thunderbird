@@ -20,6 +20,8 @@
                 src="chrome://calendar/content/preferences/alarms.js"/>
         <script type="application/javascript"
                 src="chrome://calendar/content/calendar-dialog-utils.js"/>
+        <script type="application/javascript"
+                src="chrome://calendar/content/calendar-ui-utils.js"/>
 
         <preferences>
             <preference id="calendar.alarms.playsound"
@@ -54,45 +56,52 @@
             <preference id="calendar.alarms.todoalarmunit"
                         name="calendar.alarms.todoalarmunit"
                         type="string"/>
-<!--
-            <preference id="calendar.alarms.emailaddress"
-                        name="calendar.alarms.emailaddress"
-                        type="string"/>
-            <preference id="calendar.alarms.text"
-                        name="calendar.alarms.text"
-                        type="string"/>
--->
+            <preference id="calendar.alarms.defaultsnoozelength"
+                        name="calendar.alarms.defaultsnoozelength"
+                        type="int"/>
         </preferences>
 
         <groupbox>
             <caption label="&pref.alarmgoesoff.label;"/>
-            <vbox>
-                <hbox align="center" flex="1">
-                    <checkbox id="alarmSoundCheckbox"
-                              preference="calendar.alarms.playsound"
-                              label="&pref.playasound;"
-                              accesskey="&pref.calendar.alarms.playsound.accessKey;"/>
-                    <filefield id="alarmSoundFileField"
-                               flex="1"
-                               preference="calendar.alarms.soundURL"
-                               preference-editable="true"
-                               onsyncfrompreference="return gAlarmsPane.readSoundLocation();"/>
-                </hbox>
-                <hbox pack="end">
-                    <button id="calendar.prefs.alarm.sound.useDefault"
-                            label="&pref.calendar.alarms.sound.useDefault.label;"
-                            accesskey="&pref.calendar.alarms.sound.useDefault.accessKey;"
-                            oncommand="gAlarmsPane.useDefaultSound()"/>
-                    <button id="calendar.prefs.alarm.sound.browse"
-                            label="&pref.calendar.alarms.sound.browse.label;"
-                            accesskey="&pref.calendar.alarms.sound.browse.accessKey;"
-                            oncommand="gAlarmsPane.browseAlarm()"/>
-                    <button id="calendar.prefs.alarm.sound.preview"
-                            label="&pref.calendar.alarms.sound.preview.label;"
-                            accesskey="&pref.calendar.alarms.sound.preview.accessKey;"
-                            oncommand="gAlarmsPane.previewAlarm()"/>
-                </hbox>
-            </vbox>
+            <grid id="alarm-sound-grid">
+                <columns id="alarm-sound-columns">
+                    <column id="alarm-sound-label-column"/>
+                    <column id="alarm-sound-content-column" flex="1"/>
+                </columns>
+                <rows id="alarm-sound-rows">
+                    <row id="alarm-sound-soundfile-row" align="center">
+                        <checkbox id="alarmSoundCheckbox"
+                                  preference="calendar.alarms.playsound"
+                                  label="&pref.playasound;"
+                                  accesskey="&pref.calendar.alarms.playsound.accessKey;"/>
+                        <filefield id="alarmSoundFileField"
+                                   flex="1"
+                                   preference="calendar.alarms.soundURL"
+                                   preference-editable="true"
+                                   onsyncfrompreference="return gAlarmsPane.readSoundLocation();"/>
+                    </row>
+                    <row id="alarm-sound-buttons-row">
+                        <spacer id="alarm-sound-spacer"/>
+                        <hbox id="alarm-sound-buttons-box">
+                            <button id="calendar.prefs.alarm.sound.useDefault"
+                                    flex="1"
+                                    label="&pref.calendar.alarms.sound.useDefault.label;"
+                                    accesskey="&pref.calendar.alarms.sound.useDefault.accessKey;"
+                                    oncommand="gAlarmsPane.useDefaultSound()"/>
+                            <button id="calendar.prefs.alarm.sound.browse"
+                                    flex="1"
+                                    label="&pref.calendar.alarms.sound.browse.label;"
+                                    accesskey="&pref.calendar.alarms.sound.browse.accessKey;"
+                                    oncommand="gAlarmsPane.browseAlarm()"/>
+                            <button id="calendar.prefs.alarm.sound.play"
+                                    flex="1"
+                                    label="&pref.calendar.alarms.sound.play.label;"
+                                    accesskey="&pref.calendar.alarms.sound.play.accessKey;"
+                                    oncommand="gAlarmsPane.previewAlarm()"/>
+                        </hbox>
+                    </row>
+                </rows>
+            </grid>
             <hbox align="center" flex="1">
                 <checkbox id="alarmshow"
                           preference="calendar.alarms.show"
@@ -115,6 +124,22 @@
                     <column/>
                 </columns>
                 <rows>
+                    <row align="center">
+                        <label value="&pref.defaultsnoozelength.label;"
+                               accesskey="&pref.defaultsnoozelength.accesskey;"
+                               control="defaultsnoozelength"/>
+                        <hbox align="center">
+                            <textbox id="defaultsnoozelength"
+                                     preference="calendar.alarms.defaultsnoozelength"
+                                     type="number"
+                                     min="0"
+                                     maxlength="4"
+                                     size="3"
+                                     onselect="updateUnitLabelPlural('defaultsnoozelength','defaultsnoozelengthunit','minutes')"
+                                     oninput="updateUnitLabelPlural('defaultsnoozelength','defaultsnoozelengthunit','minutes')"/>
+                            <label id="defaultsnoozelengthunit"/>
+                        </hbox>
+                    </row>
                     <row align="center">
                         <label value="&pref.defalarm4events.label;"
                                accesskey="&pref.defalarm4events.accesskey;"
@@ -161,27 +186,18 @@
                                      type="number"
                                      min="0"
                                      size="3"
-                                     oninput="gAlarmsPane.updateMenuPlural('eventdefalarmlen','eventdefalarmunit')"/>
+                                     onselect="updateMenuLabelsPlural('eventdefalarmlen','eventdefalarmunit')"
+                                     oninput="updateMenuLabelsPlural('eventdefalarmlen','eventdefalarmunit')"/>
                             <menulist id="eventdefalarmunit"
                                       crop="none"
-                                      preference="calendar.alarms.eventalarmunit"
-                                      labelnumber="labelplural">
+                                      preference="calendar.alarms.eventalarmunit">
                                 <menupopup id="eventdefalarmunitpopup">
                                     <menuitem id="eventdefalarmunitmin"
-                                              label="&calendar.global.units.minutes;"
-                                              labelplural="&calendar.global.units.minutes;"
-                                              labelsingular="&calendar.global.units.minute;"
                                               value="minutes"
                                               selected="true"/>
                                     <menuitem id="eventdefalarmunithour"
-                                              label="&calendar.global.units.hours;"
-                                              labelplural="&calendar.global.units.hours;"
-                                              labelsingular="&calendar.global.units.hour;"
                                               value="hours"/>
                                     <menuitem id="eventdefalarmunitday"
-                                              label="&calendar.global.units.days;"
-                                              labelplural="&calendar.global.units.days;"
-                                              labelsingular="&calendar.global.units.day;"
                                               value="days"/>
                                 </menupopup>
                             </menulist>
@@ -197,27 +213,18 @@
                                      type="number"
                                      min="0"
                                      size="3"
-                                     oninput="gAlarmsPane.updateMenuPlural('tododefalarmlen','tododefalarmunit')"/>
+                                     onselect="updateMenuLabelsPlural('tododefalarmlen','tododefalarmunit')"
+                                     oninput="updateMenuLabelsPlural('tododefalarmlen','tododefalarmunit')"/>
                             <menulist id="tododefalarmunit"
                                       crop="none"
-                                      preference="calendar.alarms.todoalarmunit"
-                                      labelnumber="labelplural">
+                                      preference="calendar.alarms.todoalarmunit">
                                 <menupopup id="tododefalarmunitpopup">
                                     <menuitem id="tododefalarmunitmin"
-                                              label="&calendar.global.units.minutes;"
-                                              labelplural="&calendar.global.units.minutes;"
-                                              labelsingular="&calendar.global.units.minute;"
                                               value="minutes"
                                               selected="true"/>
                                     <menuitem id="tododefalarmunithour"
-                                              label="&calendar.global.units.hours;"
-                                              labelplural="&calendar.global.units.hours;"
-                                              labelsingular="&calendar.global.units.hour;"
                                               value="hours"/>
                                     <menuitem id="tododefalarmunitday"
-                                              label="&calendar.global.units.days;"
-                                              labelplural="&calendar.global.units.days;"
-                                              labelsingular="&calendar.global.units.day;"
                                               value="days"/>
                                 </menupopup>
                             </menulist>
@@ -226,20 +233,6 @@
                 </rows>
             </grid>
 
-<!--
-            <hbox collapsed="true">
-                <caption label="&pref.defaultemail.label;"/>
-                <textbox id="alarmemailaddress"
-                         preference="calendar.alarms.emailaddress"
-                         flex="1"/>
-            </hbox>
-            <hbox collapsed="true">
-                <caption label="&pref.defaulttext.label;"/>
-                <textbox id="alarmtext"
-                         preference="calendar.alarm.text"
-                         flex="1"/>
-            </hbox>
--->
         </groupbox>
 
     </vbox>

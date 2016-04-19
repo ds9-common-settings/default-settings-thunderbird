@@ -7,6 +7,7 @@ Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
 Components.utils.import("resource://calendar/modules/calUtils.jsm");
 Components.utils.import("resource://calendar/modules/calXMLUtils.jsm");
 Components.utils.import("resource://calendar/modules/calPrintUtils.jsm");
+Components.utils.import("resource://gre/modules/Preferences.jsm");
 
 /**
  * Prints a rough month-grid of events/tasks
@@ -31,7 +32,8 @@ calMonthPrinter.prototype = {
     get name() cal.calGetString("calendar", "monthPrinterName"),
 
     formatToHtml: function monthPrint_format(aStream, aStart, aEnd, aCount, aItems, aTitle) {
-        let document = cal.xml.parseFile("chrome://calendar/skin/printing/calMonthGridPrinter.html");
+        let document = cal.xml.parseFile("chrome://calendar-common/skin/printing/calMonthGridPrinter.html");
+        let defaultTimezone = cal.calendarDefaultTimezone();
 
         // Set page title
         document.getElementById("title").textContent = aTitle;
@@ -57,6 +59,8 @@ calMonthPrinter.prototype = {
         for each (let item in aItems) {
             let itemStartDate = item[cal.calGetStartDateProp(item)] || item[cal.calGetEndDateProp(item)];
             let itemEndDate = item[cal.calGetEndDateProp(item)] || item[cal.calGetStartDateProp(item)];
+            itemStartDate = itemStartDate.getInTimezone(defaultTimezone);
+            itemEndDate = itemEndDate.getInTimezone(defaultTimezone);
 
             if (!itemStartDate && !itemEndDate) {
                 cal.print.addItemToDayboxNodate(document, item);
@@ -94,7 +98,7 @@ calMonthPrinter.prototype = {
 
         // Remove templates from HTML, no longer needed
         let templates = document.getElementById("templates");
-        templates.parentNode.removeChild(templates);
+        templates.remove();
 
         // Stream out the resulting HTML
         let html = cal.xml.serializeDOM(document);
@@ -156,7 +160,7 @@ calMonthPrinter.prototype = {
         currentMonth.querySelector(".month-name").textContent = monthTitle;
 
         // Set up the weekday titles
-        let wkst = cal.getPrefSafe("calendar.week.start", 0);
+        let wkst = Preferences.get("calendar.week.start", 0);
         for (let i = 1; i <= 7; i++) {
             let dayNumber = ((i + wkst - 1) % 7) + 1;
             let dayTitle = currentMonth.querySelector(".day" + i + "-title");
@@ -215,7 +219,7 @@ calMonthPrinter.prototype = {
 
             let weekDay = currentDate.weekday;
             let dayOffPrefName = "calendar.week.d" + weekDay + weekdayMap[weekDay] + "soff";
-            if (cal.getPrefSafe(dayOffPrefName, false)) {
+            if (Preferences.get(dayOffPrefName, false)) {
                 dayBox.className += " day-off";
             }
 

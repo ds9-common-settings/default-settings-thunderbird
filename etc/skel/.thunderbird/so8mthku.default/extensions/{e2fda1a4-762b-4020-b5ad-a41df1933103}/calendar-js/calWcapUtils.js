@@ -3,7 +3,9 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 Components.utils.import("resource://calendar/modules/calIteratorUtils.jsm");
+Components.utils.import("resource://calendar/modules/calUtils.jsm");
 Components.utils.import("resource://gre/modules/Services.jsm");
+Components.utils.import("resource://gre/modules/Preferences.jsm");
 
 var g_bShutdown = false;
 
@@ -175,9 +177,7 @@ function getTime() {
     if (g_bShutdown) {
         return null;
     }
-    var ret = createDateTime();
-    ret.jsDate = new Date();
-    return ret;
+    return cal.jsDateToDateTime(new Date());
 }
 
 function getIcalUTC(dt) {
@@ -211,7 +211,7 @@ function getDatetimeFromIcalProp(prop) {
 }
 
 function getPref(prefName, defaultValue) {
-    var ret = getPrefSafe(prefName, defaultValue);
+    var ret = Preferences.get(prefName, defaultValue);
     log(ret, "getPref(): prefName=" + prefName);
     return ret;
 }

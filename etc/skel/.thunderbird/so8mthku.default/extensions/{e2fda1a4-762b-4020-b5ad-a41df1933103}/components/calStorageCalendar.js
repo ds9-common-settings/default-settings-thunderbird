@@ -138,6 +138,8 @@ calStorageCalendar.prototype = {
                 return false;
             case "requiresNetwork":
                 return false;
+            case "capabilities.removeModes":
+                return ["delete"];
         }
         return this.__proto__.__proto__.getProperty.apply(this, arguments);
     },
@@ -191,6 +193,7 @@ calStorageCalendar.prototype = {
             }
             // open the database
             this.mDB = Services.storage.openDatabase(fileURL.file);
+            this.mDB.executeSimpleSQL("PRAGMA journal_mode=WAL");
             upgradeDB(this.mDB);
 
         } else if (this.uri.schemeIs("moz-profile-calendar")) {

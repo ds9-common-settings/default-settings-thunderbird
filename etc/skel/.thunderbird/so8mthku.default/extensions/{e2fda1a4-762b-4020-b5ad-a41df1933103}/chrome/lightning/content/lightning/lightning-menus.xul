@@ -140,16 +140,29 @@
                   key="calendar-month-view-key"
                   command="calendar_month-view_command"/>
         <menuseparator id="ltnBeforeCalendarViewSection"/>
-        <menuitem id="ltnTasksViewMinimonth"
-                  type="checkbox"
-                  label="&calendar.tasks.view.minimonth.label;"
-                  accesskey="&calendar.tasks.view.minimonth.accesskey;"
-                  command="calendar_toggle_minimonthpane_command"/>
-        <menuitem id="ltnTasksViewCalendarlist"
-                  type="checkbox"
-                  label="&calendar.tasks.view.calendarlist.label;"
-                  accesskey="&calendar.tasks.view.calendarlist.accesskey;"
-                  command="calendar_toggle_calendarlist_command"/>
+        <menu id="ltnCalendarPaneMenu"
+              label="&lightning.toolbar.calendarmenu.label;"
+              accesskey="&lightning.toolbar.calendarmenu.accesskey;">
+          <menupopup id="ltnCalendarPanePopup"
+                     onpopupshowing="InitViewCalendarPaneMenu()">
+            <menuitem id="ltnViewCalendarPane"
+                      type="checkbox"
+                      label="&lightning.toolbar.calendarpane.label;"
+                      accesskey="&lightning.toolbar.calendarpane.accesskey;"
+                      command="calendar_toggle_calendarsidebar_command"/>
+            <menuseparator id="ltnCalendarPaneMenuSeparator"/>
+            <menuitem id="ltnTasksViewMinimonth"
+                      type="checkbox"
+                      label="&calendar.tasks.view.minimonth.label;"
+                      accesskey="&calendar.tasks.view.minimonth.accesskey;"
+                      command="calendar_toggle_minimonthpane_command"/>
+            <menuitem id="ltnTasksViewCalendarlist"
+                      type="checkbox"
+                      label="&calendar.tasks.view.calendarlist.label;"
+                      accesskey="&calendar.tasks.view.calendarlist.accesskey;"
+                      command="calendar_toggle_calendarlist_command"/>
+          </menupopup>
+        </menu>
         <menuseparator id="ltnBeforeCurrentViewMenu"/>
         <menu id="ltnCalendarCurrentViewMenu"
               observes="calendar_mode_calendar"
@@ -306,7 +319,7 @@
           label="&lightning.menu.eventtask.label;"
           accesskey="&lightning.menu.eventtask.accesskey;"
           insertafter="messageMenu">
-      <menupopup id="menu_Event_Task_Popup" onpopupshowing="changeMenuForTask(event)">
+      <menupopup id="menu_Event_Task_Popup" onpopupshowing="changeMenuForTask(event); setupDeleteMenuitem('ltnDeleteSelectedCalendar')">
         <menuitem id="ltnNewEvent2"
                   label="&event.new.event;"
                   accesskey="&event.new.event.accesskey;"
@@ -360,8 +373,12 @@
                   commmand="calendar_publish_calendar_command"
                   observes="calendar_publish_calendar_command"/>
         <menuitem id="ltnDeleteSelectedCalendar"
-                  label="&calendar.deletecalendar.label;"
-                  accesskey="&calendar.deletecalendar.accesskey;"
+                  labeldelete="&calendar.deletecalendar.label;"
+                  labelremove="&calendar.removecalendar.label;"
+                  labelunsubscribe="&calendar.unsubscribecalendar.label;"
+                  accesskeydelete="&calendar.deletecalendar.accesskey;"
+                  accesskeyremove="&calendar.removecalendar.accesskey;"
+                  accesskeyunsubscribe="&calendar.unsubscribecalendar.accesskey;"
                   command="calendar_delete_calendar_command"
                   observes="calendar_delete_calendar_command"/>
         <menuseparator id="ltnBeforeTaskActions"/>
@@ -426,11 +443,11 @@
         <menuitem id="mailContext-calendar-convert-event-menuitem"
                   label="&calendar.context.convertmenu.event.label;"
                   accesskey="&calendar.context.convertmenu.event.accesskey;"
-                  oncommand="calendarCalendarButtonDNDObserver.onDropMessage(gFolderDisplay.selectedMessage)"/>
+                  oncommand="calendarExtract.extractFromEmail(true)" />
         <menuitem id="mailContext-calendar-convert-task-menuitem"
                   label="&calendar.context.convertmenu.task.label;"
                   accesskey="&calendar.context.convertmenu.task.accesskey;"
-                  oncommand="calendarTaskButtonDNDObserver.onDropMessage(gFolderDisplay.selectedMessage)"/>
+                  oncommand="calendarExtract.extractFromEmail(false)" />
       </menupopup>
     </menu>
   </menupopup>
@@ -540,14 +557,25 @@
                   name="calendarMenuViews"
                   command="calendar_month-view_command"/>
         <menuseparator id="appmenu_ltnBeforeCalendarViewSection"/>
-        <menuitem id="appmenu_ltnTasksViewMinimonth"
-                  type="checkbox"
-                  label="&calendar.tasks.view.minimonth.label;"
-                  command="calendar_toggle_minimonthpane_command"/>
-        <menuitem id="appmenu_ltnTasksViewCalendarlist"
-                  type="checkbox"
-                  label="&calendar.tasks.view.calendarlist.label;"
-                  command="calendar_toggle_calendarlist_command"/>
+        <menu id="appmenu_ltnCalendarPaneMenu"
+              label="&lightning.toolbar.calendarmenu.label;">
+          <menupopup id="appmenu_ltnCalendarPanePopup"
+                     onpopupshowing="InitViewCalendarPaneMenu()">
+            <menuitem id="appmenu_ltnViewCalendarPane"
+                      type="checkbox"
+                      label="&lightning.toolbar.calendarpane.label;"
+                      command="calendar_toggle_calendarsidebar_command"/>
+            <menuseparator id="appmenu_ltnCalendarPaneMenuSeparator"/>
+            <menuitem id="appmenu_ltnTasksViewMinimonth"
+                      type="checkbox"
+                      label="&calendar.tasks.view.minimonth.label;"
+                      command="calendar_toggle_minimonthpane_command"/>
+            <menuitem id="appmenu_ltnTasksViewCalendarlist"
+                      type="checkbox"
+                      label="&calendar.tasks.view.calendarlist.label;"
+                      command="calendar_toggle_calendarlist_command"/>
+          </menupopup>
+        </menu>
         <menuseparator id="appmenu_ltnBeforeCurrentViewMenu"/>
         <menu id="appmenu_ltnCalendarCurrentViewMenu"
               observes="calendar_mode_calendar"
@@ -677,7 +705,7 @@
     <menu id="appmenu_Event_Task"
           label="&lightning.menu.eventtask.label;"
           insertafter="appmenu_messageMenu">
-      <menupopup id="appmenu_Event_Task_Popup" onpopupshowing="changeMenuForTask(event)">
+      <menupopup id="appmenu_Event_Task_Popup" onpopupshowing="changeMenuForTask(event); setupDeleteMenuitem('appmenu_ltnDeleteSelectedCalendar')">
         <menuitem id="appmenu_ltnMenuSwitchToCalendar"
                   type="checkbox"
                   label="&lightning.toolbar.calendar.label;"
@@ -711,7 +739,12 @@
                   commmand="calendar_publish_calendar_command"
                   observes="calendar_publish_calendar_command"/>
         <menuitem id="appmenu_ltnDeleteSelectedCalendar"
-                  label="&calendar.deletecalendar.label;"
+                  labeldelete="&calendar.deletecalendar.label;"
+                  labelremove="&calendar.removecalendar.label;"
+                  labelunsubscribe="&calendar.unsubscribecalendar.label;"
+                  accesskeydelete="&calendar.deletecalendar.accesskey;"
+                  accesskeyremove="&calendar.removecalendar.accesskey;"
+                  accesskeyunsubscribe="&calendar.unsubscribecalendar.accesskey;"
                   command="calendar_delete_calendar_command"
                   observes="calendar_delete_calendar_command"/>
         <menuseparator id="ltnBeforeTaskActions"/>

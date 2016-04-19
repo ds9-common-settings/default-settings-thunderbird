@@ -6,6 +6,7 @@ Components.utils.import("resource:///modules/mailServices.js");
 Components.utils.import("resource://calendar/modules/calUtils.jsm");
 Components.utils.import("resource://gre/modules/Services.jsm");
 Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
+Components.utils.import("resource://gre/modules/Preferences.jsm");
 
 function convertFromUnicode(aCharset, aSrc) {
     let unicodeConverter = Components.classes["@mozilla.org/intl/scriptableunicodeconverter"]
@@ -93,7 +94,7 @@ calItipEmailTransport.prototype = {
                         att = item.getAttendeeById("mailto:" + aItipItem.identity);
                     }
                     if (!att) { // should not happen anymore
-                        return;
+                        return false;
                     }
 
                     // work around BUG 351589, the below just removes RSVP:
@@ -128,11 +129,12 @@ calItipEmailTransport.prototype = {
                 }
             }
 
-            this._sendXpcomMail(aRecipients, aSubject, aBody, aItipItem);
+            return this._sendXpcomMail(aRecipients, aSubject, aBody, aItipItem);
         } else {
             // Sunbird case: Call user's default mailer on system.
             throw Components.results.NS_ERROR_NOT_IMPLEMENTED;
         }
+        return false;
     },
 
     _initEmailTransport: function cietIES() {
@@ -190,9 +192,13 @@ calItipEmailTransport.prototype = {
                         "This will disable OL (up to 2003) to consume the mail as an iTIP invitation showing\n" +
                         "the usual calendar buttons.");
                 // To somehow have a last resort before sending spam, the user can choose to send the mail.
-                let prefCompatMode = cal.getPrefSafe("calendar.itip.compatSendMode", 0);
+                let prefCompatMode = Preferences.get("calendar.itip.compatSendMode", 0);
                 let inoutCheck = { value: (prefCompatMode == 1) };
-                if (Services.prompt.confirmEx(null,
+                let parent = Services.wm.getMostRecentWindow(null);
+                if (parent.closed) {
+                    parent = cal.getCalendarWindow();
+                }
+                if (Services.prompt.confirmEx(parent,
                                               cal.calGetString("lightning", "imipSendMail.title", null, "lightning"),
                                               cal.calGetString("lightning", "imipSendMail.text", null, "lightning"),
                                               Services.prompt.STD_YES_NO_BUTTONS,
@@ -205,7 +211,7 @@ calItipEmailTransport.prototype = {
                 } // else go on with auto sending for now
                 compatMode = (inoutCheck.value ? 1 : 0);
                 if (compatMode != prefCompatMode) {
-                    cal.setPref("calendar.itip.compatSendMode", compatMode);
+                    Preferences.set("calendar.itip.compatSendMode", compatMode);
                 }
             }
             case (Components.interfaces.calIItipItem.AUTO): {
@@ -221,15 +227,35 @@ calItipEmailTransport.prototype = {
                     // Add this recipient id to the list.
                     toList += rId;
                 }
-                let mailFile = this._createTempImipFile(compatMode, toList, aSubject, aBody, aItem, identity);
+                let composeUtils = Components.classes["@mozilla.org/messengercompose/computils;1"]
+                                             .createInstance(Components.interfaces.nsIMsgCompUtils);
+                let messageId = composeUtils.msgGenerateMessageId(identity);
+                let mailFile = this._createTempImipFile(compatMode, toList, aSubject, aBody, aItem, identity, messageId);
                 if (mailFile) {
                     // compose fields for message: from/to etc need to be specified both here and in the file
                     let composeFields = Components.classes["@mozilla.org/messengercompose/composefields;1"]
                                                   .createInstance(Components.interfaces.nsIMsgCompFields);
                     composeFields.characterSet = "UTF-8";
                     composeFields.to = toList;
-                    composeFields.from = identity.email;
+                    let mailfrom = (!identity.fullName.length) ? identity.email : identity.fullName + " <" + identity.email + ">";
+                    composeFields.from = (cal.validateRecipientList(mailfrom) == mailfrom)
+                                         ? mailfrom : identity.email;
                     composeFields.replyTo = identity.replyTo;
+                    composeFields.organization = identity.organization;
+                    composeFields.messageId = messageId;
+                    let validRecipients;
+                    if (identity.doCc) {
+                        validRecipients = cal.validateRecipientList(identity.doCcList);
+                        if (validRecipients != "") {
+                            composeFields.cc = validRecipients;
+                        }
+                    }
+                    if (identity.doBcc) {
+                        validRecipients = cal.validateRecipientList(identity.doBccList);
+                        if (validRecipients != "") {
+                            composeFields.bcc = validRecipients;
+                        }
+                    }
 
                     // xxx todo: add send/progress UI, maybe recycle
                     //           "@mozilla.org/messengercompose/composesendlistener;1"
@@ -249,6 +275,7 @@ calItipEmailTransport.prototype = {
                                             null  /* nsIMsgSendListener aListener */,
                                             null  /* nsIMsgStatusFeedback aStatusFeedback */,
                                             ""    /* password */);
+                    return true;
                 }
                 break;
             }
@@ -263,18 +290,19 @@ calItipEmailTransport.prototype = {
                                 "Unknown autoResponse type: " +
                                 aItem.autoResponse);
         }
+        return false;
     },
 
-    _createTempImipFile: function cietCTIF(compatMode, aToList, aSubject, aBody, aItem, aIdentity) {
+    _createTempImipFile: function cietCTIF(compatMode, aToList, aSubject, aBody, aItem, aIdentity, aMessageId) {
         try {
             function encodeUTF8(text) {
                 return convertFromUnicode("UTF-8", text).replace(/(\r\n)|\n/g, "\r\n");
             }
-            function encodeMimeHeader(header) {
-                let fieldNameLen = (header.indexOf(": ") + 2);
+            function encodeMimeHeader(aHeader, aIsEmail = false) {
+                let fieldNameLen = (aHeader.indexOf(": ") + 2);
                 return MailServices.mimeConverter
-                                   .encodeMimePartIIStr_UTF8(header,
-                                                             false,
+                                   .encodeMimePartIIStr_UTF8(aHeader,
+                                                             aIsEmail,
                                                              "UTF-8",
                                                              fieldNameLen,
                                                              Components.interfaces.nsIMimeConverter.MIME_ENCODED_WORD_SIZE);
@@ -290,16 +318,35 @@ calItipEmailTransport.prototype = {
             let calText = serializer.serializeToString();
             let utf8CalText = encodeUTF8(calText);
 
+            let fullFrom = !aIdentity.fullName.length ? null :
+                           cal.validateRecipientList(aIdentity.fullName + "<" + aIdentity.email + ">");
+
             // Home-grown mail composition; I'd love to use nsIMimeEmitter, but it's not clear to me whether
             // it can cope with nested attachments,
             // like multipart/alternative with enclosed text/calendar and text/plain.
             let mailText = ("MIME-version: 1.0\r\n" +
                             (aIdentity.replyTo
-                             ? "Return-path: " + aIdentity.replyTo + "\r\n" : "") +
-                            "From: " + aIdentity.email + "\r\n" +
-                            "To: " + aToList + "\r\n" +
+                             ? "Return-path: " + encodeMimeHeader(aIdentity.replyTo, true) + "\r\n" : "") +
+                            "From: " + encodeMimeHeader(fullFrom || aIdentity.email, true) + "\r\n" +
+                            (aIdentity.organization
+                             ? "Organization: " + encodeMimeHeader(aIdentity.organization) + "\r\n" : "") +
+                            "Message-ID: " + aMessageId + "\r\n" +
+                            "To: " + encodeMimeHeader(aToList, true) + "\r\n" +
                             "Date: " + (new Date()).toUTCString() + "\r\n" +
                             "Subject: " + encodeMimeHeader(aSubject.replace(/(\n|\r\n)/, "|")) + "\r\n");
+            let validRecipients;
+            if (aIdentity.doCc) {
+                validRecipients = cal.validateRecipientList(aIdentity.doCcList);
+                if (validRecipients != "") {
+                    mailText += ("Cc: " + encodeMimeHeader(validRecipients, true) + "\r\n");
+                }
+            }
+            if (aIdentity.doBcc) {
+                validRecipients = cal.validateRecipientList(aIdentity.doBccList);
+                if (validRecipients != "") {
+                    mailText += ("Bcc: " + encodeMimeHeader(validRecipients, true) + "\r\n");
+                }
+            }
             switch (compatMode) {
                 case 1:
                     mailText += ("Content-class: urn:content-classes:calendarmessage\r\n" +

@@ -45,7 +45,7 @@ var gCategoriesPane = {
         }
 
         gCategoryList = categoriesStringToArray(categories);
-        
+
         // When categories is empty, split returns an array containing one empty
         // string, rather than an empty array. This results in an empty listbox
         // child with no corresponding category.
@@ -76,7 +76,7 @@ var gCategoriesPane = {
 
 
         while (listbox.lastChild.id != "categoryColumns")
-            listbox.removeChild(listbox.lastChild);
+            listbox.lastChild.remove();
 
         for (var i=0; i < gCategoryList.length; i++) {
             var newListItem = document.createElement("listitem");
@@ -92,7 +92,7 @@ var gCategoriesPane = {
             } catch (ex) {
                 categoryColor.setAttribute("label", noneLabel);
             }
- 
+
             newListItem.appendChild(categoryName);
             newListItem.appendChild(categoryColor);
             listbox.appendChild(newListItem);
@@ -108,7 +108,11 @@ var gCategoriesPane = {
         listbox.clearSelection();
         this.updateButtons();
         window.openDialog("chrome://calendar/content/preferences/editCategory.xul",
-                          "addCategory", "modal,centerscreen,chrome,resizable=no",
+                          "addCategory",
+                          // Workaround for Bug 1151440 - the HTML color picker won't work
+                          // in linux when opened from modal dialog
+                          Application.platformIsLinux ? "centerscreen,chrome,resizable=no" :
+                                                        "modal,centerscreen,chrome,resizable=no",
                           "", null, addTitle);
     },
 
@@ -126,7 +130,11 @@ var gCategoriesPane = {
  
         if (list.selectedItem) {
             window.openDialog("chrome://calendar/content/preferences/editCategory.xul",
-                              "editCategory", "modal,centerscreen,chrome,resizable=no",
+                              "editCategory",
+                              // Workaround for Bug 1151440 - the HTML color picker won't work
+                              // in linux when opened from modal dialog
+                              Application.platformIsLinux ? "centerscreen,chrome,resizable=no" :
+                                                            "modal,centerscreen,chrome,resizable=no",
                               gCategoryList[list.selectedIndex], currentColor, editTitle);
         }
     },
@@ -158,7 +166,7 @@ var gCategoriesPane = {
                                newSelection.previousSibling;
             }
             gCategoryList.splice(list.getIndexOfItem(item), 1);
-            list.removeChild(item);
+            item.remove();
         }
         list.selectedItem = newSelection;
         this.updateButtons();

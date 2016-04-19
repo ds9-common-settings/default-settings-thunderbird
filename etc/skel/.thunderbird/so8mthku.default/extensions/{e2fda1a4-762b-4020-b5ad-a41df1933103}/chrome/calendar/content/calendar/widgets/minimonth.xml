@@ -418,6 +418,7 @@
       <field name="mObservesComposite">false</field>
       <constructor><![CDATA[
           Components.utils.import("resource://gre/modules/Services.jsm");
+          Components.utils.import("resource://gre/modules/Preferences.jsm");
 
           this.mToday = false;
           this.mSelected = false;
@@ -438,8 +439,7 @@
       <destructor><![CDATA[
           Components.utils.import("resource://gre/modules/Services.jsm");
 
-          var composite = getCompositeCalendar();
-          if (composite && this.mObservesComposite == true) {
+          if (this.mObservesComposite == true) {
               getCompositeCalendar().removeObserver(this);
           }
 
@@ -697,7 +697,7 @@
       <method name="refreshDisplay">
         <body><![CDATA[
           // Find out which should be the first day of the week
-          this.weekStart = getPrefSafe("calendar.week.start", 0);
+          this.weekStart = Preferences.get("calendar.week.start", 0);
           if (!this.mValue) {
               this.mValue = new Date();
           }
@@ -878,16 +878,8 @@
       <method name="getBoxForDate">
         <parameter name="aDate"/>
         <body><![CDATA[
-            let ymd;
-            if (aDate instanceof Date) {
-                ymd = [aDate.getFullYear(),
-                       aDate.getMonth(),
-                       aDate.getDate()].join("-");
-            } else {
-                // Probably a calIDateTime
-                ymd = [aDate.year, aDate.month, aDate.day].join("-");
-            }
-
+            // aDate is a calIDateTime
+            let ymd = [aDate.year, aDate.month, aDate.day].join("-");
             return (ymd in this.mDayMap ? this.mDayMap[ymd] : null);
         ]]></body>
       </method>
@@ -916,7 +908,7 @@
             }
 
             if (aDate) {
-              var box = this.getBoxForDate(aDate);
+              let box = this.getBoxForDate(cal.jsDateToDateTime(aDate, cal.calendarDefaultTimezone()));
               if (box) {
                   removeForBox(box);
               }
@@ -1060,7 +1052,7 @@
                 this.showMonth(aMainDate);
             } else if (!sameDate) {
                 // select day only
-                var day = this.getBoxForDate(aDate);
+                let day = this.getBoxForDate(cal.jsDateToDateTime(aDate, cal.calendarDefaultTimezone()));
                 if (this.mSelected) {
                     this.mSelected.removeAttribute("selected");
                 }

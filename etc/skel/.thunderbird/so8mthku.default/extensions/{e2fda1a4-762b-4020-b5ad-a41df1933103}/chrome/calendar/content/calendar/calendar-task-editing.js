@@ -89,7 +89,7 @@ var taskEdit = {
      * @param aEvent    The DOM blur event
      */
     onBlur: function tE_onBlur(aEvent) {
-        var edit = aEvent.target;
+        let edit = aEvent.target;
         if (edit.localName == "input") {
             // For some reason, we only receive the blur event for the input
             // element. There are no targets that point to the textbox. Go up
@@ -97,7 +97,11 @@ var taskEdit = {
             edit = edit.parentNode.parentNode;
         }
 
-        var calendar = getSelectedCalendar();
+        let calendar = getSelectedCalendar();
+        if (!calendar) {
+            // this must be a first run, we don't have a calendar yet
+            return;
+        }
 
         if (calendar.getProperty("capabilities.tasks.supported") === false){
             taskEdit.setupTaskField(edit,
@@ -125,13 +129,13 @@ var taskEdit = {
      */
     onKeyPress: function tE_onKeyPress(aEvent) {
         if (aEvent.keyCode == Components.interfaces.nsIDOMKeyEvent.DOM_VK_RETURN) {
-            var edit = aEvent.target;
+            let edit = aEvent.target;
             if (edit.value && edit.value.length > 0) {
-                var item = createTodo();
-                item.calendar = getSelectedCalendar();
+                let item = cal.createTodo();
+                setDefaultItemValues(item);
                 item.title = edit.value;
+
                 edit.value = "";
-                cal.alarms.setDefaultValues(item);
                 doTransaction('add', item, item.calendar, null, null);
             }
         }

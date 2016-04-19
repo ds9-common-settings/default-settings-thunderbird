@@ -6,6 +6,7 @@ Components.utils.import("resource:///modules/mailServices.js");
 Components.utils.import("resource://calendar/modules/calUtils.jsm");
 Components.utils.import("resource://calendar/modules/calAlarmUtils.jsm");
 Components.utils.import("resource://calendar/modules/calIteratorUtils.jsm");
+Components.utils.import("resource://gre/modules/Preferences.jsm");
 Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
 
 /**
@@ -215,19 +216,13 @@ cal.itip = {
     /**
      * Scope: iTIP message receiver
      *
-     * Gets localized texts about the message state. This returns a JS object
-     * with the following structure:
+     * Gets localized toolbar label about the message state and triggers buttons to show.
+     * This returns a JS object with the following structure:
      *
      * {
      *    label: "This is a desciptive text about the itip item",
-     *    button1: {
-     *      label: "What to show on the first button, i.e 'Decline'" +
-     *             "This can be null if the button is not to be shown"
-     *      actionMethod: "The method this triggers, i.e DECLINED",
-     *    },
-     *    // Same structure for button2/3
-     *    button2: { ... }
-     *    button3: { ... }
+     *    buttons: ["imipXXXButton", ...],
+     *    hideMenuItem: ["imipXXXButton_Option", ...]
      * }
      *
      * @see processItipItem   This takes the same parameters as its optionFunc.
@@ -243,10 +238,7 @@ cal.itip = {
         if (itipItem.receivedMethod) {
             imipLabel = cal.itip.getMethodText(itipItem.receivedMethod);
         }
-        let data = { label: imipLabel };
-        for each (let btn in ["button1", "button2", "button3"]) {
-            data[btn] = { label: null, actionMethod: "" };
-        }
+        let data = { label: imipLabel, buttons: [], hideMenuItems: [] };
 
         if (rc == Components.interfaces.calIErrors.CAL_IS_READONLY) {
             // No writable calendars, tell the user about it
@@ -256,9 +248,8 @@ cal.itip = {
             // added/updated, we want to tell them that.
             data.label = _gs("imipBarAlreadyProcessedText");
             if (foundItems && foundItems.length) {
-                data.button1.label = _gs("imipDetails.label");
                 // Not a real method, but helps us decide
-                data.button1.actionMethod = "X-SHOWDETAILS";
+                data.buttons.push("imipDetailsButton");
             }
         } else if (Components.isSuccessCode(rc)) {
 
@@ -269,10 +260,10 @@ cal.itip = {
                 case "PUBLISH:UPDATE":
                 case "REQUEST:UPDATE-MINOR":
                     data.label = _gs("imipBarUpdateText");
-                    data.button1.label = _gs("imipUpdate.label");
+                    data.buttons.push("imipUpdateButton");
                     break;
                 case "PUBLISH":
-                    data.button1.label = _gs("imipAddToCalendar.label");
+                    data.buttons.push("imipAddButton");
                     break;
                 case "REQUEST:UPDATE":
                 case "REQUEST:NEEDS-ACTION":
@@ -283,20 +274,33 @@ cal.itip = {
                         data.label = _gs("imipBarProcessedNeedsAction");
                     }
 
-                    data.button1.label = _gs("imipAcceptInvitation.label");
-                    data.button1.actionMethod = "ACCEPTED";
-                    data.button2.label = _gs("imipDeclineInvitation.label");
-                    data.button2.actionMethod = "DECLINED";
-                    data.button3.label = _gs("imipAcceptTentativeInvitation.label");
-                    data.button3.actionMethod = "TENTATIVE";
+                    let isRecurringMaster = false;
+                    for (let item of itipItem.getItemList({})) {
+                        if (item.recurrenceInfo) {
+                            isRecurringMaster = true;
+                        }
+                    }
+                    if (itipItem.getItemList({}).length > 1 || isRecurringMaster) {
+                        data.buttons.push("imipAcceptRecurrencesButton");
+                        data.buttons.push("imipDeclineRecurrencesButton");
+                    } else {
+                        data.buttons.push("imipAcceptButton");
+                        data.buttons.push("imipDeclineButton");
+                    }
+                    data.buttons.push("imipMoreButton");
+                    // Use data.hideMenuItems.push("idOfMenuItem") to hide specific menuitems
+                    // from the dropdown menu of a button.  This might be useful to to remove
+                    // a generally available option for a specific invitation, because the
+                    // respective feature is not available for the calendar, the invitation
+                    // is in or the feature is prohibited by the organizer
                     break;
                 }
                 case "CANCEL": {
-                    data.button1.label = _gs("imipCancelInvitation.label");
+                    data.buttons.push("imipDeleteButton");
                     break;
                 }
                 case "REFRESH": {
-                    data.button1.label = _gs("imipSend.label");
+                    data.buttons.push("imipReconfirmButton");
                     break;
                 }
                 default:
@@ -360,22 +364,19 @@ cal.itip = {
             }
         }
 
-        let hdrParser = MailServices.headerParser;
-        let emails = {};
-
         // First check the recipient list
-        hdrParser.parseHeadersWithArray(aMsgHdr.recipients, emails, {}, {});
-        for each (let recipient in emails.value) {
-            if (recipient.toLowerCase() in emailMap) {
+        let toList = MailServices.headerParser.makeFromDisplayAddress(aMsgHdr.recipients);
+        for (let recipient of toList) {
+            if (recipient.email.toLowerCase() in emailMap) {
                 // Return the first found recipient
                 return recipient;
             }
         }
 
         // Maybe we are in the CC list?
-        hdrParser.parseHeadersWithArray(aMsgHdr.ccList, emails, {}, {});
-        for each (let recipient in emails.value) {
-            if (recipient.toLowerCase() in emailMap) {
+        let ccList = MailServices.headerParser.makeFromDisplayAddress(aMsgHdr.ccList);
+        for (let recipient of ccList) {
+            if (recipient.email.toLowerCase() in emailMap) {
                 // Return the first found recipient
                 return recipient;
             }
@@ -579,6 +580,7 @@ cal.itip = {
 
         let invitedAttendee = cal.isInvitation(aItem) && cal.getInvitedAttendee(aItem);
         if (invitedAttendee) { // actually is an invitation copy, fix attendee list to send REPLY
+            invitedAttendee = invitedAttendee.clone();
             /* We check if the attendee id matches one of of the
              * userAddresses. If they aren't equal, it means that
              * someone is accepting invitations on behalf of an other user. */
@@ -586,7 +588,6 @@ cal.itip = {
                 let userAddresses = aItem.calendar.aclEntry.getUserAddresses({});
                 if (userAddresses.length > 0
                     && !cal.attendeeMatchesAddresses(invitedAttendee, userAddresses)) {
-                    invitedAttendee = invitedAttendee.clone();
                     invitedAttendee.setProperty("SENT-BY", "mailto:" + userAddresses[0]);
                 }
             }
@@ -597,7 +598,6 @@ cal.itip = {
                 if (aOpType == Components.interfaces.calIOperationListener.DELETE) {
                     // in case the attendee has just deleted the item, we want to send out a DECLINED REPLY:
                     origInvitedAttendee = invitedAttendee;
-                    invitedAttendee = invitedAttendee.clone();
                     invitedAttendee.participationStatus = "DECLINED";
                 }
 
@@ -610,6 +610,11 @@ cal.itip = {
                     aItem = aItem.clone();
                     aItem.removeAllAttendees();
                     aItem.addAttendee(invitedAttendee);
+                    // we remove X-MS-OLK-SENDER to avoid confusing Outlook 2007+ (w/o Exchange)
+                    // about the notification sender (see bug 603933)
+                    if (aItem.hasProperty("X-MS-OLK-SENDER")) {
+                        aItem.deleteProperty("X-MS-OLK-SENDER");
+                    }
                     sendMessage(aItem, "REPLY", [aItem.organizer], autoResponse);
                 }
             }
@@ -622,6 +627,19 @@ cal.itip = {
             return;
         }
 
+        // special handling for invitation with event status cancelled
+        if (aItem.getAttendees({}).length > 0 &&
+            aItem.getProperty("STATUS") == "CANCELLED") {
+
+            if (cal.itip.getSequence(aItem) > 0) {
+                // make sure we send a cancellation and not an request
+                aOpType = Components.interfaces.calIOperationListener.DELETE;
+            } else {
+                // don't send an invitation, if the event was newly created and has status cancelled
+                return;
+            }
+        }
+
         if (aOpType == Components.interfaces.calIOperationListener.DELETE) {
             sendMessage(aItem, "CANCEL", aItem.getAttendees({}), autoResponse);
             return;
@@ -630,6 +648,7 @@ cal.itip = {
         let originalAtt = (aOriginalItem ? aOriginalItem.getAttendees({}) : []);
         let itemAtt = aItem.getAttendees({});
         let canceledAttendees = [];
+        let addedAttendees = [];
 
         if (itemAtt.length > 0 || originalAtt.length > 0) {
             let attMap = {};
@@ -641,6 +660,9 @@ cal.itip = {
                 if (att.id.toLowerCase() in attMap) {
                     // Attendee was in original item.
                     delete attMap[att.id.toLowerCase()];
+                } else {
+                    // Attendee only in new item
+                    addedAttendees.push(att);
                 }
             }
 
@@ -649,6 +671,9 @@ cal.itip = {
             }
         }
 
+        // setting default value to control for sending (cancellation) messages
+        // this will be set to false, once the user cancels sending manually
+        let sendOut = true;
         // Check to see if some part of the item was updated, if so, re-send REQUEST
         if (!aOriginalItem || (cal.itip.compare(aItem, aOriginalItem) > 0)) { // REQUEST
 
@@ -682,8 +707,19 @@ cal.itip = {
                     recipients.push(attendee);
                 }
 
+                // if send out should be limited to newly added attendees and no major
+                // props (attendee is not such) have changed, only the respective attendee
+                // is added to the recipient list while the attendee information in the
+                // ical is left to enable the new attendee to see who else is attending
+                // the event (if not prevented otherwise)
+                if (isMinorUpdate &&
+                    addedAttendees.length > 0 &&
+                    Preferences.get("calendar.itip.updateInvitationForNewAttendeesOnly", false)) {
+                    recipients = addedAttendees;
+                }
+
                 if (recipients.length > 0) {
-                    sendMessage(requestItem, "REQUEST", recipients, autoResponse);
+                    sendOut = sendMessage(requestItem, "REQUEST", recipients, autoResponse);
                 }
 
             }
@@ -696,7 +732,9 @@ cal.itip = {
             for each (let att in canceledAttendees) {
                 cancelItem.addAttendee(att);
             }
-            sendMessage(cancelItem, "CANCEL", canceledAttendees, autoResponse);
+            if (sendOut) {
+                sendMessage(cancelItem, "CANCEL", canceledAttendees, autoResponse);
+            }
         }
     },
 
@@ -754,6 +792,34 @@ cal.itip = {
         }
 
         return newItem;
+    },
+
+    /**
+     * Returns a copy of an itipItem with modified properties and items build from scratch
+     * Use itipItem.clone() instead if only a simple copy is required
+     *
+     * @param aItipItem     ItipItem to derive a new one from
+     * @param aItems        List of items to be contained in the new itipItem
+     * @param aProps        List of properties to be different in the new itipItem
+     */
+    getModifiedItipItem: function cal_getModifiedItipItem(aItipItem, aItems, aProps) {
+
+        let itipItem = Components.classes["@mozilla.org/calendar/itip-item;1"]
+                                 .createInstance(Components.interfaces.calIItipItem);
+        let serializedItems = "";
+        (aItems || []).forEach(function(item) serializedItems += cal.getSerializedItem(item));
+        itipItem.init(serializedItems);
+
+        let props = aProps || {};
+        itipItem.autoResponse = ("autoResponse" in props) ? props.autoResponse : aItipItem.autoResponse;
+        itipItem.identity = ("identity" in props) ? props.identity : aItipItem.identity;
+        itipItem.isSend = ("isSend" in props) ? props.isSend : aItipItem.isSend;
+        itipItem.localStatus = ("localStatus" in props) ? props.localStatus : aItipItem.localStatus;
+        itipItem.receivedMethod = ("receivedMethod" in props) ? props.receivedMethod : aItipItem.receivedMethod;
+        itipItem.responseMethod = ("responseMethod" in props) ? props.responseMethod : aItipItem.responseMethod;
+        itipItem.targetCalendar = ("targetCalendar" in props) ? properties.targetCalendar : aItipItem.targetCalendar;
+
+        return itipItem;
     }
 };
 
@@ -902,36 +968,64 @@ function createOrganizer(aCalendar) {
  */
 function sendMessage(aItem, aMethod, aRecipientsList, autoResponse) {
     if (aRecipientsList.length == 0) {
-        return;
+        return false;
     }
     let calendar = cal.wrapInstance(aItem.calendar, Components.interfaces.calISchedulingSupport);
     if (calendar) {
         if (calendar.QueryInterface(Components.interfaces.calISchedulingSupport)
                           .canNotify(aMethod, aItem)) {
-            return; //provider will handle that
+            // provider will handle that, so we return - we leave it also to the provider to
+            // deal with user canceled notifications (if possible), so set the return value
+            // to true as false would prevent any further notification within this cycle
+            return true;
         }
     }
 
     let aTransport = aItem.calendar.getProperty("itip.transport");
     if (!aTransport) { // can only send if there's a transport for the calendar
-        return;
+        return false;
     }
     aTransport = aTransport.QueryInterface(Components.interfaces.calIItipTransport);
 
-    let itipItem = Components.classes["@mozilla.org/calendar/itip-item;1"]
-                             .createInstance(Components.interfaces.calIItipItem);
-    itipItem.init(cal.getSerializedItem(aItem));
-    itipItem.responseMethod = aMethod;
-    itipItem.targetCalendar = aItem.calendar;
-    itipItem.autoResponse = ((autoResponse && autoResponse.value) ? Components.interfaces.calIItipItem.AUTO
-                                                                  : Components.interfaces.calIItipItem.USER);
-    if (autoResponse) {
-        autoResponse.value = true; // auto every following
-    }
-    // XXX I don't know whether the below are used at all, since we don't use the itip processor
-    itipItem.isSend = true;
+    function _sendItem(aSendToList, aSendItem) {
+        let itipItem = Components.classes["@mozilla.org/calendar/itip-item;1"]
+                                 .createInstance(Components.interfaces.calIItipItem);
+        itipItem.init(cal.getSerializedItem(aSendItem));
+        itipItem.responseMethod = aMethod;
+        itipItem.targetCalendar = aSendItem.calendar;
+        itipItem.autoResponse = ((autoResponse && autoResponse.value) ? Components.interfaces.calIItipItem.AUTO
+                                                                      : Components.interfaces.calIItipItem.USER);
+        if (autoResponse) {
+            autoResponse.value = true; // auto every following
+        }
+        // XXX I don't know whether the below are used at all, since we don't use the itip processor
+        itipItem.isSend = true;
 
-    aTransport.sendItems(aRecipientsList.length, aRecipientsList, itipItem);
+        return aTransport.sendItems(aSendToList.length, aSendToList, itipItem);
+    }
+
+    // split up transport, if attendee undisclosure is requested
+    // and this is a message send by the organizer
+    if((aItem.getProperty("X-MOZ-SEND-INVITATIONS-UNDISCLOSED") == "TRUE") &&
+       aMethod != "REPLY" &&
+       aMethod != "REFRESH" &&
+       aMethod != "COUNTER") {
+        for each( aRecipient in aRecipientsList) {
+            // create a list with a single recipient
+            let sendToList = [aRecipient];
+            // remove other recipients from vevent attendee list
+            let sendItem = aItem.clone();
+            sendItem.removeAllAttendees();
+            sendItem.addAttendee(aRecipient);
+            // send message
+            if (!_sendItem(sendToList, sendItem)) {
+                return false;
+            };
+        }
+        return true;
+    } else {
+        return _sendItem(aRecipientsList, aItem);
+    }
 }
 
 /** local to this module file
@@ -1203,10 +1297,19 @@ ItipItemFinder.prototype = {
                                             }
                                         }
                                         if (att) {
-                                            let firstFoundItem = this.mFoundItems.length && this.mFoundItems[0];
-                                            let foundAttendee = firstFoundItem.getAttendeeById(att.id);
+                                            let firstFoundItem = this.mFoundItems[0];
+                                            // again, fall back to using configured organizer if not found
+                                            let foundAttendee = firstFoundItem.getAttendeeById(att.id) || att;
 
-                                            if (foundAttendee.participationStatus == "NEEDS-ACTION") {
+                                            // If the the user hasn't responded to the invitation yet and we
+                                            // are viewing the current representation of the item, show the
+                                            // accept/decline buttons. This means newer events will show the
+                                            // "Update" button and older events will show the "already
+                                            // processed" text.
+                                            if (foundAttendee.participationStatus == "NEEDS-ACTION" &&
+                                                (item.calendar.getProperty("itip.disableRevisionChecks") ||
+                                                 cal.itip.compare(itipItemItem, item) == 0)) {
+
                                                 actionMethod = "REQUEST:NEEDS-ACTION";
                                                 operations.push(function(opListener, partStat) {
                                                     let changedItem = firstFoundItem.clone();

@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 Components.utils.import("resource://gre/modules/Services.jsm");
+Components.utils.import("resource://gre/modules/Preferences.jsm");
 
 function Synthetic(aOpen, aDuration) {
     this.open = aOpen;
@@ -11,9 +12,10 @@ function Synthetic(aOpen, aDuration) {
 
 var agendaListbox = {
     agendaListboxControl: null,
-    pendingRefresh: null,
+    mPendingRefreshJobs: null,
     kDefaultTimezone: null,
-    showsToday: false
+    showsToday: false,
+    soonDays: 5
 };
 
 /**
@@ -29,14 +31,28 @@ function initAgendaListbox() {
     this.today = new Synthetic(showTodayHeader, 1);
     this.addPeriodListItem(this.today, "today-header");
     this.tomorrow = new Synthetic(showTomorrowHeader, 1);
-    var soondays = getPrefSafe("calendar.agendaListbox.soondays", 5);
-    this.soon = new Synthetic(showSoonHeader, soondays);
+    this.soonDays = getSoondaysPreference();
+    this.soon = new Synthetic(showSoonHeader, this.soonDays);
     this.periods = [this.today, this.tomorrow, this.soon];
+    this.mPendingRefreshJobs = new Map();
+
+    var prefObserver = {
+        observe: function aL_observe(aSubject, aTopic, aPrefName) {
+            switch (aPrefName) {
+                case "calendar.agendaListbox.soondays":
+                    agendaListbox.soonDays = getSoondaysPreference();
+                    agendaListbox.updateSoonSection();
+                    break;
+            }
+        }
+    }
+    Services.prefs.addObserver("calendar.agendaListbox", prefObserver, false);
 
     // Make sure the agenda listbox is unloaded
     var self = this;
     window.addEventListener("unload",
                             function unload_agendaListbox() {
+                                Services.prefs.removeObserver("calendar.agendaListbox", prefObserver);
                                 self.uninit();
                             },
                             false);
@@ -88,7 +104,7 @@ function removePeriodListItem(aPeriod) {
     if (aPeriod.listItem) {
         aPeriod.listItem.getCheckbox().removeEventListener("CheckboxStateChange", this.onCheckboxChange, true);
         if (aPeriod.listItem) {
-            this.agendaListboxControl.removeChild(aPeriod.listItem);
+            aPeriod.listItem.remove();
             aPeriod.listItem = null;
         }
     }
@@ -120,7 +136,7 @@ function onCheckboxChange(event) {
                 var nextItemSibling = listItem.nextSibling;
                 leaveloop = (!agendaListbox.isEventListItem(listItem));
                 if (!leaveloop) {
-                    agendaListbox.agendaListboxControl.removeChild(listItem);
+                    listItem.remove();
                     listItem = nextItemSibling;
                 }
             }
@@ -391,7 +407,7 @@ function isBefore(aItem, aCompItem, aPeriod) {
 }
 
 /**
- * Returns the a start or end date of an item according to which of them
+ * Returns the start or end date of an item according to which of them
  * must be displayed in a given period of the agenda
  *
  * @param aItem         The item to compare.
@@ -485,7 +501,7 @@ function deleteItem(aItem, aMoveSelection) {
                     this.moveSelection();
                 }
             }
-            this.agendaListboxControl.removeChild(listItem);
+            listItem.remove();
         }
     }
     return isSelected;
@@ -502,7 +518,7 @@ function deleteItemsFromCalendar(aCalendar) {
     for each (let childNode in childNodes) {
         if (childNode && childNode.occurrence
             && childNode.occurrence.calendar.id == aCalendar.id) {
-            this.agendaListboxControl.removeChild(childNode);
+            childNode.remove();
         }
     }
 }
@@ -566,7 +582,9 @@ function createNewEvent(aEvent) {
         // isDate = true automatically makes the start time be the next full hour.
         var eventStart = agendaListbox.today.start.clone();
         eventStart.isDate = true;
-        createEventWithDialog(getSelectedCalendar(), eventStart);
+        if (calendarController.isCommandEnabled("calendar_new_event_command")) {
+            createEventWithDialog(getSelectedCalendar(), eventStart);
+        }
     }
 }
 
@@ -600,35 +618,88 @@ function setupContextMenu(popup) {
  */
 agendaListbox.refreshCalendarQuery =
 function refreshCalendarQuery(aStart, aEnd, aCalendar) {
-    let pendingRefresh = cal.wrapInstance(this.pendingRefresh, Components.interfaces.calIOperation);
-    if (this.pendingRefresh) {
-        if (pendingRefresh) {
-            this.pendingRefresh = null;
-            pendingRefresh.cancel(null);
-        } else {
-            return;
+    let refreshJob = {
+        agendaListbox: this,
+        calendar: null,
+        calId: null,
+        operation: null,
+        cancelled: false,
+
+        onOperationComplete: function(aCalendar, aStatus, aOperationType, aId, aDateTime) {
+            if (this.agendaListbox.mPendingRefreshJobs.has(this.calId)) {
+                this.agendaListbox.mPendingRefreshJobs.delete(this.calId);
+            }
+
+            if (!this.cancelled) {
+                setCurrentEvent();
+            }
+        },
+
+        onGetResult: function(aCalendar, aStatus, aItemType, aDetail, aCount, aItems) {
+            if (this.cancelled || !Components.isSuccessCode(aStatus)) {
+                return;
+            }
+            for (let item of aItems) {
+                this.agendaListbox.addItem(item);
+            }
+        },
+
+        cancel: function() {
+            this.cancelled = true;
+            let op = cal.wrapInstance(this.operation, Components.interfaces.calIOperation);
+            if (op && op.isPending) {
+                op.cancel();
+                this.operation = null;
+            }
+        },
+
+        execute: function(aStart, aEnd, aCalendar) {
+            if (!(aStart || aEnd || aCalendar)) {
+                this.agendaListbox.removeListItems();
+            }
+
+            if (!aCalendar) {
+                aCalendar = this.agendaListbox.calendar;
+            }
+            if (!aStart) {
+                aStart = this.agendaListbox.getStart();
+            }
+            if (!aEnd) {
+                aEnd = this.agendaListbox.getEnd();
+            }
+            if (!(aStart || aEnd || aCalendar)) {
+                return;
+            }
+
+            if (aCalendar.type == "composite") {
+                // we're refreshing from the composite calendar, so we can cancel
+                // all other pending refresh jobs.
+                this.calId = "composite";
+                for (let job of this.agendaListbox.mPendingRefreshJobs.values()) {
+                    job.cancel();
+                }
+                this.agendaListbox.mPendingRefreshJobs.clear();
+            } else {
+                this.calId = aCalendar.id;
+                if (this.agendaListbox.mPendingRefreshJobs.has(this.calId)) {
+                    this.agendaListbox.mPendingRefreshJobs.get(this.calId).cancel();
+                    this.agendaListbox.mPendingRefreshJobs.delete(this.calId);
+                }
+            }
+            this.calendar = aCalendar;
+
+            let filter = this.calendar.ITEM_FILTER_CLASS_OCCURRENCES |
+                         this.calendar.ITEM_FILTER_TYPE_EVENT;
+            let op = this.calendar.getItems(filter, 0, aStart, aEnd, this);
+            op = cal.wrapInstance(op, Components.interfaces.calIOperation);
+            if (op && op.isPending) {
+                this.operation = op;
+                this.agendaListbox.mPendingRefreshJobs.set(this.calId, this);
+            }
         }
-    }
-    if (!(aStart || aEnd || aCalendar)) {
-        this.removeListItems();
-    }
-    if (!aStart) {
-        aStart = this.getStart();
-    }
-    if (!aEnd) {
-        aEnd = this.getEnd();
-    }
-    if (aStart && aEnd) {
-        var filter = this.calendar.ITEM_FILTER_CLASS_OCCURRENCES |
-                     this.calendar.ITEM_FILTER_TYPE_EVENT;
-        this.pendingRefresh = true;
-        let refreshCalendar = aCalendar || this.calendar;
-        pendingRefresh = refreshCalendar.getItems(filter, 0, aStart, aEnd,
-                                                  this.calendarOpListener);
-        if (pendingRefresh && pendingRefresh.isPending) { // support for calIOperation
-            this.pendingRefresh = pendingRefresh;
-        }
-    }
+    };
+
+    refreshJob.execute(aStart, aEnd, aCalendar);
 };
 
 /**
@@ -787,7 +858,7 @@ function removeListItems() {
             }
             if (this.isEventListItem(listItem)) {
                 if (listItem != this.agendaListboxControl.firstChild) {
-                    this.agendaListboxControl.removeChild(listItem);
+                    listItem.remove();
                 } else {
                     leaveloop = true;
                 }
@@ -824,29 +895,6 @@ function getListItemByHashId(ahashId) {
  */
 agendaListbox.calendarOpListener = {
     agendaListbox : agendaListbox
-};
-
-/**
- * Called when all items have been retrieved from the calendar.
- * @see calIOperationListener
- */
-agendaListbox.calendarOpListener.onOperationComplete =
-function listener_onOperationComplete(calendar, status, optype, id,
-                                      detail) {
-    // signal that the current operation finished.
-    this.agendaListbox.pendingRefresh = null;
-    setCurrentEvent();
-};
-
-/**
- * Called when an item has been retrieved, adds all items to the agenda listbox.
- * @see calIOperationListener
- */
-agendaListbox.calendarOpListener.onGetResult =
-function listener_onGetResult(calendar, status, itemtype, detail, count, items) {
-    if (!Components.isSuccessCode(status))
-        return;
-    items.forEach(this.agendaListbox.addItem, this.agendaListbox);
 };
 
 /**
@@ -988,6 +1036,18 @@ agendaListbox.calendarObserver.onDefaultCalendarChanged = function(aCalendar) {
 };
 
 /**
+ * Updates the "Soon" section of today pane when preference soondays changes
+ **/
+agendaListbox.updateSoonSection =
+function updateSoonSection() {
+    let soonHeader = document.getElementById("nextweek-header");
+    this.soon.duration = this.soonDays;
+    this.soon.open = true;
+    soonHeader.setItem(this.soon, true);
+    agendaListbox.refreshPeriodDates(now());
+}
+
+/**
  * Updates the event considered "current". This goes through all "today" items
  * and sets the "current" attribute on all list items that are currently
  * occurring.
@@ -1013,7 +1073,7 @@ function setCurrentEvent() {
                     var msuntillend = complistItem.occurrence.endDate
                                         .getInTimezone(agendaListbox.kDefaultTimezone)
                                         .subtractDate(anow).inSeconds;
-                    if (msuntillend >= 0) {
+                    if (msuntillend > 0) {
                         complistItem.setAttribute("current", "true");
                         if ((msuntillend < msScheduleTime)  || (msScheduleTime == -1)){
                             msScheduleTime = msuntillend;
@@ -1041,7 +1101,7 @@ function setCurrentEvent() {
     if (removelist) {
       if (removelist.length > 0) {
           for (var i = 0;i < removelist.length; i++) {
-              agendaListbox.agendaListboxControl.removeChild(removelist[i]);
+              removelist[i].remove();
           }
       }
     }
@@ -1093,4 +1153,25 @@ function scheduleNextCurrentEventUpdate(aRefreshCallback, aMsUntil) {
         gEventTimer.cancel();
     }
     gEventTimer.initWithCallback(udCallback, aMsUntil, gEventTimer.TYPE_ONE_SHOT);
+}
+
+/**
+ * Gets a right value for calendar.agendaListbox.soondays preference, avoid
+ * erroneus values edited in the lightning.js preference file
+ **/
+function getSoondaysPreference() {
+    let prefName = "calendar.agendaListbox.soondays";
+    let soonpref = Preferences.get(prefName, 5);
+
+    if (soonpref > 0 && soonpref <= 28) {
+        if (soonpref % 7 != 0) {
+            let intSoonpref = Math.floor(soonpref / 7) * 7;
+            soonpref = (intSoonpref == 0 ? soonpref : intSoonpref);
+            Preferences.set(prefName, soonpref, "INT");
+        }
+    } else {
+        soonpref = soonpref > 28 ? 28 : 1;
+        Preferences.set(prefName, soonpref, "INT");
+    }
+    return soonpref;
 }
