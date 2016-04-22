@@ -5,6 +5,7 @@
 Components.utils.import("resource://calendar/modules/calUtils.jsm");
 Components.utils.import("resource://calendar/modules/calIteratorUtils.jsm");
 Components.utils.import("resource://gre/modules/PluralForm.jsm");
+Components.utils.import("resource://gre/modules/Preferences.jsm");
 
 let allowedActionsMap = {}; 
 
@@ -90,7 +91,7 @@ function loadReminders() {
     // Set up a default absolute date. This will be overridden if the selected
     // alarm is absolute.
     let absDate = document.getElementById("reminder-absolute-date");
-    absDate.value = getDefaultStartDate().jsDate;
+    absDate.value = cal.dateTimeToJsDate(getDefaultStartDate());
 
     if (listbox.childNodes.length) {
         // We have reminders, select the first by default. For some reason,
@@ -241,7 +242,7 @@ function onReminderSelected() {
             relationType.value = "absolute";
 
             // Date
-            absDate.value = (reminder.alarmDate || getDefaultStartDate()).jsDate;
+            absDate.value = cal.dateTimeToJsDate(reminder.alarmDate || cal.getDefaultStartDate());
         } else {
             relationType.value =  "relative";
 
@@ -362,7 +363,7 @@ function onNewReminder() {
     let listbox = document.getElementById("reminder-listbox");
 
     let reminder = cal.createAlarm();
-    let alarmlen = getPrefSafe("calendar.alarms." + itemType + "alarmlen", 15);
+    let alarmlen = Preferences.get("calendar.alarms." + itemType + "alarmlen", 15);
 
     // Default is a relative DISPLAY alarm, |alarmlen| minutes before the event.
     // If DISPLAY is not supported by the provider, then pick the provider's
@@ -405,7 +406,7 @@ function onRemoveReminder() {
                                    listitem.previousSibling : null);
 
     listbox.clearSelection();
-    listbox.removeChild(listitem);
+    listitem.remove();
     listbox.selectItem(newSelection);
 
     setElementValue("reminder-remove-button",

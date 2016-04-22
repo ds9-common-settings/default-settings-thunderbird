@@ -4,6 +4,7 @@
 
 Components.utils.import("resource://calendar/modules/calUtils.jsm");
 Components.utils.import("resource://gre/modules/Services.jsm");
+Components.utils.import("resource://gre/modules/Preferences.jsm");
 
 /*
  * Authentication helper code
@@ -14,8 +15,8 @@ cal.auth = {
     /**
      * Auth prompt implementation - Uses password manager if at all possible.
      */
-    Prompt: function calPrompt(aProvider) {
-        this.mProvider = aProvider;
+    Prompt: function calPrompt() {
+        this.mWindow = cal.getCalendarWindow();
         this.mReturnedLogins = {};
     },
 
@@ -48,7 +49,7 @@ cal.auth = {
 
         // Only show the save password box if we are supposed to.
         let savepassword = null;
-        if (cal.getPrefSafe("signon.rememberSignons", true)) {
+        if (Preferences.get("signon.rememberSignons", true)) {
             savepassword = cal.calGetString("passwordmgr", "rememberPassword", null, "passwordmgr");
         }
 
@@ -95,7 +96,9 @@ cal.auth = {
                 Services.logins.addLogin(newLoginInfo);
             }
         } catch (exc) {
-            cal.ASSERT(false, exc);
+            // Only show the message if its not an abort, which can happen if
+            // the user canceled the master password dialog
+            cal.ASSERT(exc.result == Components.results.NS_ERROR_ABORT, exc);
         }
     },
 
@@ -250,7 +253,7 @@ cal.auth.Prompt.prototype = {
         } else {
             let prompter2 = Components.classes["@mozilla.org/embedcomp/window-watcher;1"]
                                       .getService(Components.interfaces.nsIPromptFactory)
-                                      .getPrompt(this.mProvider, Components.interfaces.nsIAuthPrompt2);
+                                      .getPrompt(this.mWindow, Components.interfaces.nsIAuthPrompt2);
             return prompter2.promptAuth(aChannel, aLevel, aAuthInfo);
         }
     },
@@ -280,11 +283,11 @@ cal.auth.Prompt.prototype = {
                                 ) {
         var self = this;
         let promptlistener = {
-
             onPromptStart: function() {
                 res=self.promptAuth(aChannel, aLevel, aAuthInfo);
 
                 if (res) {
+                    gAuthCache.setAuthInfo(hostKey, aAuthInfo);
                     this.onPromptAuthAvailable();
                     return true;
                 }
@@ -294,16 +297,72 @@ cal.auth.Prompt.prototype = {
             },
 
             onPromptAuthAvailable : function() {
+                let authInfo = gAuthCache.retrieveAuthInfo(hostKey);
+                if (authInfo) {
+                    aAuthInfo.username = authInfo.username;
+                    aAuthInfo.password = authInfo.password;
+                }
                 aCallback.onAuthAvailable(aContext, aAuthInfo);
             },
 
             onPromptCanceled : function() {
+                gAuthCache.retrieveAuthInfo(hostKey);
                 aCallback.onAuthCancelled(aContext, true);
             }
         };
 
-        var asyncprompter = Components.classes["@mozilla.org/messenger/msgAsyncPrompter;1"]
-                                      .getService(Components.interfaces.nsIMsgAsyncPrompter);
-        asyncprompter.queueAsyncAuthPrompt(aChannel.URI.spec, false, promptlistener);
+        let hostKey = aChannel.URI.prePath + ":" + aAuthInfo.realm;
+        gAuthCache.planForAuthInfo(hostKey);
+
+        function queuePrompt() {
+            let asyncprompter = Components.classes["@mozilla.org/messenger/msgAsyncPrompter;1"]
+                                          .getService(Components.interfaces.nsIMsgAsyncPrompter);
+            asyncprompter.queueAsyncAuthPrompt(hostKey, false, promptlistener);
+        }
+
+        self.mWindow = cal.getCalendarWindow();
+
+        // the prompt will fail if we are too early
+        if (self.mWindow.document.readyState != "complete") {
+            self.mWindow.addEventListener("load", queuePrompt, true);
+        } else {
+            queuePrompt();
+        }
+    }
+};
+
+// Cache for authentication information since onAuthInformation in the prompt
+// listener is called without further information. If the password is not
+// saved, there is no way to retrieve it. We use ref counting to avoid keeping
+// the password in memory longer than needed.
+let gAuthCache = {
+    _authInfoCache: new Map(),
+    planForAuthInfo: function(hostKey) {
+        let authInfo = this._authInfoCache.get(hostKey);
+        if (authInfo) {
+            authInfo.refCnt++;
+        } else {
+            this._authInfoCache.set(hostKey, { refCnt: 1 });
+        }
+    },
+
+    setAuthInfo: function(hostKey, aAuthInfo) {
+        let authInfo = this._authInfoCache.get(hostKey);
+        if (authInfo) {
+            authInfo.username = aAuthInfo.username;
+            authInfo.password = aAuthInfo.password;
+        }
+    },
+
+    retrieveAuthInfo: function(hostKey) {
+        let authInfo = this._authInfoCache.get(hostKey);
+        if (authInfo) {
+            authInfo.refCnt--;
+
+            if (authInfo.refCnt == 0) {
+                this._authInfoCache.delete(hostKey);
+            }
+        }
+        return authInfo;
     }
 };

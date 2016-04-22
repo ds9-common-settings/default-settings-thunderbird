@@ -43,8 +43,8 @@ function ltnInitMailIdentitiesRow() {
     // Remove all children from the email list to avoid duplicates if the list
     // has already been populated during a previous step in the calendar
     // creation wizard.
-    while (menuPopup.lastChild) {
-        menuPopup.removeChild(menuPopup.lastChild);
+    while (menuPopup.hasChildNodes()) {
+        menuPopup.lastChild.remove();
     }
 
     addMenuItem(menuPopup, ltnGetString("lightning", "imipNoIdentity"), "none");
@@ -54,7 +54,7 @@ function ltnInitMailIdentitiesRow() {
     } else {
         identities = MailServices.accounts.allIdentities;
     }
-    for each (let identity in fixIterator(identities, Components.interfaces.nsIMsgIdentity)) {
+    for (let identity in fixIterator(identities, Components.interfaces.nsIMsgIdentity)) {
         addMenuItem(menuPopup, identity.identityName, identity.key);
     }
     try {

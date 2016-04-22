@@ -6,8 +6,9 @@
 
 var gCalThreadingEnabled;
 
-Components.utils.import("resource:///modules/XPCOMUtils.jsm");
+Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
 Components.utils.import("resource://gre/modules/Services.jsm");
+Components.utils.import("resource://gre/modules/Preferences.jsm");
 
 // Usually the backend loader gets loaded via profile-after-change, but in case
 // a calendar component hooks in earlier, its very likely it will use calUtils.
@@ -82,7 +83,8 @@ let cal = {
      * Create an adapter for the given interface. If passed, methods will be
      * added to the template object, otherwise a new object will be returned.
      *
-     * @param iface     The interface to adapt (Components.interfaces...)
+     * @param iface     The interface to adapt, either using
+     *                    Components.interfaces or the name as a string.
      * @param template  (optional) A template object to extend
      * @return          If passed the adapted template object, otherwise a
      *                    clean adapter.
@@ -96,20 +98,20 @@ let cal = {
     createAdapter: function createAdapter(iface, template) {
         let methods;
         let adapter = template || {};
-        switch (iface) {
-            case Components.interfaces.calIObserver:
+        switch (iface.name || iface) {
+            case "calIObserver":
                 methods = ["onStartBatch", "onEndBatch", "onLoad", "onAddItem",
                            "onModifyItem", "onDeleteItem", "onError",
                            "onPropertyChanged", "onPropertyDeleting"];
                 break;
-            case Components.interfaces.calICalendarManagerObserver:
+            case "calICalendarManagerObserver":
                 methods = ["onCalendarRegistered", "onCalendarUnregistering",
                            "onCalendarDeleting"];
                 break;
-            case Components.interfaces.calIOperationListener:
+            case "calIOperationListener":
                 methods = ["onGetResult", "onOperationComplete"];
                 break;
-            case Components.interfaces.calICompositeObserver:
+            case "calICompositeObserver":
                 methods = ["onCalendarAdded", "onCalendarRemoved",
                            "onDefaultCalendarChanged"];
                 break;
@@ -130,9 +132,27 @@ let cal = {
 
     get threadingEnabled() {
         if (gCalThreadingEnabled === undefined) {
-            gCalThreadingEnabled = !cal.getPrefSafe("calendar.threading.disabled", false);
+            gCalThreadingEnabled = !Preferences.get("calendar.threading.disabled", false);
         }
         return gCalThreadingEnabled;
+    },
+
+    /*
+     * Checks whether a calendar supports events
+     *
+     * @param aCalendar
+     */
+    isEventCalendar: function cal_isEventCalendar(aCalendar) {
+        return (aCalendar.getProperty("capabilities.events.supported") !== false);
+    },
+
+    /*
+     * Checks whether a calendar supports tasks
+     *
+     * @param aCalendar
+     */
+    isTaskCalendar: function cal_isTaskCalendar(aCalendar) {
+        return (aCalendar.getProperty("capabilities.tasks.supported") !== false);
     },
 
     /**
@@ -175,6 +195,35 @@ let cal = {
     },
 
     /**
+     * Returns a copy of an event that
+     * - has a relation set to the original event
+     * - has the same organizer but
+     * - has any attendee removed
+     * Intended to get a copy of a normal event invitation that behaves as if the PUBLISH method
+     * was chosen instead.
+     *
+     * @param aItem         original item
+     * @param aUid          (optional) UID to use for the new item
+     */
+    getPublishLikeItemCopy: function (aItem, aUid) {
+        // avoid changing aItem
+        let item = aItem.clone();
+        // reset to a new UUID if applicable
+        item.id = aUid || cal.getUUID();
+        // add a relation to the original item
+        let relation = cal.createRelation();
+        relation.relId = aItem.id;
+        relation.relType = "SIBLING";
+        item.addRelation(relation);
+        // remove attendees
+        item.removeAllAttendees();
+        if (!aItem.isMutable) {
+            item = item.makeImmutable();
+        }
+        return item;
+    },
+
+    /**
      * Shortcut function to serialize an item (including all overridden items).
      */
     getSerializedItem: function cal_getSerializedItem(aItem) {
@@ -194,6 +243,27 @@ let cal = {
             isInvitation = calendar.isInvitation(aItem);
         }
         return isInvitation;
+    },
+
+    /**
+     * Returns a basically checked recipient list - malformed elements will be removed
+     *
+     * @param   string aRecipients  a comma-seperated list of e-mail addresses
+     * @return  string              a comma-seperated list of e-mail addresses
+     */
+    validateRecipientList: function (aRecipients) {
+        let compFields = Components.classes["@mozilla.org/messengercompose/composefields;1"]
+                                   .createInstance(Components.interfaces.nsIMsgCompFields);
+        // Resolve the list considering also configured display names
+        let result = compFields.splitRecipients(aRecipients, false, {});
+        // Malformed e-mail addresses with display name in list will result in "Display name <>".
+        // So, we need an additional check on the e-mail address itself and sort out malformed
+        // entries from the previous list (both objects have always the same length)
+        if (result.length > 0) {
+            let resultAddress = compFields.splitRecipients(aRecipients, true, {});
+            result = result.filter((v, idx) => !!resultAddress[idx]);
+        }
+        return result.join(",");
     },
 
     /**
@@ -218,6 +288,26 @@ let cal = {
     },
 
     /**
+     * Prepends a mailto: prefix to an email address like string
+     *
+     * @param  {string}        the string to prepend the prefix if not already there
+     * @return {string}        the string with prefix
+     */
+    prependMailTo: function(aId) {
+        return aId.replace(/^(?:mailto:)?(.*)@/i, "mailto:$1@");
+    },
+
+    /**
+     * Removes an existing mailto: prefix from an attendee id
+     *
+     * @param  {string}       the string to remove the prefix from if any
+     * @return {string}       the string without prefix
+     */
+    removeMailTo: function(aId) {
+        return aId.replace(/^mailto:/i, "");
+    },
+
+    /**
      * Shortcut function to get the invited attendee of an item.
      */
     getInvitedAttendee: function cal_getInvitedAttendee(aItem, aCalendar) {
@@ -230,6 +320,25 @@ let cal = {
             invitedAttendee = calendar.getInvitedAttendee(aItem);
         }
         return invitedAttendee;
+    },
+
+    /**
+     * Returns the default transparency to apply for an event depending on whether its an all-day event
+     *
+     * @param aIsAllDay      If true, the default transparency for all-day events is returned
+     */
+    getEventDefaultTransparency: function (aIsAllDay) {
+        let transp = null;
+        if (aIsAllDay) {
+            transp = Preferences.get("calendar.events.defaultTransparency.allday.transparent", false)
+                     ? "TRANSPARENT"
+                     : "OPAQUE";
+        } else {
+            transp = Preferences.get("calendar.events.defaultTransparency.standard.transparent", false)
+                     ? "TRANSPARENT"
+                     : "OPAQUE";
+        }
+        return transp;
     },
 
     // The below functions will move to some different place once the
@@ -436,9 +545,25 @@ let cal = {
                             aDate.getSeconds(),
                             aTimezone);
         } else {
-            newDate.jsDate = aDate;
+            newDate.nativeTime = aDate.getTime() * 1000;
         }
         return newDate;
+    },
+
+    /**
+     * Convert a calIDateTime to a Javascript date object. This is the
+     * replacement for the former .jsDate property.
+     *
+     * @param cdt       The calIDateTime instnace
+     * @return          The Javascript date equivalent.
+     */
+    dateTimeToJsDate: function(cdt) {
+        if (cdt.timezone.isFloating) {
+            return new Date(cdt.year, cdt.month, cdt.day,
+                            cdt.hour, cdt.minute, cdt.second);
+        } else {
+            return new Date(cdt.nativeTime / 1000);
+        }
     },
 
     sortEntry: function cal_sortEntry(aItem) {
@@ -584,12 +709,12 @@ let cal = {
         while (childNode) {
             let prevChildNode = childNode.previousSibling;
             if (!aAttribute || aAttribute === undefined) {
-                aParentNode.removeChild(childNode);
+                childNode.remove();
              } else if (!aValue || aValue === undefined) {
-                aParentNode.removeChild(childNode);
+                childNode.remove();
             } else if (childNode && childNode.hasAttribute(aAttribute)
                 && childNode.getAttribute(aAttribute) == aValue) {
-                aParentNode.removeChild(childNode);
+                childNode.remove();
             }
             childNode = prevChildNode;
         };

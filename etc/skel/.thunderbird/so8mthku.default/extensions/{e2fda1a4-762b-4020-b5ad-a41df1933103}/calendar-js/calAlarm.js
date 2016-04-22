@@ -427,12 +427,6 @@ calAlarm.prototype = {
             comp.addProperty(attendee.icalProperty);
         }
 
-        // Set up attachments (REQUIRED for AUDIO and EMAIL types, there MUST
-        // NOT be more than one for AUDIO.
-        if (this.action == "AUDIO" && this.getAttachments({}).length != 1) {
-            throw Components.results.NS_ERROR_NOT_INITIALIZED;
-        }
-
         /* TODO should we be strict here?
         if (this.action == "EMAIL" && !this.attachments.length) {
             throw Components.results.NS_ERROR_NOT_INITIALIZED;
@@ -657,15 +651,15 @@ calAlarm.prototype = {
             let unit;
             if (alarmlen % 1440 == 0) {
                 // Alarm is in days
-                unit = "reminderCustomUnitDays";
+                unit = "unitDays";
                 alarmlen /= 1440;
             } else if (alarmlen % 60 == 0) {
-                unit = "reminderCustomUnitHours";
+                unit = "unitHours";
                 alarmlen /= 60;
             } else {
-                unit = "reminderCustomUnitMinutes";
+                unit = "unitMinutes";
             }
-            let localeUnitString = calGetString("calendar-alarms", unit);
+            let localeUnitString = cal.calGetString("calendar", unit);
             let unitString = PluralForm.get(alarmlen, localeUnitString)
                                        .replace("#1", alarmlen);
             let originStringName = "reminderCustomOrigin";
@@ -691,7 +685,6 @@ calAlarm.prototype = {
             return calGetString("calendar-alarms",
                                 "reminderCustomTitle",
                                 [unitString, originString]);
-                                
         } else {
             // This is an incomplete alarm, but then again we should never reach
             // this state.

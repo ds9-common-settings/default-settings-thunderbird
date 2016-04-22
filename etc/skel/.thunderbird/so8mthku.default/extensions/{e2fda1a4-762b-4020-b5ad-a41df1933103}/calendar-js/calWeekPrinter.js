@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
+Components.utils.import("resource://gre/modules/Preferences.jsm");
 
 Components.utils.import("resource://calendar/modules/calUtils.jsm");
 Components.utils.import("resource://calendar/modules/calXMLUtils.jsm");
@@ -31,7 +32,8 @@ calWeekPrinter.prototype = {
     get name() cal.calGetString("calendar", "weekPrinterName"),
 
     formatToHtml: function weekPrint_format(aStream, aStart, aEnd, aCount, aItems, aTitle) {
-        let document = cal.xml.parseFile("chrome://calendar/skin/printing/calWeekPrinter.html");
+        let document = cal.xml.parseFile("chrome://calendar-common/skin/printing/calWeekPrinter.html");
+        let defaultTimezone = cal.calendarDefaultTimezone();
 
         // Set page title
         document.getElementById("title").textContent = aTitle;
@@ -50,6 +52,8 @@ calWeekPrinter.prototype = {
         for each (let item in aItems) {
             let itemStartDate = item[cal.calGetStartDateProp(item)] || item[cal.calGetEndDateProp(item)];
             let itemEndDate = item[cal.calGetEndDateProp(item)] || item[cal.calGetStartDateProp(item)];
+            itemStartDate = itemStartDate.getInTimezone(defaultTimezone);
+            itemEndDate = itemEndDate.getInTimezone(defaultTimezone);
 
             if (!itemStartDate && !itemEndDate) {
                 cal.print.addItemToDayboxNodate(document, item);
@@ -81,7 +85,7 @@ calWeekPrinter.prototype = {
 
         // Remove templates from HTML, no longer needed
         let templates = document.getElementById("templates");
-        templates.parentNode.removeChild(templates);
+        templates.remove();
 
         // Stream out the resulting HTML
         let html = cal.xml.serializeDOM(document);
@@ -121,7 +125,7 @@ calWeekPrinter.prototype = {
             let titleNode = currentPage.querySelector("." + weekdayName + "-title");
             titleNode.textContent = dateFormatter.formatDateLong(currentDate.getInTimezone(defaultTimezone));
 
-            if (cal.getPrefSafe(dayOffPrefName, false)) {
+            if (Preferences.get(dayOffPrefName, false)) {
                 let daysOffNode = currentPage.querySelector("." + weekdayName + "-box");
                 daysOffNode.className += " day-off";
             }

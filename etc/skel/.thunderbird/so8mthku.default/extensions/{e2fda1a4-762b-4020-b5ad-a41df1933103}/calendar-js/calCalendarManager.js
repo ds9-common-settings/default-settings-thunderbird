@@ -4,11 +4,14 @@
 
 Components.utils.import("resource://gre/modules/AddonManager.jsm");
 Components.utils.import("resource://gre/modules/Services.jsm");
+Components.utils.import("resource://gre/modules/Preferences.jsm");
 Components.utils.import("resource://calendar/modules/calUtils.jsm");
 Components.utils.import("resource://calendar/modules/calProviderUtils.jsm");
 
 const REGISTRY_BRANCH = "calendar.registry.";
 const DB_SCHEMA_VERSION = 10;
+const MAX_INT = Math.pow(2, 31) - 1;
+const MIN_INT = -MAX_INT;
 
 function calCalendarManager() {
     this.wrappedJSObject = this;
@@ -45,9 +48,6 @@ calCalendarManager.prototype = {
         this.mCalObservers = null;
         this.mRefreshTimer = {};
         this.setupOfflineObservers();
-        if (cal.isSunbird()) {
-            this.loginMasterPassword();
-        }
         this.mNetworkCalendarCount = 0;
         this.mReadonlyCalendarCount = 0;
         this.mCalendarCount = 0;
@@ -56,7 +56,7 @@ calCalendarManager.prototype = {
 
         // We only add the observer if the pref is set and only check for the
         // pref on startup to avoid checking for every http request
-        if (cal.getPrefSafe("calendar.network.multirealm", false)) {
+        if (Preferences.get("calendar.network.multirealm", false)) {
             Services.obs.addObserver(this, "http-on-examine-response", false);
         }
 
@@ -77,7 +77,7 @@ calCalendarManager.prototype = {
         // Remove the observer if the pref is set. This might fail when the
         // user flips the pref, but we assume he is going to restart anyway
         // afterwards.
-        if (cal.getPrefSafe("calendar.network.multirealm", false)) {
+        if (Preferences.get("calendar.network.multirealm", false)) {
             Services.obs.removeObserver(this, "http-on-examine-response");
         }
 
@@ -91,24 +91,6 @@ calCalendarManager.prototype = {
 
     cleanupOfflineObservers: function ccm_cleanupOfflineObservers() {
         Services.obs.removeObserver(this, "network:offline-status-changed");
-    },
-
-    loginMasterPassword: function ccm_loginMasterPassword() {
-        // Try to avoid the multiple master password prompts on startup scenario
-        // by prompting for the master password upfront.
-        let token = Components.classes["@mozilla.org/security/pk11tokendb;1"]
-                              .getService(Components.interfaces.nsIPK11TokenDB)
-                              .getInternalKeyToken();
-
-        // Only log in to the internal token if it is already initialized,
-        // otherwise we get a "Change Master Password" dialog.
-        try {
-            if (!token.needsUserInit) {
-                token.login(false);
-            }
-        } catch (ex) {
-            // If user cancels an exception is expected.
-        }
     },
 
     observe: function ccm_observe(aSubject, aTopic, aData) {
@@ -167,7 +149,7 @@ calCalendarManager.prototype = {
                     // NOTE: For some reason, this observer call doesn't have
                     // the "cal" namespace defined
                     let ua = httpChannel.getRequestHeader("User-Agent");
-                    let calUAString = getPrefSafe("calendar.useragent.extra");
+                    let calUAString = Preferences.get("calendar.useragent.extra");
                     if (calUAString && ua.indexOf(calUAString) < 0) {
                         // User-Agent is not a mergeable header. We need to
                         // merge the user agent ourselves.
@@ -274,8 +256,8 @@ calCalendarManager.prototype = {
 
             while (selectCalendars.executeStep()) {
                 let id = cal.getUUID(); // use fresh uuids
-                cal.setPref(getPrefBranchFor(id) + "type", selectCalendars.row.type);
-                cal.setPref(getPrefBranchFor(id) + "uri", selectCalendars.row.uri);
+                Preferences.set(getPrefBranchFor(id) + "type", selectCalendars.row.type);
+                Preferences.set(getPrefBranchFor(id) + "uri", selectCalendars.row.uri);
                 // the former id served as sort position:
                 sortOrder[selectCalendars.row.id] = id;
                 // move over prefs:
@@ -285,13 +267,13 @@ calCalendarManager.prototype = {
                     let value = selectPrefs.row.value;
                     switch (name) {
                         case "readonly":
-                            cal.setPref(getPrefBranchFor(id) + "readOnly", value == "true");
+                            Preferences.set(getPrefBranchFor(id) + "readOnly", value == "true");
                             break;
                         case "relaxedmode":
-                            cal.setPref(getPrefBranchFor(id) + "relaxedMode", value == "true");
+                            Preferences.set(getPrefBranchFor(id) + "relaxedMode", value == "true");
                             break;
                         case "suppressalarms":
-                            cal.setPref(getPrefBranchFor(id) + "suppressAlarms", value == "true");
+                            Preferences.set(getPrefBranchFor(id) + "suppressAlarms", value == "true");
                             break;
                         case "disabled":
                         case "cache.supported":
@@ -301,17 +283,15 @@ calCalendarManager.prototype = {
                         case "calendar-main-in-composite":
                         case "lightning-main-default":
                         case "calendar-main-default":
-                            cal.setPref(getPrefBranchFor(id) + name, value == "true");
+                            Preferences.set(getPrefBranchFor(id) + name, value == "true");
                             break;
                         case "backup-time":
                         case "uniquenum":
-                            cal.setPref(getPrefBranchFor(id) + name, Number(value));
-                            break;
-                        case "name":
-                            cal.setLocalizedPref(getPrefBranchFor(id) + name, value);
+                            // These preference names were migrated due to bug 979262.
+                            Preferences.set(getPrefBranchFor(id) + name + "2", "bignum:" + value);
                             break;
                         default: // keep as string
-                            cal.setPref(getPrefBranchFor(id) + name, value);
+                            Preferences.set(getPrefBranchFor(id) + name, value);
                             break;
                     }
                 }
@@ -322,7 +302,7 @@ calCalendarManager.prototype = {
             for each (let s in sortOrder) {
                 sortOrderAr.push(s);
             }
-            cal.setPref("calendar.list.sortOrder", sortOrderAr.join(" "));
+            Preferences.set("calendar.list.sortOrder", sortOrderAr.join(" "));
             flushPrefs();
 
         } finally {
@@ -415,22 +395,13 @@ calCalendarManager.prototype = {
     //
 
     alertAndQuit: function cmgr_alertAndQuit() {
-        // If we're Lightning, we want to include the extension name
-        // in the error message rather than blaming Thunderbird.
-        var errorBoxTitle;
-        var errorBoxText;
-        var errorBoxButtonLabel;
+        // We want to include the extension name in the error message rather
+        // than blaming Thunderbird.
         var hostAppName = calGetString("brand", "brandShortName", null, "branding");
-        if (isSunbird()) {
-            errorBoxTitle = calGetString("calendar", "tooNewSchemaErrorBoxTitle", [hostAppName]);
-            errorBoxText = calGetString("calendar", "tooNewSchemaErrorBoxTextSunbird", [hostAppName]);
-            errorBoxButtonLabel = calGetString("calendar", "tooNewSchemaButtonQuit", [hostAppName]);
-        } else {
-            var calAppName = calGetString("lightning", "brandShortName", null, "lightning");
-            errorBoxTitle = calGetString("calendar", "tooNewSchemaErrorBoxTitle", [calAppName]);
-            errorBoxText = calGetString("calendar", "tooNewSchemaErrorBoxTextLightning", [calAppName, hostAppName]);
-            errorBoxButtonLabel = calGetString("calendar", "tooNewSchemaButtonRestart", [hostAppName]);
-        }
+        var calAppName = calGetString("lightning", "brandShortName", null, "lightning");
+        var errorBoxTitle = calGetString("calendar", "tooNewSchemaErrorBoxTitle", [calAppName]);
+        var errorBoxText = calGetString("calendar", "tooNewSchemaErrorBoxTextLightning", [calAppName, hostAppName]);
+        var errorBoxButtonLabel = calGetString("calendar", "tooNewSchemaButtonRestart", [hostAppName]);
 
         var promptSvc = Services.prompt;
 
@@ -448,16 +419,12 @@ calCalendarManager.prototype = {
                                          null, // No checkbox
                                          { value: false }); // Unnecessary checkbox state
 
-        if (isSunbird()) {
-            Services.startup.quit(Components.interfaces.nsIAppStartup.eForceQuit);
-        } else {
-            // Disable Lightning
-            AddonManager.getAddonByID("{e2fda1a4-762b-4020-b5ad-a41df1933103}", function getLightningExt(aAddon) {
-                aAddon.userDisabled = true;
-                Services.startup.quit(Components.interfaces.nsIAppStartup.eRestart |
-                    Components.interfaces.nsIAppStartup.eForceQuit);
-            });
-        }
+        // Disable Lightning
+        AddonManager.getAddonByID("{e2fda1a4-762b-4020-b5ad-a41df1933103}", function getLightningExt(aAddon) {
+            aAddon.userDisabled = true;
+            Services.startup.quit(Components.interfaces.nsIAppStartup.eRestart |
+                Components.interfaces.nsIAppStartup.eForceQuit);
+        });
     },
 
     /**
@@ -524,8 +491,8 @@ calCalendarManager.prototype = {
             calendar.id = cal.getUUID();
         }
 
-        cal.setPref(getPrefBranchFor(calendar.id) + "type", calendar.type);
-        cal.setPref(getPrefBranchFor(calendar.id) + "uri", calendar.uri.spec);
+        Preferences.set(getPrefBranchFor(calendar.id) + "type", calendar.type);
+        Preferences.set(getPrefBranchFor(calendar.id) + "uri", calendar.uri.spec);
 
         if ((calendar.getProperty("cache.supported") !== false) &&
             (calendar.getProperty("cache.enabled") ||
@@ -622,29 +589,47 @@ calCalendarManager.prototype = {
         this.clearRefreshTimer(calendar);
     },
 
+    // Delete this method for Lightning 4.7 at latest
     deleteCalendar: function(calendar) {
-        /* check to see if calendar is unregistered first... */
-        /* delete the calendar for good */
-        if (this.mCache && (calendar.id in this.mCache)) {
-            throw "Can't delete a registered calendar";
+        if (!this.deleteCalendar.warningIssued) {
+            cal.WARN("Use of calICalendarManager::deleteCalendar is deprecated" +
+                     " and will be removed with the next release. Use" +
+                     " ::removeCalendar instead.\n" + cal.STACK(10));
+            this.deleteCalendar.warningIssued = true;
         }
+
+        const cICM = Components.interfaces.calICalendarManager;
+        this.removeCalendar(calendar, cICM.REMOVE_NO_UNREGISTER);
+    },
+
+    removeCalendar: function(calendar, mode=0) {
+        const cICM = Components.interfaces.calICalendarManager;
+
+        let removeModes = new Set(calendar.getProperty("capabilities.removeModes") || ["unsubscribe"]);
+        if (!removeModes.has("unsubscribe") && !removeModes.has("delete")) {
+            // Removing is not allowed
+            return;
+        }
+
+        if ((mode & cICM.REMOVE_NO_UNREGISTER) && this.mCache &&
+            (calendar.id in this.mCache)) {
+            throw new Components.Exception("Can't remove a registered calendar");
+        } else if (!(mode & cICM.REMOVE_NO_UNREGISTER)) {
+            this.unregisterCalendar(calendar);
+        }
+
+        // This observer notification needs to be fired for both unsubscribe
+        // and delete, we don't differ this at the moment.
         this.notifyObservers("onCalendarDeleting", [calendar]);
 
-        // XXX This is a workaround for bug 351499. We should remove it once
-        // we sort out the whole "delete" vs. "unsubscribe" UI thing.
-        //
-        // We only want to delete the contents of calendars from local
-        // providers (storage and memory). Otherwise we may nuke someone's
-        // calendar stored on a server when all they really wanted to do was
-        // unsubscribe.
-        let wrappedCalendar = cal.wrapInstance(calendar, Components.interfaces.calICalendarProvider);
-        if (wrappedCalendar &&
-            (wrappedCalendar.type == "storage" || wrappedCalendar.type == "memory")) {
-            try {
-                wrappedCalendar.deleteCalendar(calendar, null);
-            } catch (e) {
-                Components.utils.reportError("error purging calendar: " + e);
+        // For deleting, we also call the deleteCalendar method from the provider.
+        if (removeModes.has("delete") && (mode & cICM.REMOVE_NO_DELETE) == 0) {
+            let wrappedCalendar = cal.wrapInstance(calendar, Components.interfaces.calICalendarProvider);
+            if (!wrappedCalendar) {
+                throw new Components.Exception("Calendar is missing a provider implementation for delete");
             }
+
+            wrappedCalendar.deleteCalendar(calendar, null);
         }
     },
 
@@ -678,8 +663,8 @@ calCalendarManager.prototype = {
 
             for (let calBranch in allCals) {
                 let id = calBranch.substring(REGISTRY_BRANCH.length);
-                let ctype = cal.getPrefSafe(calBranch + ".type", null);
-                let curi = cal.getPrefSafe(calBranch + ".uri", null);
+                let ctype = Preferences.get(calBranch + ".type", null);
+                let curi = Preferences.get(calBranch + ".uri", null);
 
                 try {
                     if (!ctype || !curi) { // sanity check
@@ -734,11 +719,15 @@ calCalendarManager.prototype = {
         cal.ASSERT(name && name.length > 0, "Pref Name must be non-empty!");
 
         let branch = (getPrefBranchFor(calendar.id) + name);
+        let value = Preferences.get(branch, null);
 
-        if ( name === "name" ) {
-            return cal.getLocalizedPref(branch, null);
+        if (typeof value == "string" && value.startsWith("bignum:")) {
+            let converted = Number(value.substr(7));
+            if (!isNaN(converted)) {
+                value = converted;
+            }
         }
-        return cal.getPrefSafe(branch, null);
+        return value;
     },
 
     setCalendarPref_: function(calendar, name, value) {
@@ -747,13 +736,17 @@ calCalendarManager.prototype = {
         cal.ASSERT(name && name.length > 0, "Pref Name must be non-empty!");
 
         let branch = (getPrefBranchFor(calendar.id) + name);
-        // Delete before to allow pref-type changes:
-        Services.prefs.deleteBranch(branch);
 
-        if ( name === "name" ) {
-            cal.setLocalizedPref(branch, value);
-        } else {
-            cal.setPref(branch, value);
+        if (typeof value == "number" && (value > MAX_INT || value < MIN_INT || !Number.isInteger(value))) {
+            // This is something the preferences service can't store directly.
+            // Convert to string and tag it so we know how to handle it.
+            value = "bignum:" + value;
+        }
+
+        // Delete before to allow pref-type changes, then set the pref.
+        Services.prefs.deleteBranch(branch);
+        if (value !== null && value !== undefined) {
+            Preferences.set(branch, value);
         }
     },
 
@@ -838,12 +831,22 @@ calMgrCalendarObserver.prototype = {
     },
 
     changeCalendarCache: function(aCalendar, aName, aValue, aOldValue) {
+        const cICM = Components.interfaces.calICalendarManager;
         aOldValue = aOldValue || false;
         aValue = aValue || false;
 
+        // hack for bug 1182264 to deal with calendars, which have set cache.enabled, but in fact do
+        // not support caching (like storage calendars) - this also prevents enabling cache again
+        if (aCalendar.getProperty("cache.supported") === false) {
+            if (aCalendar.getProperty("cache.enabled") === true) {
+                aCalendar.deleteProperty("cache.enabled");
+            }
+            return;
+        }
+
         if (aOldValue != aValue) {
             // Try to find the current sort order
-            let sortOrderPref = cal.getPrefSafe("calendar.list.sortOrder", "").split(" ");
+            let sortOrderPref = Preferences.get("calendar.list.sortOrder", "").split(" ");
             let initialSortOrderPos = null;
             for (let i = 0; i < sortOrderPref.length; ++i) {
                 if (sortOrderPref[i] == aCalendar.id) {
@@ -854,8 +857,7 @@ calMgrCalendarObserver.prototype = {
             // it so the registerCalendar call can wrap/unwrap the
             // calCachedCalendar facade saving the user the need to
             // restart Thunderbird and making sure a new Id is used.
-            this.calMgr.unregisterCalendar(aCalendar);
-            this.calMgr.deleteCalendar(aCalendar);
+            this.calMgr.removeCalendar(aCalendar, cICM.REMOVE_NO_DELETE);
             var newCal = this.calMgr.createCalendar(aCalendar.type,aCalendar.uri);
             newCal.name = aCalendar.name;
 

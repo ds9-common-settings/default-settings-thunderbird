@@ -5,6 +5,7 @@
 Components.utils.import("resource://calendar/modules/calProviderUtils.jsm");
 Components.utils.import("resource://gre/modules/Services.jsm");
 Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
+Components.utils.import("resource://gre/modules/Preferences.jsm");
 
 const calICalendar = Components.interfaces.calICalendar;
 const cICL = Components.interfaces.calIChangeLog;
@@ -152,14 +153,19 @@ calCachedCalendar.prototype = {
 
     onCalendarUnregistering: function() {
         if (this.mCachedCalendar) {
+            let self = this;
             this.mCachedCalendar.removeObserver(this.mCachedObserver);
-            // Although this doesn't really follow the spec, we know the
-            // storage calendar's deleteCalendar method is synchronous.
             // TODO put changes into a different calendar and delete
             // afterwards.
+
+            let listener = {
+                onDeleteCalendar: function (aCalendar, aStatus, aDetail) {
+                    self.mCachedCalendar = null;
+                }
+            };
+
             this.mCachedCalendar.QueryInterface(Components.interfaces.calICalendarProvider)
-                                .deleteCalendar(this.mCachedCalendar, null);
-            this.mCachedCalendar = null;
+                                .deleteCalendar(this.mCachedCalendar, listener);
         }
     },
 
@@ -177,7 +183,7 @@ calCachedCalendar.prototype = {
                     this.mUncachedCalendar.resetLog();
                 }
             } else {
-                let calType = getPrefSafe("calendar.cache.type", "storage");
+                let calType = Preferences.get("calendar.cache.type", "storage");
                 // While technically, the above deleteCalendar should delete the
                 // whole calendar, this is nothing more than deleting all events
                 // todos and properties. Therefore the initialization can be

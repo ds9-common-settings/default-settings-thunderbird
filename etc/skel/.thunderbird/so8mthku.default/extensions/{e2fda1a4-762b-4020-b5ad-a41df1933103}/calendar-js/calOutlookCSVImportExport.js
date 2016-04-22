@@ -3,7 +3,9 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 Components.utils.import("resource://calendar/modules/calAlarmUtils.jsm");
+Components.utils.import("resource://calendar/modules/calUtils.jsm");
 Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
+Components.utils.import("resource://gre/modules/Preferences.jsm");
 
 const localeEn = {
     headTitle       : "Subject",
@@ -269,7 +271,7 @@ calOutlookCSVImporter.prototype = {
                             // end date is exclusive, so set to next day after start.
                             eDate.day += 1;
                         } else {
-                            eDate.minute += cal.getPrefSafe("calendar.event.defaultlength", 60);
+                            eDate.minute += Preferences.get("calendar.event.defaultlength", 60);
                         }
                     } else {
                         // An endDate was found.
@@ -434,8 +436,8 @@ calOutlookCSVExporter.prototype = {
 
     exportToStream: function csv_exportToStream(aStream, aCount, aItems) {
         // Helper functions
-        function dateString(aDateTime) aDateTime.jsDate.toLocaleFormat(localeEn.dateFormat);
-        function timeString(aDateTime) aDateTime.jsDate.toLocaleFormat(localeEn.timeFormat);
+        function dateString(aDateTime) cal.dateTimeToJsDate(aDateTime).toLocaleFormat(localeEn.dateFormat);
+        function timeString(aDateTime) cal.dateTimeToJsDate(aDateTime).toLocaleFormat(localeEn.timeFormat);
         function txtString(aString) aString || "";
 
         let str = "";

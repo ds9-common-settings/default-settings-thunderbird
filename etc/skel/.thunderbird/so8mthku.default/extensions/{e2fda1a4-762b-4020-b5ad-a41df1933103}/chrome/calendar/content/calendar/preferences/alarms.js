@@ -19,50 +19,9 @@ var gAlarmsPane = {
         this.alarmsPlaySoundPrefChanged();
 
         // Set the correct singular/plural for the time units
-        this.updateMenuPlural("eventdefalarmlen", "eventdefalarmunit");
-        this.updateMenuPlural("tododefalarmlen",  "tododefalarmunit");
-    },
-
-    /**
-     * Update the given menu to show the correct plural form in the unit
-     * menulist.
-     *
-     * @param lengthFieldId     The ID of the length field textbox.
-     * @param menuId            The ID of the unit menu to update.
-     */
-    updateMenuPlural: function gAP_updateMenuPlural(lengthFieldId, menuId) {
-        var field = document.getElementById(lengthFieldId);
-        var menu  = document.getElementById(menuId);
-
-        var length = field.value;
-        var newLabelNumber;
-        if (Number(length) > 1) {
-            newLabelNumber = "labelplural";
-        } else {
-            newLabelNumber = "labelsingular";
-        }
-
-        // Only make necessary changes
-        var oldLabelNumber = menu.getAttribute("labelnumber");
-        if (newLabelNumber != oldLabelNumber) {
-            // remember what we are showing now
-            menu.setAttribute("labelnumber", newLabelNumber);
-
-            // update the menu items
-            var items = menu.getElementsByTagName("menuitem");
-
-            for (var i=0; i < items.length; i++) {
-                var menuItem = items[i];
-                var newLabel = menuItem.getAttribute(newLabelNumber);
-                menuItem.label = newLabel;
-                menuItem.setAttribute("label", newLabel);
-            }
-
-            // force the menu selection to redraw
-            var saveSelectedIndex = menu.selectedIndex;
-            menu.selectedIndex = -1;
-            menu.selectedIndex = saveSelectedIndex;
-        }
+        updateMenuLabelsPlural("eventdefalarmlen", "eventdefalarmunit");
+        updateMenuLabelsPlural("tododefalarmlen",  "tododefalarmunit");
+        updateUnitLabelPlural("defaultsnoozelength", "defaultsnoozelengthunit", "minutes");
     },
 
     /**
@@ -168,7 +127,7 @@ var gAlarmsPane = {
         var items = [document.getElementById("alarmSoundFileField"),
                      document.getElementById("calendar.prefs.alarm.sound.useDefault"),
                      document.getElementById("calendar.prefs.alarm.sound.browse"),
-                     document.getElementById("calendar.prefs.alarm.sound.preview")];
+                     document.getElementById("calendar.prefs.alarm.sound.play")];
 
         for (var i=0; i < items.length; i++) {
             items[i].disabled = !alarmsPlaySoundPref.value;
