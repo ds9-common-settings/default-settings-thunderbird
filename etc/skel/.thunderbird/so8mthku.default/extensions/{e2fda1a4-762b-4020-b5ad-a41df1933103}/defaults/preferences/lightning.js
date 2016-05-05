@@ -72,6 +72,12 @@ pref("calendar.itip.notify-replies", false);
 // whether email invitation updates are send out to all attendees if (only) adding a new attendee
 pref("calendar.itip.updateInvitationForNewAttendeesOnly", false);
 
+//whether changes in email invitation updates should be displayed
+pref("calendar.itip.displayInvitationChanges", true);
+
+//whether for delegated invitations a delegatee's replies will be send also to delegator(s)
+pref("calendar.itip.notifyDelegatorOnReply", true);
+
 // whether CalDAV (experimental) scheduling is enabled or not.
 pref("calendar.caldav.sched.enabled", false);
 
@@ -80,6 +86,9 @@ pref("calendar.caldav.sched.enabled", false);
 pref("calendar.week.start", 0);
 pref("calendar.weeks.inview", 4);
 pref("calendar.previousweeks.inview", 0);
+
+// Show week number in minimonth and multiweek/month views
+pref("calendar.view-minimonth.showWeekNumber", true);
 
 // Default days off
 pref("calendar.week.d0sundaysoff", true);
@@ -129,7 +138,7 @@ pref("calendar.threading.latency ", 250);
 pref("calendar.network.multirealm", false);
 
 // Set up user agent
-pref("calendar.useragent.extra", "Lightning/4.0.5.2");
+pref("calendar.useragent.extra", "Lightning/4.7");
 
 // Disable use of system colors in minimonth and calendar views
 pref("calendar.view.useSystemColors", false);
@@ -139,7 +148,9 @@ pref("calendar.view.useSystemColors", false);
 pref("calendar.filter.maxiterations", 50);
 
 // Backend to use. false: libical, true: ical.js
+//@line 154 "/build/thunderbird-kde/src/thunderbird-45.0/calendar/lightning/content/lightning.js"
 pref("calendar.icaljs", false);
+//@line 156 "/build/thunderbird-kde/src/thunderbird-45.0/calendar/lightning/content/lightning.js"
 
 // Calendar integration notification
 pref("calendar.integration.notify", true);
