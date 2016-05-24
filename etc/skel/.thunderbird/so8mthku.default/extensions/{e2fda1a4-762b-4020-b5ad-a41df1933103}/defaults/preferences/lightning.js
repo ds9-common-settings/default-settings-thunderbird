@@ -138,7 +138,7 @@ pref("calendar.threading.latency ", 250);
 pref("calendar.network.multirealm", false);
 
 // Set up user agent
-pref("calendar.useragent.extra", "Lightning/4.7");
+pref("calendar.useragent.extra", "Lightning/4.7.1");
 
 // Disable use of system colors in minimonth and calendar views
 pref("calendar.view.useSystemColors", false);
@@ -148,9 +148,9 @@ pref("calendar.view.useSystemColors", false);
 pref("calendar.filter.maxiterations", 50);
 
 // Backend to use. false: libical, true: ical.js
-//@line 154 "/build/thunderbird-kde/src/thunderbird-45.0/calendar/lightning/content/lightning.js"
+//@line 154 "/build/thunderbird-kde/src/thunderbird-45.1.0/calendar/lightning/content/lightning.js"
 pref("calendar.icaljs", false);
-//@line 156 "/build/thunderbird-kde/src/thunderbird-45.0/calendar/lightning/content/lightning.js"
+//@line 156 "/build/thunderbird-kde/src/thunderbird-45.1.0/calendar/lightning/content/lightning.js"
 
 // Calendar integration notification
 pref("calendar.integration.notify", true);

@@ -1,4 +1,4 @@
-services.addons.mozilla.org:HSTS	7	16932	1494501856574,1,0
+services.addons.mozilla.org:HSTS	8	16945	1495621608328,1,0
 addons.cdn.mozilla.net:HSTS	4	16784	1481726991235,1,0
 addons.mozilla.org:HSTS	0	16706	1475007232044,1,0
 www.gandi.net:HSTS	6	16910	1476837907741,1,0
