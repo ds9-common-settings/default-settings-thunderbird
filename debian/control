@@ -1,11 +1,11 @@
-Source: netrunner-settings-thunderbird
+Source: default-settings-thunderbird
 Section: admin
 Priority: optional
 Maintainer: Leszek Lesner <leszek@zevenos.com>
 Build-Depends: debhelper (>= 5)
 Standards-Version: 3.7.2
 
-Package: netrunner-settings-thunderbird
+Package: default-settings-thunderbird
 Architecture: all
-Description: Default configuration for Thunderbird in Netrunner
- Default configuration for Thunderbird in Netrunner
+Description: Default configuration for Thunderbird 
+ Default configuration for Thunderbird in Maui/Netrunner

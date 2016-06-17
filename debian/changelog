@@ -1,4 +1,4 @@
-netrunner-settings-thunderbird (1.0.15) utopic; urgency=low
+default-settings-thunderbird (1.0.15) utopic; urgency=low
 
   * Updated for TB 31
 
