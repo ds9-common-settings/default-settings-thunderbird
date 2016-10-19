@@ -7,5 +7,6 @@ Standards-Version: 3.7.2
 
 Package: default-settings-thunderbird
 Architecture: all
+Recommend: xul-ext-lightning
 Description: Default configuration for Thunderbird 
  Default configuration for Thunderbird in Maui/Netrunner
