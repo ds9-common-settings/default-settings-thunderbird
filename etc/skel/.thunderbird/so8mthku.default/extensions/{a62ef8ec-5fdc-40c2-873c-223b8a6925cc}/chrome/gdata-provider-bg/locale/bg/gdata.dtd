@@ -16,6 +16,9 @@
 <!ENTITY gdata.reminder.action.sms.label "Изпращане на текстово съобщение">
 
 
+
+
+
 <!ENTITY gdata.reminder.default "Default Reminder">
 <!ENTITY gdata.wizard.calendars.description "Please select the calendars and task lists you would like to subscribe to.">
 

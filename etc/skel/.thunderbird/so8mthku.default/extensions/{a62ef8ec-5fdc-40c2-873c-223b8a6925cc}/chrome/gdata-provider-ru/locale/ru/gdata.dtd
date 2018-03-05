@@ -13,12 +13,10 @@
 <!ENTITY gdata.migration.upgrade.accesskey "О">
 <!ENTITY gdata.migration.showagain.label "Всегда проверять ">
 
+<!ENTITY gdata.reminder.default "Оповещение по умолчанию">
 <!ENTITY gdata.reminder.action.sms.label "Отправить текстовое сообщение">
 
+<!ENTITY gdata.wizard.session.description "Пожалуйста, выберите существующую сессию или введите свой адрес электронной почты для создания новой сессии. Вам нужен только одна сессия на учётную запись.">
+<!ENTITY gdata.wizard.calendars.description "Пожалуйста, выберите календари и списки задач, на которые вы хотели бы подписаться.">
 
-<!ENTITY gdata.reminder.default "Default Reminder">
-<!ENTITY gdata.wizard.calendars.description "Please select the calendars and task lists you would like to subscribe to.">
-
-<!ENTITY gdata.wizard.nextstep.description "Please advance to the next step to set up your calendars.">
-
-<!ENTITY gdata.wizard.session.description "Please pick an existing session or enter your email address to create a new session. You only need one session per account.">
+<!ENTITY gdata.wizard.nextstep.description "Пожалуйста, перейдите к следующему шагу, чтобы настроить свои календари.">

@@ -8,7 +8,7 @@
 
   <Description about="urn:mozilla:install-manifest">
     <em:id>{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}</em:id>
-    <em:version>2.7</em:version>
+    <em:version>3.3</em:version>
     <em:type>2</em:type>
 
     <!-- Target Application this extension can install into,
@@ -27,7 +27,7 @@
         <!-- Thunderbird -->
         <em:id>{3550f703-e582-4d05-9a08-453d09bdfdc6}</em:id>
         <em:minVersion>24.0</em:minVersion>
-        <em:maxVersion>44.0a1</em:maxVersion>
+        <em:maxVersion>52.0</em:maxVersion>
       </Description>
     </em:targetApplication>
     <em:targetApplication>
@@ -35,7 +35,7 @@
         <!-- SeaMonkey -->
         <em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
         <em:minVersion>2.21</em:minVersion>
-        <em:maxVersion>2.41a1</em:maxVersion>
+        <em:maxVersion>2.49</em:maxVersion>
       </Description>
     </em:targetApplication>
 
